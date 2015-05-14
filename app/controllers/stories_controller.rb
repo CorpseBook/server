@@ -5,10 +5,10 @@ class StoriesController < ApplicationController
   end
 
   def create
-    story = Story.new(story_params)
-    if story.save
+    new_story = Story.new(story_params)
+    if new_story.save
       render status: 200, json: {
-        story: story,
+        story: new_story,
       }
     else
       render status: 400, json: {
