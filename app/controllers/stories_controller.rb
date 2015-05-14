@@ -7,11 +7,14 @@ class StoriesController < ApplicationController
   def create
     story = Story.new(story_params)
     if story.save
-      render status: 200
+      render status: 200, json: {
+        story: story,
+      }
     else
-      render status: 400
+      render status: 400, json: {
+        message: "Your request was not successful."
+      }
     end
-    redirect_to '/'
   end
 
   private

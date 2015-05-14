@@ -2,6 +2,10 @@ require 'rails_helper'
 
 RSpec.describe StoriesController, type: :controller do
 
+  before(:all) do
+    Story.destroy_all
+  end
+
   describe '#create' do
     it "should route to post" do
       should route(:post, '/stories').to(action: :create)

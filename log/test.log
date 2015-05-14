@@ -103,3 +103,15 @@ Processing by StoriesController#create as HTML
   [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
 Completed 500 Internal Server Error in 20ms (ActiveRecord: 2.4ms)
   [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Processing by StoriesController#create as HTML
+  Parameters: {"story"=>{"title"=>"Supernatural Winnipeg", "origin_latitude"=>"-41.2967128", "origin_longitude"=>"174.77388449999998", "contribution_limit"=>"12"}}
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "stories" ("title", "origin_latitude", "origin_longitude", "contribution_limit", "completed", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["title", "Supernatural Winnipeg"], ["origin_latitude", -41.2967128], ["origin_longitude", 174.77388449999998], ["contribution_limit", 12], ["completed", "f"], ["created_at", "2015-05-14 06:37:31.615176"], ["updated_at", "2015-05-14 06:37:31.615176"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 19ms (Views: 0.4ms | ActiveRecord: 3.6ms)
+  [1m[35mStory Load (0.5ms)[0m  SELECT  "stories".* FROM "stories"  ORDER BY "stories"."id" DESC LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
