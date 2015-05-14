@@ -2,11 +2,15 @@ require 'rails_helper'
 
 RSpec.describe StoriesController, type: :controller do
 
-  before(:all) do
-    Story.destroy_all
+
+  describe "#index" do
+    it "should return all the stories as json" do
+      get :index, :format => :json
+      expect(response.body).to eq(Story.all.to_json)
+    end
   end
 
-  describe '#create' do
+  describe "#create" do
     it "should route to post" do
       should route(:post, '/stories').to(action: :create)
     end
@@ -22,6 +26,20 @@ RSpec.describe StoriesController, type: :controller do
     it "should return an HTTP response of 200 if successful" do
       expect(response.status).to eq(200)
     end
+  end
 
+
+  describe "#show" do
+    before do
+      @story = Story.create(title: "Joe's Adventure", origin_latitude: -42.29, origin_longitude: 175.77, contribution_limit: 100)
+    end
+    it "should find a particular story" do
+      get :show, id: @story.id
+      expect(response.body).to eq(@story.to_json)
+    end
+  end
+
+  after(:all) do
+    Story.destroy_all
   end
 end
