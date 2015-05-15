@@ -1,10 +1,12 @@
 # Use this hook to configure devise mailer, warden hooks and so forth.
 # Many of these configuration options can be set straight in your model.
 Devise.setup do |config|
+
+  config.omniauth :facebook, "747906931989002", "65c7c8ed6f7f8ab9c0f1aad5edc6410f"
   # The secret key used by Devise. Devise uses this key to generate
   # random tokens. Changing this key will render invalid all existing
   # confirmation, reset password and unlock tokens in the database.
-  # config.secret_key = '47b97c8eea41dc0babd36756b1314f6a36f4fb70d78867d6fb591b4a22cbb826f6ff1b110cef9c8b972fd4192e773ba8d6c49a9d8baa9279ce63cdd2a5629f32'
+  # config.secret_key = 'cd4eb0b74fef5cc709d8ad2be96256f7d3d8adbd1c81d45fddd4c596eedba197122649d3d619a06bd332c03e51daddb5660e4b3b3fac82826dfa76dc94833764'
 
   # ==> Mailer Configuration
   # Configure the e-mail address which will be shown in Devise::Mailer,
@@ -97,7 +99,7 @@ Devise.setup do |config|
   config.stretches = Rails.env.test? ? 1 : 10
 
   # Setup a pepper to generate the encrypted password.
-  # config.pepper = '44d84dce463995db673d84159b5ba2a34e84d508a7124e5e4f2470b3f91000a71aef99f37f73524e6c8ef55a68cc0b331e31324c5cda522facdcfe9c96fbdeed'
+  # config.pepper = 'e1d2d8f47bc2fe6cfa644896df37e9fc06bd28b11f0b900bebe6118ec68a817eb588df658def00548de4bc8373a24a3c0f9ef76dfe44b1908312ce65f40d3672'
 
   # ==> Configuration for :confirmable
   # A period that the user is allowed to access the website even without
