@@ -1192,3 +1192,42 @@ ActionController::ParameterMissing (param is missing or the value is empty: cont
   Rendered /Users/caradev/.rbenv/versions/2.0.0-p481/lib/ruby/gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
   Rendered /Users/caradev/.rbenv/versions/2.0.0-p481/lib/ruby/gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.2ms)
   Rendered /Users/caradev/.rbenv/versions/2.0.0-p481/lib/ruby/gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (22.9ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (4.2ms)[0m  [1mINSERT INTO "contributions" ("content", "story_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["content", "This is content."], ["story_id", 1], ["created_at", "2015-05-15 02:19:51.491304"], ["updated_at", "2015-05-15 02:19:51.491304"]]
+  [1m[35m (5.1ms)[0m  COMMIT
+
+
+Started GET "/stories/1" for ::1 at 2015-05-15 14:20:15 +1200
+Processing by StoriesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mStory Load (0.3ms)[0m  SELECT  "stories".* FROM "stories" WHERE "stories"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mContribution Load (0.2ms)[0m  [1mSELECT "contributions".* FROM "contributions" WHERE "contributions"."story_id" = $1[0m  [["story_id", 1]]
+  [1m[35mContribution Load (0.2ms)[0m  SELECT  "contributions".* FROM "contributions" WHERE "contributions"."story_id" = $1  ORDER BY "contributions"."id" DESC LIMIT 1  [["story_id", 1]]
+Completed 200 OK in 72ms (Views: 0.4ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/stories/1" for 127.0.0.1 at 2015-05-15 14:29:46 +1200
+Processing by StoriesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mStory Load (0.1ms)[0m  [1mSELECT  "stories".* FROM "stories" WHERE "stories"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mContribution Load (0.1ms)[0m  SELECT "contributions".* FROM "contributions" WHERE "contributions"."story_id" = $1  [["story_id", 1]]
+  [1m[36mContribution Load (0.3ms)[0m  [1mSELECT  "contributions".* FROM "contributions" WHERE "contributions"."story_id" = $1  ORDER BY "contributions"."id" DESC LIMIT 1[0m  [["story_id", 1]]
+Completed 200 OK in 59ms (Views: 0.2ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/stories/1" for 127.0.0.1 at 2015-05-15 14:30:09 +1200
+Processing by StoriesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mStory Load (0.2ms)[0m  SELECT  "stories".* FROM "stories" WHERE "stories"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mContribution Load (0.1ms)[0m  [1mSELECT "contributions".* FROM "contributions" WHERE "contributions"."story_id" = $1[0m  [["story_id", 1]]
+  [1m[35mContribution Load (0.2ms)[0m  SELECT  "contributions".* FROM "contributions" WHERE "contributions"."story_id" = $1  ORDER BY "contributions"."id" DESC LIMIT 1  [["story_id", 1]]
+Completed 200 OK in 17ms (Views: 0.2ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/stories/1" for ::1 at 2015-05-15 14:31:05 +1200
+Processing by StoriesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mStory Load (0.2ms)[0m  [1mSELECT  "stories".* FROM "stories" WHERE "stories"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mContribution Load (0.1ms)[0m  SELECT "contributions".* FROM "contributions" WHERE "contributions"."story_id" = $1  [["story_id", 1]]
+Completed 200 OK in 16ms (Views: 0.2ms | ActiveRecord: 2.3ms)
