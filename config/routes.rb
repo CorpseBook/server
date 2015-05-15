@@ -5,7 +5,15 @@ Rails.application.routes.draw do
     resources :contributions, only: [:create]
   end
 
+  get '/stories/nearby' => "stories#nearby"
 
+  controller :stories, path: '/' do
+    match 'stories', to: "stories#create", via: [ :post, :options]
+  end
+
+  controller :contributions, path: "/stories/:story_id/" do
+    match 'contributions', to: "contributions#create", via: [ :post, :options]
+  end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

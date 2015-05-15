@@ -17,6 +17,7 @@ class ApplicationController < ActionController::Base
    end
 
    def cors_preflight_check
+    p request.method
      if request.method == 'OPTIONS'
        # headers['Access-Control-Allow-Origin'] = '*'
        # headers['Access-Control-Allow-Methods'] = 'POST, GET, PUT, DELETE, OPTIONS'
@@ -27,9 +28,16 @@ class ApplicationController < ActionController::Base
        headers['Access-Control-Allow-Methods'] = 'POST, PUT, DELETE, GET, OPTIONS'
        headers['Access-Control-Request-Method'] = '*'
        headers['Access-Control-Allow-Headers'] = 'Origin, X-Requested-With, Content-Type, Accept, Authorization'
+       headers['Access-Control-Allow-Credentials'] = 'true'
+       headers['Access-Control-Max-Age'] = '1728000'
 
        render :text => '', :content_type => 'text/plain'
      end
+
+     # def set_csrf_cookie_for_ng
+     #    cookies['XSRF-TOKEN'] = form_authenticity_token if protect_against_forgery?
+     #  end
+
    end
 
 

@@ -32,10 +32,20 @@ RSpec.describe StoriesController, type: :controller do
   describe "#show" do
     before do
       @story = Story.create(title: "Joe's Adventure", origin_latitude: -42.29, origin_longitude: 175.77, contribution_limit: 100)
-    end
-    it "should find a particular story" do
+      @contribution = Contribution.create(story_id: @story.id, content: "Blah blah blah.")
       get :show, id: @story.id
-      expect(response.body).to eq(@story.to_json)
+    end
+
+    it "should find a particular story's contributions" do
+      expect(@story.contributions).to include(@contribution)
+    end
+
+    it "should return the story's title in json" do
+      expect(response.body).to include(@story.title.to_json)
+    end
+
+    it "should return the story's contribution in json" do
+      expect(response.body).to include(@contribution.to_json)
     end
   end
 

@@ -18,7 +18,7 @@ RSpec.describe Story, type: :model do
   	after(:each) do
   		Story.delete_all
   		Location.delete_all
-  	end
-  
+  	end 
+
 
 end
