@@ -16,5 +16,10 @@ RSpec.describe StoriesController, type: :controller do
       expect(Story.last.title).to eq("Supernatural Winnipeg")
     end
 
+    it "sends a json response" do
+      post :create, {story: {title: 'birds', contribution_limit: 12, origin_longitude: 26, origin_latitude: 168}}
+      expect(response.body).to eq({story: {title: 'birds', contribution_limit: 12, origin_longitude: 26, origin_latitude: 168, completed: false}}.to_json)
+    end
+
   end
 end
