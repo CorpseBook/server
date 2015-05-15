@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   root to: 'home#index'
 
   resources :stories do
-    resources :constributions, only: [:create]
+    resources :contributions, only: [:create]
   end
 
 
