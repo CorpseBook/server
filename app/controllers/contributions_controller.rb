@@ -20,7 +20,7 @@ class ContributionsController < ApplicationController
   private
 
   def contribution_params
-    params.require(:contribution).permit(:content, :story_id)
+    params.require(:contribution).permit(:content)
   end
 
 end
