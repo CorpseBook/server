@@ -40,8 +40,12 @@ RSpec.describe StoriesController, type: :controller do
       expect(@story.contributions).to include(@contribution)
     end
 
-    it "should return the story's contributions in json" do
-      expect(response.body).to eq(@contribution.to_json)
+    it "should return the story's title in json" do
+      expect(response.body).to include(@story.title.to_json)
+    end
+
+    it "should return the story's contribution in json" do
+      expect(response.body).to include(@contribution.to_json)
     end
   end
 
