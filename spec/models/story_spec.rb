@@ -15,9 +15,16 @@ RSpec.describe Story, type: :model do
 		expect(Location.farthest(origin: @welly_story.location).first).to eq(@akl_story.location)
   	end
 
+	it "Stories can searched by nearby" do
+
+		expect(Location.within(10, origin: @welly_story.location)).to include(@welly_story.location)
+		expect(Location.within(200, origin: @welly_story.location)).to include(@nelly_story.location)
+		expect(Location.within(10, origin: @welly_story.location)).not_to include(@akl_story.location)
+  	end  	
+
   	after(:each) do
-  		Story.delete_all
-  		Location.delete_all
+  		Story.destroy_all
+  		Location.destroy_all
   	end 
 
 
