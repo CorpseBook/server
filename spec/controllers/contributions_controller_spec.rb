@@ -6,7 +6,7 @@ RSpec.describe ContributionsController, type: :controller do
     before do
       # @story = Story.create(title: "Supernatural Winnipeg", origin_latitude: -41.2967128, origin_longitude: 174.77388449999998, contribution_limit: 12)
       # @contribution = Contribution.create(content: "Here is my contribution.")
-      post :create, :contribution => {:content => "uashdfkjasdgfhabdsvfhjksad"},git pull origstory_id: 1
+      post :create, :contribution => {:content => "uashdfkjasdgfhabdsvfhjksad"},story_id: 1
     end
 
     it "should create new contribution" do
