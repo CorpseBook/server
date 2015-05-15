@@ -2562,3 +2562,675 @@ Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
   [1m[36mSQL (2.3ms)[0m  [1mDELETE FROM "stories"[0m
   [1m[35mSQL (0.3ms)[0m  DELETE FROM "locations"
   [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.9ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+Processing by StoriesController#index as JSON
+Geokit is using the domain: test.host
+  [1m[36mStory Load (1.1ms)[0m  [1mSELECT "stories".* FROM "stories"[0m
+Completed 200 OK in 6ms (Views: 1.7ms | ActiveRecord: 3.1ms)
+  [1m[35mStory Load (0.7ms)[0m  SELECT "stories".* FROM "stories"
+  [1m[36m (0.4ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+Processing by StoriesController#create as HTML
+  Parameters: {"story"=>{"title"=>"Supernatural Winnipeg", "origin_latitude"=>"-41.2967128", "origin_longitude"=>"174.77388449999998", "contribution_limit"=>"12"}}
+Geokit is using the domain: test.host
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 4.8ms)
+  [1m[36m (0.4ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+Processing by StoriesController#create as HTML
+  Parameters: {"story"=>{"title"=>"Supernatural Winnipeg", "origin_latitude"=>"-41.2967128", "origin_longitude"=>"174.77388449999998", "contribution_limit"=>"12"}}
+Geokit is using the domain: test.host
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Processing by StoriesController#create as HTML
+  Parameters: {"story"=>{"title"=>"Supernatural Winnipeg", "origin_latitude"=>"-41.2967128", "origin_longitude"=>"174.77388449999998", "contribution_limit"=>"12"}}
+Geokit is using the domain: test.host
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35mStory Load (0.5ms)[0m  SELECT "stories".* FROM "stories"
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (1.1ms)[0m  [1mINSERT INTO "locations" ("lat", "lng", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["lat", -36], ["lng", 174], ["created_at", "2015-05-15 03:47:27.360862"], ["updated_at", "2015-05-15 03:47:27.360862"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "locations" ("lat", "lng", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["lat", -41], ["lng", 174], ["created_at", "2015-05-15 03:47:27.367656"], ["updated_at", "2015-05-15 03:47:27.367656"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "locations" ("lat", "lng", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["lat", -41], ["lng", 173], ["created_at", "2015-05-15 03:47:27.370097"], ["updated_at", "2015-05-15 03:47:27.370097"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mLocation Load (3.1ms)[0m  [1mSELECT  "locations".* FROM "locations"  ORDER BY 
+          (ACOS(least(1,COS(-0.7155849933176751)*COS(3.036872898470133)*COS(RADIANS(locations.lat))*COS(RADIANS(locations.lng))+
+          COS(-0.7155849933176751)*SIN(3.036872898470133)*COS(RADIANS(locations.lat))*SIN(RADIANS(locations.lng))+
+          SIN(-0.7155849933176751)*SIN(RADIANS(locations.lat))))*6376.77271)
+          DESC LIMIT 1[0m
+  [1m[35mSQL (0.6ms)[0m  DELETE FROM "locations"
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "locations" ("lat", "lng", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["lat", -36], ["lng", 174], ["created_at", "2015-05-15 03:47:27.382388"], ["updated_at", "2015-05-15 03:47:27.382388"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "locations" ("lat", "lng", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["lat", -41], ["lng", 174], ["created_at", "2015-05-15 03:47:27.385999"], ["updated_at", "2015-05-15 03:47:27.385999"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "locations" ("lat", "lng", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["lat", -41], ["lng", 173], ["created_at", "2015-05-15 03:47:27.389472"], ["updated_at", "2015-05-15 03:47:27.389472"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "stories" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"[0m  [["created_at", "2015-05-15 03:47:27.399710"], ["updated_at", "2015-05-15 03:47:27.399710"]]
+  [1m[35mSQL (0.6ms)[0m  UPDATE "locations" SET "locatable_type" = $1, "locatable_id" = $2, "updated_at" = $3 WHERE "locations"."id" = $4  [["locatable_type", "Story"], ["locatable_id", 66], ["updated_at", "2015-05-15 03:47:27.402041"], ["id", 140]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "stories" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"[0m  [["created_at", "2015-05-15 03:47:27.408679"], ["updated_at", "2015-05-15 03:47:27.408679"]]
+  [1m[35mSQL (0.5ms)[0m  UPDATE "locations" SET "locatable_type" = $1, "locatable_id" = $2, "updated_at" = $3 WHERE "locations"."id" = $4  [["locatable_type", "Story"], ["locatable_id", 67], ["updated_at", "2015-05-15 03:47:27.410343"], ["id", 141]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "stories" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"[0m  [["created_at", "2015-05-15 03:47:27.413060"], ["updated_at", "2015-05-15 03:47:27.413060"]]
+  [1m[35mSQL (0.5ms)[0m  UPDATE "locations" SET "locatable_type" = $1, "locatable_id" = $2, "updated_at" = $3 WHERE "locations"."id" = $4  [["locatable_type", "Story"], ["locatable_id", 68], ["updated_at", "2015-05-15 03:47:27.414656"], ["id", 142]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mLocation Load (1.2ms)[0m  SELECT  "locations".* FROM "locations"  ORDER BY 
+          (ACOS(least(1,COS(-0.7155849933176751)*COS(3.036872898470133)*COS(RADIANS(locations.lat))*COS(RADIANS(locations.lng))+
+          COS(-0.7155849933176751)*SIN(3.036872898470133)*COS(RADIANS(locations.lat))*SIN(RADIANS(locations.lng))+
+          SIN(-0.7155849933176751)*SIN(RADIANS(locations.lat))))*6376.77271)
+          DESC LIMIT 1
+  [1m[36mSQL (2.1ms)[0m  [1mDELETE FROM "stories"[0m
+  [1m[35mSQL (0.4ms)[0m  DELETE FROM "locations"
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Processing by StoriesController#index as JSON
+Geokit is using the domain: test.host
+  [1m[36mStory Load (1.0ms)[0m  [1mSELECT "stories".* FROM "stories"[0m
+Completed 200 OK in 5ms (Views: 1.3ms | ActiveRecord: 2.7ms)
+  [1m[35mStory Load (0.3ms)[0m  SELECT "stories".* FROM "stories"
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+Processing by StoriesController#create as HTML
+  Parameters: {"story"=>{"title"=>"Supernatural Winnipeg", "origin_latitude"=>"-41.2967128", "origin_longitude"=>"174.77388449999998", "contribution_limit"=>"12"}}
+Geokit is using the domain: test.host
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 2.1ms)
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Processing by StoriesController#create as HTML
+  Parameters: {"story"=>{"title"=>"Supernatural Winnipeg", "origin_latitude"=>"-41.2967128", "origin_longitude"=>"174.77388449999998", "contribution_limit"=>"12"}}
+Geokit is using the domain: test.host
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Processing by StoriesController#create as HTML
+  Parameters: {"story"=>{"title"=>"Supernatural Winnipeg", "origin_latitude"=>"-41.2967128", "origin_longitude"=>"174.77388449999998", "contribution_limit"=>"12"}}
+Geokit is using the domain: test.host
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35mStory Load (0.4ms)[0m  SELECT "stories".* FROM "stories"
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (1.6ms)[0m  [1mINSERT INTO "locations" ("lat", "lng", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["lat", -36], ["lng", 174], ["created_at", "2015-05-15 03:48:35.483370"], ["updated_at", "2015-05-15 03:48:35.483370"]]
+  [1m[35m (0.3ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "locations" ("lat", "lng", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["lat", -41], ["lng", 174], ["created_at", "2015-05-15 03:48:35.491815"], ["updated_at", "2015-05-15 03:48:35.491815"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "locations" ("lat", "lng", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["lat", -41], ["lng", 173], ["created_at", "2015-05-15 03:48:35.494715"], ["updated_at", "2015-05-15 03:48:35.494715"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mLocation Load (3.0ms)[0m  [1mSELECT  "locations".* FROM "locations"  ORDER BY 
+          (ACOS(least(1,COS(-0.7155849933176751)*COS(3.036872898470133)*COS(RADIANS(locations.lat))*COS(RADIANS(locations.lng))+
+          COS(-0.7155849933176751)*SIN(3.036872898470133)*COS(RADIANS(locations.lat))*SIN(RADIANS(locations.lng))+
+          SIN(-0.7155849933176751)*SIN(RADIANS(locations.lat))))*6376.77271)
+          DESC LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  DELETE FROM "locations"
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "locations" ("lat", "lng", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["lat", -36], ["lng", 174], ["created_at", "2015-05-15 03:48:35.505888"], ["updated_at", "2015-05-15 03:48:35.505888"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "locations" ("lat", "lng", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["lat", -41], ["lng", 174], ["created_at", "2015-05-15 03:48:35.508707"], ["updated_at", "2015-05-15 03:48:35.508707"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "locations" ("lat", "lng", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["lat", -41], ["lng", 173], ["created_at", "2015-05-15 03:48:35.511150"], ["updated_at", "2015-05-15 03:48:35.511150"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "stories" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"[0m  [["created_at", "2015-05-15 03:48:35.520035"], ["updated_at", "2015-05-15 03:48:35.520035"]]
+  [1m[35mSQL (0.4ms)[0m  UPDATE "locations" SET "locatable_type" = $1, "locatable_id" = $2, "updated_at" = $3 WHERE "locations"."id" = $4  [["locatable_type", "Story"], ["locatable_id", 69], ["updated_at", "2015-05-15 03:48:35.523130"], ["id", 146]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "stories" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"[0m  [["created_at", "2015-05-15 03:48:35.529279"], ["updated_at", "2015-05-15 03:48:35.529279"]]
+  [1m[35mSQL (0.4ms)[0m  UPDATE "locations" SET "locatable_type" = $1, "locatable_id" = $2, "updated_at" = $3 WHERE "locations"."id" = $4  [["locatable_type", "Story"], ["locatable_id", 70], ["updated_at", "2015-05-15 03:48:35.530682"], ["id", 147]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "stories" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"[0m  [["created_at", "2015-05-15 03:48:35.532857"], ["updated_at", "2015-05-15 03:48:35.532857"]]
+  [1m[35mSQL (0.3ms)[0m  UPDATE "locations" SET "locatable_type" = $1, "locatable_id" = $2, "updated_at" = $3 WHERE "locations"."id" = $4  [["locatable_type", "Story"], ["locatable_id", 71], ["updated_at", "2015-05-15 03:48:35.534175"], ["id", 148]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mLocation Load (0.7ms)[0m  SELECT  "locations".* FROM "locations"  ORDER BY 
+          (ACOS(least(1,COS(-0.7155849933176751)*COS(3.036872898470133)*COS(RADIANS(locations.lat))*COS(RADIANS(locations.lng))+
+          COS(-0.7155849933176751)*SIN(3.036872898470133)*COS(RADIANS(locations.lat))*SIN(RADIANS(locations.lng))+
+          SIN(-0.7155849933176751)*SIN(RADIANS(locations.lat))))*6376.77271)
+          DESC LIMIT 1
+  [1m[36mSQL (2.2ms)[0m  [1mDELETE FROM "stories"[0m
+  [1m[35mSQL (0.3ms)[0m  DELETE FROM "locations"
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.9ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Processing by StoriesController#index as JSON
+Geokit is using the domain: test.host
+  [1m[36mStory Load (0.8ms)[0m  [1mSELECT "stories".* FROM "stories"[0m
+Completed 200 OK in 4ms (Views: 1.3ms | ActiveRecord: 2.1ms)
+  [1m[35mStory Load (0.3ms)[0m  SELECT "stories".* FROM "stories"
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+Processing by StoriesController#create as HTML
+  Parameters: {"story"=>{"title"=>"Supernatural Winnipeg", "origin_latitude"=>"-41.2967128", "origin_longitude"=>"174.77388449999998", "contribution_limit"=>"12"}}
+Geokit is using the domain: test.host
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 4.3ms)
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Processing by StoriesController#create as HTML
+  Parameters: {"story"=>{"title"=>"Supernatural Winnipeg", "origin_latitude"=>"-41.2967128", "origin_longitude"=>"174.77388449999998", "contribution_limit"=>"12"}}
+Geokit is using the domain: test.host
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Processing by StoriesController#create as HTML
+  Parameters: {"story"=>{"title"=>"Supernatural Winnipeg", "origin_latitude"=>"-41.2967128", "origin_longitude"=>"174.77388449999998", "contribution_limit"=>"12"}}
+Geokit is using the domain: test.host
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35mStory Load (0.4ms)[0m  SELECT "stories".* FROM "stories"
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.9ms)[0m  [1mINSERT INTO "locations" ("lat", "lng", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["lat", -36], ["lng", 174], ["created_at", "2015-05-15 03:49:18.242603"], ["updated_at", "2015-05-15 03:49:18.242603"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "locations" ("lat", "lng", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["lat", -41], ["lng", 174], ["created_at", "2015-05-15 03:49:18.249624"], ["updated_at", "2015-05-15 03:49:18.249624"]]
+  [1m[36m (0.3ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "locations" ("lat", "lng", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["lat", -41], ["lng", 173], ["created_at", "2015-05-15 03:49:18.255049"], ["updated_at", "2015-05-15 03:49:18.255049"]]
+  [1m[35m (0.5ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mLocation Load (3.4ms)[0m  [1mSELECT  "locations".* FROM "locations"  ORDER BY 
+          (ACOS(least(1,COS(-0.7155849933176751)*COS(3.036872898470133)*COS(RADIANS(locations.lat))*COS(RADIANS(locations.lng))+
+          COS(-0.7155849933176751)*SIN(3.036872898470133)*COS(RADIANS(locations.lat))*SIN(RADIANS(locations.lng))+
+          SIN(-0.7155849933176751)*SIN(RADIANS(locations.lat))))*6376.77271)
+          DESC LIMIT 1[0m
+  [1m[35mSQL (0.7ms)[0m  DELETE FROM "locations"
+  [1m[36m (0.4ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "locations" ("lat", "lng", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["lat", -36], ["lng", 174], ["created_at", "2015-05-15 03:49:18.275967"], ["updated_at", "2015-05-15 03:49:18.275967"]]
+  [1m[36m (0.3ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "locations" ("lat", "lng", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["lat", -41], ["lng", 174], ["created_at", "2015-05-15 03:49:18.280494"], ["updated_at", "2015-05-15 03:49:18.280494"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.4ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "locations" ("lat", "lng", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["lat", -41], ["lng", 173], ["created_at", "2015-05-15 03:49:18.284480"], ["updated_at", "2015-05-15 03:49:18.284480"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "stories" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"[0m  [["created_at", "2015-05-15 03:49:18.294131"], ["updated_at", "2015-05-15 03:49:18.294131"]]
+  [1m[35mSQL (0.7ms)[0m  UPDATE "locations" SET "locatable_type" = $1, "locatable_id" = $2, "updated_at" = $3 WHERE "locations"."id" = $4  [["locatable_type", "Story"], ["locatable_id", 72], ["updated_at", "2015-05-15 03:49:18.296426"], ["id", 152]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "stories" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"[0m  [["created_at", "2015-05-15 03:49:18.303363"], ["updated_at", "2015-05-15 03:49:18.303363"]]
+  [1m[35mSQL (0.6ms)[0m  UPDATE "locations" SET "locatable_type" = $1, "locatable_id" = $2, "updated_at" = $3 WHERE "locations"."id" = $4  [["locatable_type", "Story"], ["locatable_id", 73], ["updated_at", "2015-05-15 03:49:18.305626"], ["id", 153]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "stories" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"[0m  [["created_at", "2015-05-15 03:49:18.308368"], ["updated_at", "2015-05-15 03:49:18.308368"]]
+  [1m[35mSQL (0.5ms)[0m  UPDATE "locations" SET "locatable_type" = $1, "locatable_id" = $2, "updated_at" = $3 WHERE "locations"."id" = $4  [["locatable_type", "Story"], ["locatable_id", 74], ["updated_at", "2015-05-15 03:49:18.309888"], ["id", 154]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mLocation Load (1.2ms)[0m  SELECT  "locations".* FROM "locations"  ORDER BY 
+          (ACOS(least(1,COS(-0.7155849933176751)*COS(3.036872898470133)*COS(RADIANS(locations.lat))*COS(RADIANS(locations.lng))+
+          COS(-0.7155849933176751)*SIN(3.036872898470133)*COS(RADIANS(locations.lat))*SIN(RADIANS(locations.lng))+
+          SIN(-0.7155849933176751)*SIN(RADIANS(locations.lat))))*6376.77271)
+          DESC LIMIT 1
+  [1m[36mSQL (2.3ms)[0m  [1mDELETE FROM "stories"[0m
+  [1m[35mSQL (0.4ms)[0m  DELETE FROM "locations"
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Processing by StoriesController#index as JSON
+Geokit is using the domain: test.host
+  [1m[36mStory Load (0.6ms)[0m  [1mSELECT "stories".* FROM "stories"[0m
+Completed 200 OK in 3ms (Views: 1.1ms | ActiveRecord: 1.7ms)
+  [1m[35mStory Load (0.6ms)[0m  SELECT "stories".* FROM "stories"
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+Processing by StoriesController#create as HTML
+  Parameters: {"story"=>{"title"=>"Supernatural Winnipeg", "origin_latitude"=>"-41.2967128", "origin_longitude"=>"174.77388449999998", "contribution_limit"=>"12"}}
+Geokit is using the domain: test.host
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 4.6ms)
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Processing by StoriesController#create as HTML
+  Parameters: {"story"=>{"title"=>"Supernatural Winnipeg", "origin_latitude"=>"-41.2967128", "origin_longitude"=>"174.77388449999998", "contribution_limit"=>"12"}}
+Geokit is using the domain: test.host
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+  [1m[36m (0.4ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+Processing by StoriesController#create as HTML
+  Parameters: {"story"=>{"title"=>"Supernatural Winnipeg", "origin_latitude"=>"-41.2967128", "origin_longitude"=>"174.77388449999998", "contribution_limit"=>"12"}}
+Geokit is using the domain: test.host
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35mStory Load (0.2ms)[0m  SELECT "stories".* FROM "stories"
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (1.0ms)[0m  [1mINSERT INTO "locations" ("lat", "lng", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["lat", -36], ["lng", 174], ["created_at", "2015-05-15 03:52:54.691712"], ["updated_at", "2015-05-15 03:52:54.691712"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "locations" ("lat", "lng", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["lat", -41], ["lng", 174], ["created_at", "2015-05-15 03:52:54.698501"], ["updated_at", "2015-05-15 03:52:54.698501"]]
+  [1m[36m (0.3ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "locations" ("lat", "lng", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["lat", -41], ["lng", 173], ["created_at", "2015-05-15 03:52:54.703169"], ["updated_at", "2015-05-15 03:52:54.703169"]]
+  [1m[35m (0.3ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mLocation Load (2.5ms)[0m  [1mSELECT  "locations".* FROM "locations"  ORDER BY 
+          (ACOS(least(1,COS(-0.7155849933176751)*COS(3.036872898470133)*COS(RADIANS(locations.lat))*COS(RADIANS(locations.lng))+
+          COS(-0.7155849933176751)*SIN(3.036872898470133)*COS(RADIANS(locations.lat))*SIN(RADIANS(locations.lng))+
+          SIN(-0.7155849933176751)*SIN(RADIANS(locations.lat))))*6376.77271)
+          DESC LIMIT 1[0m
+  [1m[35mSQL (0.5ms)[0m  DELETE FROM "locations"
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "locations" ("lat", "lng", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["lat", -36], ["lng", 174], ["created_at", "2015-05-15 03:52:54.717535"], ["updated_at", "2015-05-15 03:52:54.717535"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "locations" ("lat", "lng", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["lat", -41], ["lng", 174], ["created_at", "2015-05-15 03:52:54.720375"], ["updated_at", "2015-05-15 03:52:54.720375"]]
+  [1m[35m (0.3ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "locations" ("lat", "lng", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["lat", -41], ["lng", 173], ["created_at", "2015-05-15 03:52:54.723125"], ["updated_at", "2015-05-15 03:52:54.723125"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "stories" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"[0m  [["created_at", "2015-05-15 03:52:54.731895"], ["updated_at", "2015-05-15 03:52:54.731895"]]
+  [1m[35mSQL (0.6ms)[0m  UPDATE "locations" SET "locatable_type" = $1, "locatable_id" = $2, "updated_at" = $3 WHERE "locations"."id" = $4  [["locatable_type", "Story"], ["locatable_id", 75], ["updated_at", "2015-05-15 03:52:54.736515"], ["id", 158]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "stories" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"[0m  [["created_at", "2015-05-15 03:52:54.749068"], ["updated_at", "2015-05-15 03:52:54.749068"]]
+  [1m[35mSQL (0.5ms)[0m  UPDATE "locations" SET "locatable_type" = $1, "locatable_id" = $2, "updated_at" = $3 WHERE "locations"."id" = $4  [["locatable_type", "Story"], ["locatable_id", 76], ["updated_at", "2015-05-15 03:52:54.750693"], ["id", 159]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "stories" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"[0m  [["created_at", "2015-05-15 03:52:54.753180"], ["updated_at", "2015-05-15 03:52:54.753180"]]
+  [1m[35mSQL (0.6ms)[0m  UPDATE "locations" SET "locatable_type" = $1, "locatable_id" = $2, "updated_at" = $3 WHERE "locations"."id" = $4  [["locatable_type", "Story"], ["locatable_id", 77], ["updated_at", "2015-05-15 03:52:54.754630"], ["id", 160]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mLocation Load (1.3ms)[0m  SELECT  "locations".* FROM "locations"  ORDER BY 
+          (ACOS(least(1,COS(-0.7155849933176751)*COS(3.036872898470133)*COS(RADIANS(locations.lat))*COS(RADIANS(locations.lng))+
+          COS(-0.7155849933176751)*SIN(3.036872898470133)*COS(RADIANS(locations.lat))*SIN(RADIANS(locations.lng))+
+          SIN(-0.7155849933176751)*SIN(RADIANS(locations.lat))))*6376.77271)
+          DESC LIMIT 1
+  [1m[36mStory Load (1.1ms)[0m  [1mSELECT  "stories".* FROM "stories"  ORDER BY 
+          (ACOS(least(1,COS(-0.7155849933176751)*COS(3.036872898470133)*COS(RADIANS(locations.lat))*COS(RADIANS(locations.lng))+
+          COS(-0.7155849933176751)*SIN(3.036872898470133)*COS(RADIANS(locations.lat))*SIN(RADIANS(locations.lng))+
+          SIN(-0.7155849933176751)*SIN(RADIANS(locations.lat))))*6376.77271)
+          DESC LIMIT 1[0m
+PG::UndefinedTable: ERROR:  missing FROM-clause entry for table "locations"
+LINE 2: ...5849933176751)*COS(3.036872898470133)*COS(RADIANS(locations....
+                                                             ^
+: SELECT  "stories".* FROM "stories"  ORDER BY 
+          (ACOS(least(1,COS(-0.7155849933176751)*COS(3.036872898470133)*COS(RADIANS(locations.lat))*COS(RADIANS(locations.lng))+
+          COS(-0.7155849933176751)*SIN(3.036872898470133)*COS(RADIANS(locations.lat))*SIN(RADIANS(locations.lng))+
+          SIN(-0.7155849933176751)*SIN(RADIANS(locations.lat))))*6376.77271)
+          DESC LIMIT 1
+  [1m[35mSQL (0.7ms)[0m  DELETE FROM "stories"
+PG::InFailedSqlTransaction: ERROR:  current transaction is aborted, commands ignored until end of transaction block
+: DELETE FROM "stories"
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+Processing by StoriesController#index as JSON
+Geokit is using the domain: test.host
+  [1m[36mStory Load (1.0ms)[0m  [1mSELECT "stories".* FROM "stories"[0m
+Completed 200 OK in 6ms (Views: 2.3ms | ActiveRecord: 3.0ms)
+  [1m[35mStory Load (0.6ms)[0m  SELECT "stories".* FROM "stories"
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Processing by StoriesController#create as HTML
+  Parameters: {"story"=>{"title"=>"Supernatural Winnipeg", "origin_latitude"=>"-41.2967128", "origin_longitude"=>"174.77388449999998", "contribution_limit"=>"12"}}
+Geokit is using the domain: test.host
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 2.9ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+Processing by StoriesController#create as HTML
+  Parameters: {"story"=>{"title"=>"Supernatural Winnipeg", "origin_latitude"=>"-41.2967128", "origin_longitude"=>"174.77388449999998", "contribution_limit"=>"12"}}
+Geokit is using the domain: test.host
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Processing by StoriesController#create as HTML
+  Parameters: {"story"=>{"title"=>"Supernatural Winnipeg", "origin_latitude"=>"-41.2967128", "origin_longitude"=>"174.77388449999998", "contribution_limit"=>"12"}}
+Geokit is using the domain: test.host
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35mStory Load (0.4ms)[0m  SELECT "stories".* FROM "stories"
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.9ms)[0m  [1mINSERT INTO "locations" ("lat", "lng", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["lat", -36], ["lng", 174], ["created_at", "2015-05-15 03:53:17.033387"], ["updated_at", "2015-05-15 03:53:17.033387"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "locations" ("lat", "lng", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["lat", -41], ["lng", 174], ["created_at", "2015-05-15 03:53:17.040646"], ["updated_at", "2015-05-15 03:53:17.040646"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "locations" ("lat", "lng", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["lat", -41], ["lng", 173], ["created_at", "2015-05-15 03:53:17.043595"], ["updated_at", "2015-05-15 03:53:17.043595"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mLocation Load (2.5ms)[0m  [1mSELECT  "locations".* FROM "locations"  ORDER BY 
+          (ACOS(least(1,COS(-0.7155849933176751)*COS(3.036872898470133)*COS(RADIANS(locations.lat))*COS(RADIANS(locations.lng))+
+          COS(-0.7155849933176751)*SIN(3.036872898470133)*COS(RADIANS(locations.lat))*SIN(RADIANS(locations.lng))+
+          SIN(-0.7155849933176751)*SIN(RADIANS(locations.lat))))*6376.77271)
+          DESC LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  DELETE FROM "locations"
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "locations" ("lat", "lng", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["lat", -36], ["lng", 174], ["created_at", "2015-05-15 03:53:17.053669"], ["updated_at", "2015-05-15 03:53:17.053669"]]
+  [1m[36m (0.3ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "locations" ("lat", "lng", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["lat", -41], ["lng", 174], ["created_at", "2015-05-15 03:53:17.059076"], ["updated_at", "2015-05-15 03:53:17.059076"]]
+  [1m[35m (0.3ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "locations" ("lat", "lng", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["lat", -41], ["lng", 173], ["created_at", "2015-05-15 03:53:17.064696"], ["updated_at", "2015-05-15 03:53:17.064696"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "stories" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"[0m  [["created_at", "2015-05-15 03:53:17.072924"], ["updated_at", "2015-05-15 03:53:17.072924"]]
+  [1m[35mSQL (0.6ms)[0m  UPDATE "locations" SET "locatable_type" = $1, "locatable_id" = $2, "updated_at" = $3 WHERE "locations"."id" = $4  [["locatable_type", "Story"], ["locatable_id", 78], ["updated_at", "2015-05-15 03:53:17.075408"], ["id", 164]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "stories" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"[0m  [["created_at", "2015-05-15 03:53:17.082081"], ["updated_at", "2015-05-15 03:53:17.082081"]]
+  [1m[35mSQL (0.5ms)[0m  UPDATE "locations" SET "locatable_type" = $1, "locatable_id" = $2, "updated_at" = $3 WHERE "locations"."id" = $4  [["locatable_type", "Story"], ["locatable_id", 79], ["updated_at", "2015-05-15 03:53:17.083657"], ["id", 165]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "stories" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"[0m  [["created_at", "2015-05-15 03:53:17.085979"], ["updated_at", "2015-05-15 03:53:17.085979"]]
+  [1m[35mSQL (0.5ms)[0m  UPDATE "locations" SET "locatable_type" = $1, "locatable_id" = $2, "updated_at" = $3 WHERE "locations"."id" = $4  [["locatable_type", "Story"], ["locatable_id", 80], ["updated_at", "2015-05-15 03:53:17.087446"], ["id", 166]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mLocation Load (1.2ms)[0m  SELECT  "locations".* FROM "locations"  ORDER BY 
+          (ACOS(least(1,COS(-0.7155849933176751)*COS(3.036872898470133)*COS(RADIANS(locations.lat))*COS(RADIANS(locations.lng))+
+          COS(-0.7155849933176751)*SIN(3.036872898470133)*COS(RADIANS(locations.lat))*SIN(RADIANS(locations.lng))+
+          SIN(-0.7155849933176751)*SIN(RADIANS(locations.lat))))*6376.77271)
+          DESC LIMIT 1
+  [1m[36mSQL (2.2ms)[0m  [1mDELETE FROM "stories"[0m
+  [1m[35mSQL (0.4ms)[0m  DELETE FROM "locations"
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+Processing by StoriesController#index as JSON
+Geokit is using the domain: test.host
+  [1m[36mStory Load (0.8ms)[0m  [1mSELECT "stories".* FROM "stories"[0m
+Completed 200 OK in 4ms (Views: 1.5ms | ActiveRecord: 2.0ms)
+  [1m[35mStory Load (0.3ms)[0m  SELECT "stories".* FROM "stories"
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Processing by StoriesController#create as HTML
+  Parameters: {"story"=>{"title"=>"Supernatural Winnipeg", "origin_latitude"=>"-41.2967128", "origin_longitude"=>"174.77388449999998", "contribution_limit"=>"12"}}
+Geokit is using the domain: test.host
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 4.5ms)
+  [1m[36m (0.4ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Processing by StoriesController#create as HTML
+  Parameters: {"story"=>{"title"=>"Supernatural Winnipeg", "origin_latitude"=>"-41.2967128", "origin_longitude"=>"174.77388449999998", "contribution_limit"=>"12"}}
+Geokit is using the domain: test.host
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Processing by StoriesController#create as HTML
+  Parameters: {"story"=>{"title"=>"Supernatural Winnipeg", "origin_latitude"=>"-41.2967128", "origin_longitude"=>"174.77388449999998", "contribution_limit"=>"12"}}
+Geokit is using the domain: test.host
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35mStory Load (0.3ms)[0m  SELECT "stories".* FROM "stories"
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (1.0ms)[0m  [1mINSERT INTO "locations" ("lat", "lng", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["lat", -36], ["lng", 174], ["created_at", "2015-05-15 03:53:38.780643"], ["updated_at", "2015-05-15 03:53:38.780643"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "locations" ("lat", "lng", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["lat", -41], ["lng", 174], ["created_at", "2015-05-15 03:53:38.791047"], ["updated_at", "2015-05-15 03:53:38.791047"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "locations" ("lat", "lng", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["lat", -41], ["lng", 173], ["created_at", "2015-05-15 03:53:38.794510"], ["updated_at", "2015-05-15 03:53:38.794510"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mLocation Load (2.9ms)[0m  [1mSELECT  "locations".* FROM "locations"  ORDER BY 
+          (ACOS(least(1,COS(-0.7155849933176751)*COS(3.036872898470133)*COS(RADIANS(locations.lat))*COS(RADIANS(locations.lng))+
+          COS(-0.7155849933176751)*SIN(3.036872898470133)*COS(RADIANS(locations.lat))*SIN(RADIANS(locations.lng))+
+          SIN(-0.7155849933176751)*SIN(RADIANS(locations.lat))))*6376.77271)
+          DESC LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  DELETE FROM "locations"
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "locations" ("lat", "lng", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["lat", -36], ["lng", 174], ["created_at", "2015-05-15 03:53:38.805537"], ["updated_at", "2015-05-15 03:53:38.805537"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "locations" ("lat", "lng", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["lat", -41], ["lng", 174], ["created_at", "2015-05-15 03:53:38.807989"], ["updated_at", "2015-05-15 03:53:38.807989"]]
+  [1m[35m (0.4ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "locations" ("lat", "lng", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["lat", -41], ["lng", 173], ["created_at", "2015-05-15 03:53:38.811524"], ["updated_at", "2015-05-15 03:53:38.811524"]]
+  [1m[36m (0.3ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "stories" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"[0m  [["created_at", "2015-05-15 03:53:38.823038"], ["updated_at", "2015-05-15 03:53:38.823038"]]
+  [1m[35mSQL (0.6ms)[0m  UPDATE "locations" SET "locatable_type" = $1, "locatable_id" = $2, "updated_at" = $3 WHERE "locations"."id" = $4  [["locatable_type", "Story"], ["locatable_id", 81], ["updated_at", "2015-05-15 03:53:38.825188"], ["id", 170]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "stories" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"[0m  [["created_at", "2015-05-15 03:53:38.831016"], ["updated_at", "2015-05-15 03:53:38.831016"]]
+  [1m[35mSQL (0.5ms)[0m  UPDATE "locations" SET "locatable_type" = $1, "locatable_id" = $2, "updated_at" = $3 WHERE "locations"."id" = $4  [["locatable_type", "Story"], ["locatable_id", 82], ["updated_at", "2015-05-15 03:53:38.832449"], ["id", 171]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "stories" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"[0m  [["created_at", "2015-05-15 03:53:38.835022"], ["updated_at", "2015-05-15 03:53:38.835022"]]
+  [1m[35mSQL (0.5ms)[0m  UPDATE "locations" SET "locatable_type" = $1, "locatable_id" = $2, "updated_at" = $3 WHERE "locations"."id" = $4  [["locatable_type", "Story"], ["locatable_id", 83], ["updated_at", "2015-05-15 03:53:38.836684"], ["id", 172]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mLocation Load (1.3ms)[0m  SELECT  "locations".* FROM "locations"  ORDER BY 
+          (ACOS(least(1,COS(-0.7155849933176751)*COS(3.036872898470133)*COS(RADIANS(locations.lat))*COS(RADIANS(locations.lng))+
+          COS(-0.7155849933176751)*SIN(3.036872898470133)*COS(RADIANS(locations.lat))*SIN(RADIANS(locations.lng))+
+          SIN(-0.7155849933176751)*SIN(RADIANS(locations.lat))))*6376.77271)
+          DESC LIMIT 1
+  [1m[36mStory Load (1.3ms)[0m  [1mSELECT  "stories".* FROM "stories"  ORDER BY 
+          (ACOS(least(1,COS(-0.7155849933176751)*COS(3.036872898470133)*COS(RADIANS(locations.lat))*COS(RADIANS(locations.lng))+
+          COS(-0.7155849933176751)*SIN(3.036872898470133)*COS(RADIANS(locations.lat))*SIN(RADIANS(locations.lng))+
+          SIN(-0.7155849933176751)*SIN(RADIANS(locations.lat))))*6376.77271)
+          DESC LIMIT 1[0m
+PG::UndefinedTable: ERROR:  missing FROM-clause entry for table "locations"
+LINE 2: ...5849933176751)*COS(3.036872898470133)*COS(RADIANS(locations....
+                                                             ^
+: SELECT  "stories".* FROM "stories"  ORDER BY 
+          (ACOS(least(1,COS(-0.7155849933176751)*COS(3.036872898470133)*COS(RADIANS(locations.lat))*COS(RADIANS(locations.lng))+
+          COS(-0.7155849933176751)*SIN(3.036872898470133)*COS(RADIANS(locations.lat))*SIN(RADIANS(locations.lng))+
+          SIN(-0.7155849933176751)*SIN(RADIANS(locations.lat))))*6376.77271)
+          DESC LIMIT 1
+  [1m[35mSQL (0.7ms)[0m  DELETE FROM "stories"
+PG::InFailedSqlTransaction: ERROR:  current transaction is aborted, commands ignored until end of transaction block
+: DELETE FROM "stories"
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.4ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+Processing by StoriesController#index as JSON
+Geokit is using the domain: test.host
+  [1m[36mStory Load (1.1ms)[0m  [1mSELECT "stories".* FROM "stories"[0m
+Completed 200 OK in 5ms (Views: 1.7ms | ActiveRecord: 2.1ms)
+  [1m[35mStory Load (0.6ms)[0m  SELECT "stories".* FROM "stories"
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+Processing by StoriesController#create as HTML
+  Parameters: {"story"=>{"title"=>"Supernatural Winnipeg", "origin_latitude"=>"-41.2967128", "origin_longitude"=>"174.77388449999998", "contribution_limit"=>"12"}}
+Geokit is using the domain: test.host
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 4.0ms)
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+Processing by StoriesController#create as HTML
+  Parameters: {"story"=>{"title"=>"Supernatural Winnipeg", "origin_latitude"=>"-41.2967128", "origin_longitude"=>"174.77388449999998", "contribution_limit"=>"12"}}
+Geokit is using the domain: test.host
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms)
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+Processing by StoriesController#create as HTML
+  Parameters: {"story"=>{"title"=>"Supernatural Winnipeg", "origin_latitude"=>"-41.2967128", "origin_longitude"=>"174.77388449999998", "contribution_limit"=>"12"}}
+Geokit is using the domain: test.host
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35mStory Load (0.4ms)[0m  SELECT "stories".* FROM "stories"
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (1.0ms)[0m  [1mINSERT INTO "locations" ("lat", "lng", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["lat", -36], ["lng", 174], ["created_at", "2015-05-15 03:54:31.631313"], ["updated_at", "2015-05-15 03:54:31.631313"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "locations" ("lat", "lng", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["lat", -41], ["lng", 174], ["created_at", "2015-05-15 03:54:31.638221"], ["updated_at", "2015-05-15 03:54:31.638221"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "locations" ("lat", "lng", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["lat", -41], ["lng", 173], ["created_at", "2015-05-15 03:54:31.640691"], ["updated_at", "2015-05-15 03:54:31.640691"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mLocation Load (2.9ms)[0m  [1mSELECT  "locations".* FROM "locations"  ORDER BY 
+          (ACOS(least(1,COS(-0.7155849933176751)*COS(3.036872898470133)*COS(RADIANS(locations.lat))*COS(RADIANS(locations.lng))+
+          COS(-0.7155849933176751)*SIN(3.036872898470133)*COS(RADIANS(locations.lat))*SIN(RADIANS(locations.lng))+
+          SIN(-0.7155849933176751)*SIN(RADIANS(locations.lat))))*6376.77271)
+          DESC LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  DELETE FROM "locations"
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "locations" ("lat", "lng", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["lat", -36], ["lng", 174], ["created_at", "2015-05-15 03:54:31.652768"], ["updated_at", "2015-05-15 03:54:31.652768"]]
+  [1m[36m (1.6ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "locations" ("lat", "lng", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["lat", -41], ["lng", 174], ["created_at", "2015-05-15 03:54:31.659664"], ["updated_at", "2015-05-15 03:54:31.659664"]]
+  [1m[35m (0.3ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "locations" ("lat", "lng", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["lat", -41], ["lng", 173], ["created_at", "2015-05-15 03:54:31.663025"], ["updated_at", "2015-05-15 03:54:31.663025"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "stories" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"[0m  [["created_at", "2015-05-15 03:54:31.671281"], ["updated_at", "2015-05-15 03:54:31.671281"]]
+  [1m[35mSQL (0.5ms)[0m  UPDATE "locations" SET "locatable_type" = $1, "locatable_id" = $2, "updated_at" = $3 WHERE "locations"."id" = $4  [["locatable_type", "Story"], ["locatable_id", 84], ["updated_at", "2015-05-15 03:54:31.673286"], ["id", 176]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "stories" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"[0m  [["created_at", "2015-05-15 03:54:31.679005"], ["updated_at", "2015-05-15 03:54:31.679005"]]
+  [1m[35mSQL (0.4ms)[0m  UPDATE "locations" SET "locatable_type" = $1, "locatable_id" = $2, "updated_at" = $3 WHERE "locations"."id" = $4  [["locatable_type", "Story"], ["locatable_id", 85], ["updated_at", "2015-05-15 03:54:31.680401"], ["id", 177]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "stories" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"[0m  [["created_at", "2015-05-15 03:54:31.682673"], ["updated_at", "2015-05-15 03:54:31.682673"]]
+  [1m[35mSQL (0.4ms)[0m  UPDATE "locations" SET "locatable_type" = $1, "locatable_id" = $2, "updated_at" = $3 WHERE "locations"."id" = $4  [["locatable_type", "Story"], ["locatable_id", 86], ["updated_at", "2015-05-15 03:54:31.684139"], ["id", 178]]
+  [1m[36m (0.3ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mLocation Load (1.3ms)[0m  SELECT  "locations".* FROM "locations"  ORDER BY 
+          (ACOS(least(1,COS(-0.7155849933176751)*COS(3.036872898470133)*COS(RADIANS(locations.lat))*COS(RADIANS(locations.lng))+
+          COS(-0.7155849933176751)*SIN(3.036872898470133)*COS(RADIANS(locations.lat))*SIN(RADIANS(locations.lng))+
+          SIN(-0.7155849933176751)*SIN(RADIANS(locations.lat))))*6376.77271)
+          DESC LIMIT 1
+  [1m[36mSQL (2.4ms)[0m  [1mDELETE FROM "stories"[0m
+  [1m[35mSQL (0.4ms)[0m  DELETE FROM "locations"
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.9ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Processing by StoriesController#index as JSON
+Geokit is using the domain: test.host
+  [1m[36mStory Load (1.0ms)[0m  [1mSELECT "stories".* FROM "stories"[0m
+Completed 200 OK in 5ms (Views: 1.6ms | ActiveRecord: 2.4ms)
+  [1m[35mStory Load (0.7ms)[0m  SELECT "stories".* FROM "stories"
+  [1m[36m (0.4ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+Processing by StoriesController#create as HTML
+  Parameters: {"story"=>{"title"=>"Supernatural Winnipeg", "origin_latitude"=>"-41.2967128", "origin_longitude"=>"174.77388449999998", "contribution_limit"=>"12"}}
+Geokit is using the domain: test.host
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 5.0ms)
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Processing by StoriesController#create as HTML
+  Parameters: {"story"=>{"title"=>"Supernatural Winnipeg", "origin_latitude"=>"-41.2967128", "origin_longitude"=>"174.77388449999998", "contribution_limit"=>"12"}}
+Geokit is using the domain: test.host
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Processing by StoriesController#create as HTML
+  Parameters: {"story"=>{"title"=>"Supernatural Winnipeg", "origin_latitude"=>"-41.2967128", "origin_longitude"=>"174.77388449999998", "contribution_limit"=>"12"}}
+Geokit is using the domain: test.host
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35mStory Load (0.4ms)[0m  SELECT "stories".* FROM "stories"
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (1.1ms)[0m  [1mINSERT INTO "locations" ("lat", "lng", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["lat", -36], ["lng", 174], ["created_at", "2015-05-15 03:56:21.763647"], ["updated_at", "2015-05-15 03:56:21.763647"]]
+  [1m[35m (0.3ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "locations" ("lat", "lng", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["lat", -41], ["lng", 174], ["created_at", "2015-05-15 03:56:21.771208"], ["updated_at", "2015-05-15 03:56:21.771208"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "locations" ("lat", "lng", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["lat", -41], ["lng", 173], ["created_at", "2015-05-15 03:56:21.774556"], ["updated_at", "2015-05-15 03:56:21.774556"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mLocation Load (3.0ms)[0m  [1mSELECT  "locations".* FROM "locations"  ORDER BY 
+          (ACOS(least(1,COS(-0.7155849933176751)*COS(3.036872898470133)*COS(RADIANS(locations.lat))*COS(RADIANS(locations.lng))+
+          COS(-0.7155849933176751)*SIN(3.036872898470133)*COS(RADIANS(locations.lat))*SIN(RADIANS(locations.lng))+
+          SIN(-0.7155849933176751)*SIN(RADIANS(locations.lat))))*6376.77271)
+          DESC LIMIT 1[0m
+  [1m[35mSQL (0.5ms)[0m  DELETE FROM "locations"
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "locations" ("lat", "lng", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["lat", -36], ["lng", 174], ["created_at", "2015-05-15 03:56:21.786196"], ["updated_at", "2015-05-15 03:56:21.786196"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "locations" ("lat", "lng", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["lat", -41], ["lng", 174], ["created_at", "2015-05-15 03:56:21.789716"], ["updated_at", "2015-05-15 03:56:21.789716"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "locations" ("lat", "lng", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["lat", -41], ["lng", 173], ["created_at", "2015-05-15 03:56:21.793142"], ["updated_at", "2015-05-15 03:56:21.793142"]]
+  [1m[36m (0.3ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "stories" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"[0m  [["created_at", "2015-05-15 03:56:21.800183"], ["updated_at", "2015-05-15 03:56:21.800183"]]
+  [1m[35mSQL (0.6ms)[0m  UPDATE "locations" SET "locatable_type" = $1, "locatable_id" = $2, "updated_at" = $3 WHERE "locations"."id" = $4  [["locatable_type", "Story"], ["locatable_id", 87], ["updated_at", "2015-05-15 03:56:21.802540"], ["id", 182]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "stories" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"[0m  [["created_at", "2015-05-15 03:56:21.809009"], ["updated_at", "2015-05-15 03:56:21.809009"]]
+  [1m[35mSQL (0.6ms)[0m  UPDATE "locations" SET "locatable_type" = $1, "locatable_id" = $2, "updated_at" = $3 WHERE "locations"."id" = $4  [["locatable_type", "Story"], ["locatable_id", 88], ["updated_at", "2015-05-15 03:56:21.810636"], ["id", 183]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "stories" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"[0m  [["created_at", "2015-05-15 03:56:21.813100"], ["updated_at", "2015-05-15 03:56:21.813100"]]
+  [1m[35mSQL (0.5ms)[0m  UPDATE "locations" SET "locatable_type" = $1, "locatable_id" = $2, "updated_at" = $3 WHERE "locations"."id" = $4  [["locatable_type", "Story"], ["locatable_id", 89], ["updated_at", "2015-05-15 03:56:21.814500"], ["id", 184]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mLocation Load (1.2ms)[0m  SELECT  "locations".* FROM "locations"  ORDER BY 
+          (ACOS(least(1,COS(-0.7155849933176751)*COS(3.036872898470133)*COS(RADIANS(locations.lat))*COS(RADIANS(locations.lng))+
+          COS(-0.7155849933176751)*SIN(3.036872898470133)*COS(RADIANS(locations.lat))*SIN(RADIANS(locations.lng))+
+          SIN(-0.7155849933176751)*SIN(RADIANS(locations.lat))))*6376.77271)
+          DESC LIMIT 1
+  [1m[36mSQL (1.8ms)[0m  [1mDELETE FROM "stories"[0m
+  [1m[35mSQL (0.3ms)[0m  DELETE FROM "locations"
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
