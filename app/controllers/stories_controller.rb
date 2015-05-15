@@ -14,10 +14,10 @@ class StoriesController < ApplicationController
   end
 
   def create
-    new_story = Story.new(story_params)
-    new_location = Location.new(location_params)
+    new_story = Story.new(title: story_params[:title], contribution_limit: story_params[:contribution_limit])
+    new_location = Location.new(lat: story_params[:lat], lng: story_params[:lng])
     if new_story.save
-      new_story.location.create(new_location)
+      new_story.location = new_location
       render status: 200, json: {
         story: new_story,
       }
@@ -48,10 +48,6 @@ class StoriesController < ApplicationController
   private
 
   def story_params
-    params.require(:story).permit(:title, :contribution_limit)
-  end
-
-  def location_params
-    params.require(:story).permit(:origin_latitude, :origin_longitude)
+    params.require(:story).permit(:title, :contribution_limit, :lat, :lng)
   end
 end

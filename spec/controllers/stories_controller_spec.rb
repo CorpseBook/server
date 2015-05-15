@@ -16,7 +16,7 @@ RSpec.describe StoriesController, type: :controller do
     end
 
     before do
-      post :create, {story: {title: "Supernatural Winnipeg", contribution_limit: 12, origin_latitude:-41.270833, origin_longitude: 173.283889}}
+      post :create, {story: {title: "Supernatural Winnipeg", contribution_limit: 12, lat:-41.270833, lng: 173.283889}}
     end
 
     it "should create new story" do
