@@ -18,7 +18,12 @@ class StoriesController < ApplicationController
   end
 
   def show
-    render json: Story.find(params[:id])
+    story = Story.find(params[:id])
+    if story.completed
+      render json: story.contributions.all
+    else
+      render json: story.contributions.last
+    end
   end
 
   private
