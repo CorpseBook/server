@@ -313,3 +313,937 @@ Geokit is using the domain: test.host
   [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
 Completed 200 OK in 4ms (Views: 0.4ms | ActiveRecord: 0.9ms)
   [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (1.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mStory Load (1.1ms)[0m  SELECT "stories".* FROM "stories"
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+Processing by StoriesController#create as HTML
+  Parameters: {"story"=>{"title"=>"Supernatural Winnipeg", "origin_latitude"=>"-41.2967128", "origin_longitude"=>"174.77388449999998", "contribution_limit"=>"12"}}
+Geokit is using the domain: test.host
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (1.2ms)[0m  [1mINSERT INTO "stories" ("title", "origin_latitude", "origin_longitude", "contribution_limit", "completed", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "Supernatural Winnipeg"], ["origin_latitude", -41.2967128], ["origin_longitude", 174.77388449999998], ["contribution_limit", 12], ["completed", "f"], ["created_at", "2015-05-15 00:11:51.140815"], ["updated_at", "2015-05-15 00:11:51.140815"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+Completed 200 OK in 20ms (Views: 0.5ms | ActiveRecord: 5.8ms)
+  [1m[36m (0.4ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Processing by StoriesController#create as HTML
+  Parameters: {"story"=>{"title"=>"Supernatural Winnipeg", "origin_latitude"=>"-41.2967128", "origin_longitude"=>"174.77388449999998", "contribution_limit"=>"12"}}
+Geokit is using the domain: test.host
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "stories" ("title", "origin_latitude", "origin_longitude", "contribution_limit", "completed", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["title", "Supernatural Winnipeg"], ["origin_latitude", -41.2967128], ["origin_longitude", 174.77388449999998], ["contribution_limit", 12], ["completed", "f"], ["created_at", "2015-05-15 00:11:51.155215"], ["updated_at", "2015-05-15 00:11:51.155215"]]
+  [1m[36m (0.3ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 4ms (Views: 0.6ms | ActiveRecord: 1.0ms)
+  [1m[35mStory Load (1.4ms)[0m  SELECT  "stories".* FROM "stories"  ORDER BY "stories"."id" DESC LIMIT 1
+  [1m[36m (0.4ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+Processing by StoriesController#create as HTML
+  Parameters: {"story"=>{"title"=>"Supernatural Winnipeg", "origin_latitude"=>"-41.2967128", "origin_longitude"=>"174.77388449999998", "contribution_limit"=>"12"}}
+Geokit is using the domain: test.host
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "stories" ("title", "origin_latitude", "origin_longitude", "contribution_limit", "completed", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["title", "Supernatural Winnipeg"], ["origin_latitude", -41.2967128], ["origin_longitude", 174.77388449999998], ["contribution_limit", 12], ["completed", "f"], ["created_at", "2015-05-15 00:11:51.171598"], ["updated_at", "2015-05-15 00:11:51.171598"]]
+  [1m[36m (0.3ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 4ms (Views: 0.4ms | ActiveRecord: 1.2ms)
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.9ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.9ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.9ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.9ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mStory Load (1.2ms)[0m  SELECT "stories".* FROM "stories"
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+Processing by StoriesController#create as HTML
+  Parameters: {"story"=>{"title"=>"Supernatural Winnipeg", "origin_latitude"=>"-41.2967128", "origin_longitude"=>"174.77388449999998", "contribution_limit"=>"12"}}
+Geokit is using the domain: test.host
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.9ms)[0m  [1mINSERT INTO "stories" ("title", "origin_latitude", "origin_longitude", "contribution_limit", "completed", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "Supernatural Winnipeg"], ["origin_latitude", -41.2967128], ["origin_longitude", 174.77388449999998], ["contribution_limit", 12], ["completed", "f"], ["created_at", "2015-05-15 00:43:28.352063"], ["updated_at", "2015-05-15 00:43:28.352063"]]
+  [1m[35m (0.3ms)[0m  RELEASE SAVEPOINT active_record_1
+Completed 200 OK in 24ms (Views: 0.6ms | ActiveRecord: 6.3ms)
+  [1m[36m (0.4ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+Processing by StoriesController#create as HTML
+  Parameters: {"story"=>{"title"=>"Supernatural Winnipeg", "origin_latitude"=>"-41.2967128", "origin_longitude"=>"174.77388449999998", "contribution_limit"=>"12"}}
+Geokit is using the domain: test.host
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "stories" ("title", "origin_latitude", "origin_longitude", "contribution_limit", "completed", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["title", "Supernatural Winnipeg"], ["origin_latitude", -41.2967128], ["origin_longitude", 174.77388449999998], ["contribution_limit", 12], ["completed", "f"], ["created_at", "2015-05-15 00:43:28.365868"], ["updated_at", "2015-05-15 00:43:28.365868"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 4ms (Views: 0.4ms | ActiveRecord: 0.9ms)
+  [1m[35mStory Load (1.2ms)[0m  SELECT  "stories".* FROM "stories"  ORDER BY "stories"."id" DESC LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Processing by StoriesController#create as HTML
+  Parameters: {"story"=>{"title"=>"Supernatural Winnipeg", "origin_latitude"=>"-41.2967128", "origin_longitude"=>"174.77388449999998", "contribution_limit"=>"12"}}
+Geokit is using the domain: test.host
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "stories" ("title", "origin_latitude", "origin_longitude", "contribution_limit", "completed", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["title", "Supernatural Winnipeg"], ["origin_latitude", -41.2967128], ["origin_longitude", 174.77388449999998], ["contribution_limit", 12], ["completed", "f"], ["created_at", "2015-05-15 00:43:28.376568"], ["updated_at", "2015-05-15 00:43:28.376568"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 4ms (Views: 0.3ms | ActiveRecord: 0.9ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mStory Load (1.0ms)[0m  SELECT "stories".* FROM "stories"
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+Processing by StoriesController#create as HTML
+  Parameters: {"story"=>{"title"=>"Supernatural Winnipeg", "origin_latitude"=>"-41.2967128", "origin_longitude"=>"174.77388449999998", "contribution_limit"=>"12"}}
+Geokit is using the domain: test.host
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "stories" ("title", "origin_latitude", "origin_longitude", "contribution_limit", "completed", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "Supernatural Winnipeg"], ["origin_latitude", -41.2967128], ["origin_longitude", 174.77388449999998], ["contribution_limit", 12], ["completed", "f"], ["created_at", "2015-05-15 00:48:56.152209"], ["updated_at", "2015-05-15 00:48:56.152209"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+Completed 200 OK in 22ms (Views: 0.5ms | ActiveRecord: 5.6ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Processing by StoriesController#create as HTML
+  Parameters: {"story"=>{"title"=>"Supernatural Winnipeg", "origin_latitude"=>"-41.2967128", "origin_longitude"=>"174.77388449999998", "contribution_limit"=>"12"}}
+Geokit is using the domain: test.host
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "stories" ("title", "origin_latitude", "origin_longitude", "contribution_limit", "completed", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["title", "Supernatural Winnipeg"], ["origin_latitude", -41.2967128], ["origin_longitude", 174.77388449999998], ["contribution_limit", 12], ["completed", "f"], ["created_at", "2015-05-15 00:48:56.166564"], ["updated_at", "2015-05-15 00:48:56.166564"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 3ms (Views: 0.3ms | ActiveRecord: 0.6ms)
+  [1m[35mStory Load (0.9ms)[0m  SELECT  "stories".* FROM "stories"  ORDER BY "stories"."id" DESC LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Processing by StoriesController#create as HTML
+  Parameters: {"story"=>{"title"=>"Supernatural Winnipeg", "origin_latitude"=>"-41.2967128", "origin_longitude"=>"174.77388449999998", "contribution_limit"=>"12"}}
+Geokit is using the domain: test.host
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "stories" ("title", "origin_latitude", "origin_longitude", "contribution_limit", "completed", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["title", "Supernatural Winnipeg"], ["origin_latitude", -41.2967128], ["origin_longitude", 174.77388449999998], ["contribution_limit", 12], ["completed", "f"], ["created_at", "2015-05-15 00:48:56.176219"], ["updated_at", "2015-05-15 00:48:56.176219"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 3ms (Views: 0.4ms | ActiveRecord: 0.7ms)
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mStory Load (0.8ms)[0m  SELECT "stories".* FROM "stories"
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+Processing by StoriesController#create as HTML
+  Parameters: {"story"=>{"title"=>"Supernatural Winnipeg", "origin_latitude"=>"-41.2967128", "origin_longitude"=>"174.77388449999998", "contribution_limit"=>"12"}}
+Geokit is using the domain: test.host
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "stories" ("title", "origin_latitude", "origin_longitude", "contribution_limit", "completed", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "Supernatural Winnipeg"], ["origin_latitude", -41.2967128], ["origin_longitude", 174.77388449999998], ["contribution_limit", 12], ["completed", "f"], ["created_at", "2015-05-15 00:49:27.132911"], ["updated_at", "2015-05-15 00:49:27.132911"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+Completed 200 OK in 23ms (Views: 0.4ms | ActiveRecord: 5.9ms)
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Processing by StoriesController#create as HTML
+  Parameters: {"story"=>{"title"=>"Supernatural Winnipeg", "origin_latitude"=>"-41.2967128", "origin_longitude"=>"174.77388449999998", "contribution_limit"=>"12"}}
+Geokit is using the domain: test.host
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "stories" ("title", "origin_latitude", "origin_longitude", "contribution_limit", "completed", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["title", "Supernatural Winnipeg"], ["origin_latitude", -41.2967128], ["origin_longitude", 174.77388449999998], ["contribution_limit", 12], ["completed", "f"], ["created_at", "2015-05-15 00:49:27.145162"], ["updated_at", "2015-05-15 00:49:27.145162"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 4ms (Views: 0.3ms | ActiveRecord: 0.9ms)
+  [1m[35mStory Load (1.3ms)[0m  SELECT  "stories".* FROM "stories"  ORDER BY "stories"."id" DESC LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Processing by StoriesController#create as HTML
+  Parameters: {"story"=>{"title"=>"Supernatural Winnipeg", "origin_latitude"=>"-41.2967128", "origin_longitude"=>"174.77388449999998", "contribution_limit"=>"12"}}
+Geokit is using the domain: test.host
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "stories" ("title", "origin_latitude", "origin_longitude", "contribution_limit", "completed", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["title", "Supernatural Winnipeg"], ["origin_latitude", -41.2967128], ["origin_longitude", 174.77388449999998], ["contribution_limit", 12], ["completed", "f"], ["created_at", "2015-05-15 00:49:27.155811"], ["updated_at", "2015-05-15 00:49:27.155811"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 4ms (Views: 0.4ms | ActiveRecord: 0.9ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (1.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "locations" ("lat", "lng", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["lat", "-41.288889"], ["lng", "174.777222"], ["created_at", "2015-05-15 00:50:41.357156"], ["updated_at", "2015-05-15 00:50:41.357156"]]
+  [1m[35m (1.0ms)[0m  COMMIT
+  [1m[36mStory Load (0.7ms)[0m  [1mSELECT "stories".* FROM "stories"[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+Processing by StoriesController#create as HTML
+  Parameters: {"story"=>{"title"=>"Supernatural Winnipeg", "origin_latitude"=>"-41.2967128", "origin_longitude"=>"174.77388449999998", "contribution_limit"=>"12"}}
+Geokit is using the domain: test.host
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "stories" ("title", "origin_latitude", "origin_longitude", "contribution_limit", "completed", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["title", "Supernatural Winnipeg"], ["origin_latitude", -41.2967128], ["origin_longitude", 174.77388449999998], ["contribution_limit", 12], ["completed", "f"], ["created_at", "2015-05-15 00:50:41.386881"], ["updated_at", "2015-05-15 00:50:41.386881"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 11ms (Views: 0.6ms | ActiveRecord: 2.4ms)
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Processing by StoriesController#create as HTML
+  Parameters: {"story"=>{"title"=>"Supernatural Winnipeg", "origin_latitude"=>"-41.2967128", "origin_longitude"=>"174.77388449999998", "contribution_limit"=>"12"}}
+Geokit is using the domain: test.host
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "stories" ("title", "origin_latitude", "origin_longitude", "contribution_limit", "completed", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "Supernatural Winnipeg"], ["origin_latitude", -41.2967128], ["origin_longitude", 174.77388449999998], ["contribution_limit", 12], ["completed", "f"], ["created_at", "2015-05-15 00:50:41.398490"], ["updated_at", "2015-05-15 00:50:41.398490"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+Completed 200 OK in 4ms (Views: 0.4ms | ActiveRecord: 0.9ms)
+  [1m[36mStory Load (1.2ms)[0m  [1mSELECT  "stories".* FROM "stories"  ORDER BY "stories"."id" DESC LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Processing by StoriesController#create as HTML
+  Parameters: {"story"=>{"title"=>"Supernatural Winnipeg", "origin_latitude"=>"-41.2967128", "origin_longitude"=>"174.77388449999998", "contribution_limit"=>"12"}}
+Geokit is using the domain: test.host
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "stories" ("title", "origin_latitude", "origin_longitude", "contribution_limit", "completed", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "Supernatural Winnipeg"], ["origin_latitude", -41.2967128], ["origin_longitude", 174.77388449999998], ["contribution_limit", 12], ["completed", "f"], ["created_at", "2015-05-15 00:50:41.409493"], ["updated_at", "2015-05-15 00:50:41.409493"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+Completed 200 OK in 4ms (Views: 0.4ms | ActiveRecord: 0.9ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.9ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mStory Load (1.1ms)[0m  SELECT "stories".* FROM "stories"
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+Processing by StoriesController#create as HTML
+  Parameters: {"story"=>{"title"=>"Supernatural Winnipeg", "origin_latitude"=>"-41.2967128", "origin_longitude"=>"174.77388449999998", "contribution_limit"=>"12"}}
+Geokit is using the domain: test.host
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (1.2ms)[0m  [1mINSERT INTO "stories" ("title", "origin_latitude", "origin_longitude", "contribution_limit", "completed", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "Supernatural Winnipeg"], ["origin_latitude", -41.2967128], ["origin_longitude", 174.77388449999998], ["contribution_limit", 12], ["completed", "f"], ["created_at", "2015-05-15 00:52:43.677012"], ["updated_at", "2015-05-15 00:52:43.677012"]]
+  [1m[35m (0.4ms)[0m  RELEASE SAVEPOINT active_record_1
+Completed 200 OK in 20ms (Views: 0.6ms | ActiveRecord: 5.7ms)
+  [1m[36m (0.5ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+Processing by StoriesController#create as HTML
+  Parameters: {"story"=>{"title"=>"Supernatural Winnipeg", "origin_latitude"=>"-41.2967128", "origin_longitude"=>"174.77388449999998", "contribution_limit"=>"12"}}
+Geokit is using the domain: test.host
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "stories" ("title", "origin_latitude", "origin_longitude", "contribution_limit", "completed", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["title", "Supernatural Winnipeg"], ["origin_latitude", -41.2967128], ["origin_longitude", 174.77388449999998], ["contribution_limit", 12], ["completed", "f"], ["created_at", "2015-05-15 00:52:43.695761"], ["updated_at", "2015-05-15 00:52:43.695761"]]
+  [1m[36m (0.3ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 4ms (Views: 0.4ms | ActiveRecord: 1.3ms)
+  [1m[35mStory Load (1.4ms)[0m  SELECT  "stories".* FROM "stories"  ORDER BY "stories"."id" DESC LIMIT 1
+  [1m[36m (0.4ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Processing by StoriesController#create as HTML
+  Parameters: {"story"=>{"title"=>"Supernatural Winnipeg", "origin_latitude"=>"-41.2967128", "origin_longitude"=>"174.77388449999998", "contribution_limit"=>"12"}}
+Geokit is using the domain: test.host
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "stories" ("title", "origin_latitude", "origin_longitude", "contribution_limit", "completed", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["title", "Supernatural Winnipeg"], ["origin_latitude", -41.2967128], ["origin_longitude", 174.77388449999998], ["contribution_limit", 12], ["completed", "f"], ["created_at", "2015-05-15 00:52:43.707203"], ["updated_at", "2015-05-15 00:52:43.707203"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 4ms (Views: 0.4ms | ActiveRecord: 1.0ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (1.1ms)[0m  DELETE FROM "locations"
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mStory Load (1.0ms)[0m  SELECT "stories".* FROM "stories"
+  [1m[36m (0.4ms)[0m  [1mBEGIN[0m
+Processing by StoriesController#create as HTML
+  Parameters: {"story"=>{"title"=>"Supernatural Winnipeg", "origin_latitude"=>"-41.2967128", "origin_longitude"=>"174.77388449999998", "contribution_limit"=>"12"}}
+Geokit is using the domain: test.host
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (1.2ms)[0m  [1mINSERT INTO "stories" ("title", "origin_latitude", "origin_longitude", "contribution_limit", "completed", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "Supernatural Winnipeg"], ["origin_latitude", -41.2967128], ["origin_longitude", 174.77388449999998], ["contribution_limit", 12], ["completed", "f"], ["created_at", "2015-05-15 00:54:30.675578"], ["updated_at", "2015-05-15 00:54:30.675578"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+Completed 200 OK in 25ms (Views: 0.4ms | ActiveRecord: 6.5ms)
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Processing by StoriesController#create as HTML
+  Parameters: {"story"=>{"title"=>"Supernatural Winnipeg", "origin_latitude"=>"-41.2967128", "origin_longitude"=>"174.77388449999998", "contribution_limit"=>"12"}}
+Geokit is using the domain: test.host
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "stories" ("title", "origin_latitude", "origin_longitude", "contribution_limit", "completed", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["title", "Supernatural Winnipeg"], ["origin_latitude", -41.2967128], ["origin_longitude", 174.77388449999998], ["contribution_limit", 12], ["completed", "f"], ["created_at", "2015-05-15 00:54:30.688221"], ["updated_at", "2015-05-15 00:54:30.688221"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 4ms (Views: 0.3ms | ActiveRecord: 0.9ms)
+  [1m[35mStory Load (1.2ms)[0m  SELECT  "stories".* FROM "stories"  ORDER BY "stories"."id" DESC LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Processing by StoriesController#create as HTML
+  Parameters: {"story"=>{"title"=>"Supernatural Winnipeg", "origin_latitude"=>"-41.2967128", "origin_longitude"=>"174.77388449999998", "contribution_limit"=>"12"}}
+Geokit is using the domain: test.host
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "stories" ("title", "origin_latitude", "origin_longitude", "contribution_limit", "completed", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["title", "Supernatural Winnipeg"], ["origin_latitude", -41.2967128], ["origin_longitude", 174.77388449999998], ["contribution_limit", 12], ["completed", "f"], ["created_at", "2015-05-15 00:54:30.698848"], ["updated_at", "2015-05-15 00:54:30.698848"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 4ms (Views: 0.4ms | ActiveRecord: 0.9ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "locations" ("lat", "lng", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["lat", "1.0"], ["lng", "1.0"], ["created_at", "2015-05-15 00:54:30.713163"], ["updated_at", "2015-05-15 00:54:30.713163"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "locations" ("lat", "lng", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["lat", "0.0"], ["lng", "0.0"], ["created_at", "2015-05-15 00:54:30.715419"], ["updated_at", "2015-05-15 00:54:30.715419"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mLocation Load (1.2ms)[0m  SELECT  "locations".* FROM "locations"  ORDER BY 
+          (ACOS(least(1,COS(0.0)*COS(0.0)*COS(RADIANS(locations.lat))*COS(RADIANS(locations.lng))+
+          COS(0.0)*SIN(0.0)*COS(RADIANS(locations.lat))*SIN(RADIANS(locations.lng))+
+          SIN(0.0)*SIN(RADIANS(locations.lat))))*6376.77271)
+          DESC LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mDELETE FROM "locations"[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (1.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mStory Load (1.1ms)[0m  SELECT "stories".* FROM "stories"
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+Processing by StoriesController#create as HTML
+  Parameters: {"story"=>{"title"=>"Supernatural Winnipeg", "origin_latitude"=>"-41.2967128", "origin_longitude"=>"174.77388449999998", "contribution_limit"=>"12"}}
+Geokit is using the domain: test.host
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (1.7ms)[0m  [1mINSERT INTO "stories" ("title", "origin_latitude", "origin_longitude", "contribution_limit", "completed", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "Supernatural Winnipeg"], ["origin_latitude", -41.2967128], ["origin_longitude", 174.77388449999998], ["contribution_limit", 12], ["completed", "f"], ["created_at", "2015-05-15 00:56:35.712965"], ["updated_at", "2015-05-15 00:56:35.712965"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+Completed 200 OK in 24ms (Views: 0.4ms | ActiveRecord: 6.9ms)
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+Processing by StoriesController#create as HTML
+  Parameters: {"story"=>{"title"=>"Supernatural Winnipeg", "origin_latitude"=>"-41.2967128", "origin_longitude"=>"174.77388449999998", "contribution_limit"=>"12"}}
+Geokit is using the domain: test.host
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "stories" ("title", "origin_latitude", "origin_longitude", "contribution_limit", "completed", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["title", "Supernatural Winnipeg"], ["origin_latitude", -41.2967128], ["origin_longitude", 174.77388449999998], ["contribution_limit", 12], ["completed", "f"], ["created_at", "2015-05-15 00:56:35.732953"], ["updated_at", "2015-05-15 00:56:35.732953"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 8ms (Views: 0.7ms | ActiveRecord: 1.1ms)
+  [1m[35mStory Load (0.7ms)[0m  SELECT  "stories".* FROM "stories"  ORDER BY "stories"."id" DESC LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Processing by StoriesController#create as HTML
+  Parameters: {"story"=>{"title"=>"Supernatural Winnipeg", "origin_latitude"=>"-41.2967128", "origin_longitude"=>"174.77388449999998", "contribution_limit"=>"12"}}
+Geokit is using the domain: test.host
+  [1m[36m (0.4ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "stories" ("title", "origin_latitude", "origin_longitude", "contribution_limit", "completed", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["title", "Supernatural Winnipeg"], ["origin_latitude", -41.2967128], ["origin_longitude", 174.77388449999998], ["contribution_limit", 12], ["completed", "f"], ["created_at", "2015-05-15 00:56:35.746934"], ["updated_at", "2015-05-15 00:56:35.746934"]]
+  [1m[36m (0.3ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 5ms (Views: 0.5ms | ActiveRecord: 1.0ms)
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "locations" ("lat", "lng", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["lat", "1.0"], ["lng", "1.0"], ["created_at", "2015-05-15 00:56:35.759009"], ["updated_at", "2015-05-15 00:56:35.759009"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "locations" ("lat", "lng", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["lat", "0.0"], ["lng", "0.0"], ["created_at", "2015-05-15 00:56:35.761623"], ["updated_at", "2015-05-15 00:56:35.761623"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mLocation Load (1.9ms)[0m  SELECT  "locations".* FROM "locations"  ORDER BY 
+          (ACOS(least(1,COS(0.0)*COS(0.0)*COS(RADIANS(locations.lat))*COS(RADIANS(locations.lng))+
+          COS(0.0)*SIN(0.0)*COS(RADIANS(locations.lat))*SIN(RADIANS(locations.lng))+
+          SIN(0.0)*SIN(RADIANS(locations.lat))))*6376.77271)
+          DESC LIMIT 1
+  [1m[36mSQL (0.5ms)[0m  [1mDELETE FROM "locations"[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.9ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mStory Load (1.0ms)[0m  SELECT "stories".* FROM "stories"
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+Processing by StoriesController#create as HTML
+  Parameters: {"story"=>{"title"=>"Supernatural Winnipeg", "origin_latitude"=>"-41.2967128", "origin_longitude"=>"174.77388449999998", "contribution_limit"=>"12"}}
+Geokit is using the domain: test.host
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.9ms)[0m  [1mINSERT INTO "stories" ("title", "origin_latitude", "origin_longitude", "contribution_limit", "completed", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "Supernatural Winnipeg"], ["origin_latitude", -41.2967128], ["origin_longitude", 174.77388449999998], ["contribution_limit", 12], ["completed", "f"], ["created_at", "2015-05-15 00:58:40.343206"], ["updated_at", "2015-05-15 00:58:40.343206"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+Completed 200 OK in 22ms (Views: 0.5ms | ActiveRecord: 6.2ms)
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Processing by StoriesController#create as HTML
+  Parameters: {"story"=>{"title"=>"Supernatural Winnipeg", "origin_latitude"=>"-41.2967128", "origin_longitude"=>"174.77388449999998", "contribution_limit"=>"12"}}
+Geokit is using the domain: test.host
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "stories" ("title", "origin_latitude", "origin_longitude", "contribution_limit", "completed", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["title", "Supernatural Winnipeg"], ["origin_latitude", -41.2967128], ["origin_longitude", 174.77388449999998], ["contribution_limit", 12], ["completed", "f"], ["created_at", "2015-05-15 00:58:40.356872"], ["updated_at", "2015-05-15 00:58:40.356872"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 4ms (Views: 0.3ms | ActiveRecord: 1.0ms)
+  [1m[35mStory Load (1.2ms)[0m  SELECT  "stories".* FROM "stories"  ORDER BY "stories"."id" DESC LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Processing by StoriesController#create as HTML
+  Parameters: {"story"=>{"title"=>"Supernatural Winnipeg", "origin_latitude"=>"-41.2967128", "origin_longitude"=>"174.77388449999998", "contribution_limit"=>"12"}}
+Geokit is using the domain: test.host
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "stories" ("title", "origin_latitude", "origin_longitude", "contribution_limit", "completed", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["title", "Supernatural Winnipeg"], ["origin_latitude", -41.2967128], ["origin_longitude", 174.77388449999998], ["contribution_limit", 12], ["completed", "f"], ["created_at", "2015-05-15 00:58:40.367342"], ["updated_at", "2015-05-15 00:58:40.367342"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 4ms (Views: 0.4ms | ActiveRecord: 0.9ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.4ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "locations" ("lat", "lng", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["lat", "1.0"], ["lng", "1.0"], ["created_at", "2015-05-15 00:58:40.381057"], ["updated_at", "2015-05-15 00:58:40.381057"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "locations" ("lat", "lng", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["lat", "0.0"], ["lng", "0.0"], ["created_at", "2015-05-15 00:58:40.384627"], ["updated_at", "2015-05-15 00:58:40.384627"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.6ms)[0m  DELETE FROM "locations"
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mStory Load (0.9ms)[0m  SELECT "stories".* FROM "stories"
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+Processing by StoriesController#create as HTML
+  Parameters: {"story"=>{"title"=>"Supernatural Winnipeg", "origin_latitude"=>"-41.2967128", "origin_longitude"=>"174.77388449999998", "contribution_limit"=>"12"}}
+Geokit is using the domain: test.host
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "stories" ("title", "origin_latitude", "origin_longitude", "contribution_limit", "completed", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "Supernatural Winnipeg"], ["origin_latitude", -41.2967128], ["origin_longitude", 174.77388449999998], ["contribution_limit", 12], ["completed", "f"], ["created_at", "2015-05-15 00:59:00.681151"], ["updated_at", "2015-05-15 00:59:00.681151"]]
+  [1m[35m (0.5ms)[0m  RELEASE SAVEPOINT active_record_1
+Completed 200 OK in 20ms (Views: 0.5ms | ActiveRecord: 5.3ms)
+  [1m[36m (0.5ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Processing by StoriesController#create as HTML
+  Parameters: {"story"=>{"title"=>"Supernatural Winnipeg", "origin_latitude"=>"-41.2967128", "origin_longitude"=>"174.77388449999998", "contribution_limit"=>"12"}}
+Geokit is using the domain: test.host
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "stories" ("title", "origin_latitude", "origin_longitude", "contribution_limit", "completed", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["title", "Supernatural Winnipeg"], ["origin_latitude", -41.2967128], ["origin_longitude", 174.77388449999998], ["contribution_limit", 12], ["completed", "f"], ["created_at", "2015-05-15 00:59:00.695868"], ["updated_at", "2015-05-15 00:59:00.695868"]]
+  [1m[36m (0.3ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 4ms (Views: 0.3ms | ActiveRecord: 1.2ms)
+  [1m[35mStory Load (1.3ms)[0m  SELECT  "stories".* FROM "stories"  ORDER BY "stories"."id" DESC LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+Processing by StoriesController#create as HTML
+  Parameters: {"story"=>{"title"=>"Supernatural Winnipeg", "origin_latitude"=>"-41.2967128", "origin_longitude"=>"174.77388449999998", "contribution_limit"=>"12"}}
+Geokit is using the domain: test.host
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "stories" ("title", "origin_latitude", "origin_longitude", "contribution_limit", "completed", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["title", "Supernatural Winnipeg"], ["origin_latitude", -41.2967128], ["origin_longitude", 174.77388449999998], ["contribution_limit", 12], ["completed", "f"], ["created_at", "2015-05-15 00:59:00.706791"], ["updated_at", "2015-05-15 00:59:00.706791"]]
+  [1m[36m (0.3ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 4ms (Views: 0.4ms | ActiveRecord: 1.2ms)
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.4ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "locations" ("lat", "lng", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["lat", "1.0"], ["lng", "1.0"], ["created_at", "2015-05-15 00:59:00.720664"], ["updated_at", "2015-05-15 00:59:00.720664"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "locations" ("lat", "lng", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["lat", "0.0"], ["lng", "0.0"], ["created_at", "2015-05-15 00:59:00.724341"], ["updated_at", "2015-05-15 00:59:00.724341"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mLocation Load (1.6ms)[0m  SELECT  "locations".* FROM "locations"  ORDER BY 
+          (ACOS(least(1,COS(0.0)*COS(0.0)*COS(RADIANS(locations.lat))*COS(RADIANS(locations.lng))+
+          COS(0.0)*SIN(0.0)*COS(RADIANS(locations.lat))*SIN(RADIANS(locations.lng))+
+          SIN(0.0)*SIN(RADIANS(locations.lat))))*6376.77271)
+          DESC LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1mDELETE FROM "locations"[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mStory Load (1.1ms)[0m  SELECT "stories".* FROM "stories"
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+Processing by StoriesController#create as HTML
+  Parameters: {"story"=>{"title"=>"Supernatural Winnipeg", "origin_latitude"=>"-41.2967128", "origin_longitude"=>"174.77388449999998", "contribution_limit"=>"12"}}
+Geokit is using the domain: test.host
+  [1m[35m (0.4ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.9ms)[0m  [1mINSERT INTO "stories" ("title", "origin_latitude", "origin_longitude", "contribution_limit", "completed", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "Supernatural Winnipeg"], ["origin_latitude", -41.2967128], ["origin_longitude", 174.77388449999998], ["contribution_limit", 12], ["completed", "f"], ["created_at", "2015-05-15 01:01:35.789362"], ["updated_at", "2015-05-15 01:01:35.789362"]]
+  [1m[35m (0.3ms)[0m  RELEASE SAVEPOINT active_record_1
+Completed 200 OK in 28ms (Views: 0.4ms | ActiveRecord: 6.1ms)
+  [1m[36m (0.4ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.5ms)[0m  BEGIN
+Processing by StoriesController#create as HTML
+  Parameters: {"story"=>{"title"=>"Supernatural Winnipeg", "origin_latitude"=>"-41.2967128", "origin_longitude"=>"174.77388449999998", "contribution_limit"=>"12"}}
+Geokit is using the domain: test.host
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "stories" ("title", "origin_latitude", "origin_longitude", "contribution_limit", "completed", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["title", "Supernatural Winnipeg"], ["origin_latitude", -41.2967128], ["origin_longitude", 174.77388449999998], ["contribution_limit", 12], ["completed", "f"], ["created_at", "2015-05-15 01:01:35.808749"], ["updated_at", "2015-05-15 01:01:35.808749"]]
+  [1m[36m (0.3ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 6ms (Views: 0.3ms | ActiveRecord: 1.2ms)
+  [1m[35mStory Load (1.4ms)[0m  SELECT  "stories".* FROM "stories"  ORDER BY "stories"."id" DESC LIMIT 1
+  [1m[36m (0.4ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Processing by StoriesController#create as HTML
+  Parameters: {"story"=>{"title"=>"Supernatural Winnipeg", "origin_latitude"=>"-41.2967128", "origin_longitude"=>"174.77388449999998", "contribution_limit"=>"12"}}
+Geokit is using the domain: test.host
+  [1m[36m (0.4ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "stories" ("title", "origin_latitude", "origin_longitude", "contribution_limit", "completed", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["title", "Supernatural Winnipeg"], ["origin_latitude", -41.2967128], ["origin_longitude", 174.77388449999998], ["contribution_limit", 12], ["completed", "f"], ["created_at", "2015-05-15 01:01:35.822376"], ["updated_at", "2015-05-15 01:01:35.822376"]]
+  [1m[36m (0.3ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 5ms (Views: 0.3ms | ActiveRecord: 1.3ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.4ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "locations" ("lat", "lng", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["lat", "1.0"], ["lng", "1.0"], ["created_at", "2015-05-15 01:01:35.834564"], ["updated_at", "2015-05-15 01:01:35.834564"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "locations" ("lat", "lng", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["lat", "0.0"], ["lng", "0.0"], ["created_at", "2015-05-15 01:01:35.838362"], ["updated_at", "2015-05-15 01:01:35.838362"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mLocation Load (2.6ms)[0m  SELECT  "locations".* FROM "locations"  ORDER BY 
+          (ACOS(least(1,COS(0.0)*COS(0.0)*COS(RADIANS(locations.lat))*COS(RADIANS(locations.lng))+
+          COS(0.0)*SIN(0.0)*COS(RADIANS(locations.lat))*SIN(RADIANS(locations.lng))+
+          SIN(0.0)*SIN(RADIANS(locations.lat))))*6376.77271)
+          ASC LIMIT 1
+  [1m[36mSQL (0.6ms)[0m  [1mDELETE FROM "locations"[0m
+  [1m[35m (0.5ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mStory Load (0.7ms)[0m  SELECT "stories".* FROM "stories"
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+Processing by StoriesController#create as HTML
+  Parameters: {"story"=>{"title"=>"Supernatural Winnipeg", "origin_latitude"=>"-41.2967128", "origin_longitude"=>"174.77388449999998", "contribution_limit"=>"12"}}
+Geokit is using the domain: test.host
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.9ms)[0m  [1mINSERT INTO "stories" ("title", "origin_latitude", "origin_longitude", "contribution_limit", "completed", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "Supernatural Winnipeg"], ["origin_latitude", -41.2967128], ["origin_longitude", 174.77388449999998], ["contribution_limit", 12], ["completed", "f"], ["created_at", "2015-05-15 01:02:12.476297"], ["updated_at", "2015-05-15 01:02:12.476297"]]
+  [1m[35m (0.3ms)[0m  RELEASE SAVEPOINT active_record_1
+Completed 200 OK in 23ms (Views: 0.4ms | ActiveRecord: 6.1ms)
+  [1m[36m (0.4ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+Processing by StoriesController#create as HTML
+  Parameters: {"story"=>{"title"=>"Supernatural Winnipeg", "origin_latitude"=>"-41.2967128", "origin_longitude"=>"174.77388449999998", "contribution_limit"=>"12"}}
+Geokit is using the domain: test.host
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "stories" ("title", "origin_latitude", "origin_longitude", "contribution_limit", "completed", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["title", "Supernatural Winnipeg"], ["origin_latitude", -41.2967128], ["origin_longitude", 174.77388449999998], ["contribution_limit", 12], ["completed", "f"], ["created_at", "2015-05-15 01:02:12.490633"], ["updated_at", "2015-05-15 01:02:12.490633"]]
+  [1m[36m (0.3ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 4ms (Views: 0.3ms | ActiveRecord: 1.2ms)
+  [1m[35mStory Load (1.3ms)[0m  SELECT  "stories".* FROM "stories"  ORDER BY "stories"."id" DESC LIMIT 1
+  [1m[36m (0.4ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+Processing by StoriesController#create as HTML
+  Parameters: {"story"=>{"title"=>"Supernatural Winnipeg", "origin_latitude"=>"-41.2967128", "origin_longitude"=>"174.77388449999998", "contribution_limit"=>"12"}}
+Geokit is using the domain: test.host
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "stories" ("title", "origin_latitude", "origin_longitude", "contribution_limit", "completed", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["title", "Supernatural Winnipeg"], ["origin_latitude", -41.2967128], ["origin_longitude", 174.77388449999998], ["contribution_limit", 12], ["completed", "f"], ["created_at", "2015-05-15 01:02:12.503072"], ["updated_at", "2015-05-15 01:02:12.503072"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 4ms (Views: 0.5ms | ActiveRecord: 1.0ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "locations" ("lat", "lng", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["lat", "1.0"], ["lng", "1.0"], ["created_at", "2015-05-15 01:02:12.518122"], ["updated_at", "2015-05-15 01:02:12.518122"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "locations" ("lat", "lng", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["lat", "0.0"], ["lng", "0.0"], ["created_at", "2015-05-15 01:02:12.521608"], ["updated_at", "2015-05-15 01:02:12.521608"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.6ms)[0m  DELETE FROM "locations"
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mStory Load (1.2ms)[0m  SELECT "stories".* FROM "stories"
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+Processing by StoriesController#create as HTML
+  Parameters: {"story"=>{"title"=>"Supernatural Winnipeg", "origin_latitude"=>"-41.2967128", "origin_longitude"=>"174.77388449999998", "contribution_limit"=>"12"}}
+Geokit is using the domain: test.host
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "stories" ("title", "origin_latitude", "origin_longitude", "contribution_limit", "completed", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "Supernatural Winnipeg"], ["origin_latitude", -41.2967128], ["origin_longitude", 174.77388449999998], ["contribution_limit", 12], ["completed", "f"], ["created_at", "2015-05-15 01:09:49.919328"], ["updated_at", "2015-05-15 01:09:49.919328"]]
+  [1m[35m (0.3ms)[0m  RELEASE SAVEPOINT active_record_1
+Completed 200 OK in 24ms (Views: 0.6ms | ActiveRecord: 5.9ms)
+  [1m[36m (0.4ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+Processing by StoriesController#create as HTML
+  Parameters: {"story"=>{"title"=>"Supernatural Winnipeg", "origin_latitude"=>"-41.2967128", "origin_longitude"=>"174.77388449999998", "contribution_limit"=>"12"}}
+Geokit is using the domain: test.host
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "stories" ("title", "origin_latitude", "origin_longitude", "contribution_limit", "completed", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["title", "Supernatural Winnipeg"], ["origin_latitude", -41.2967128], ["origin_longitude", 174.77388449999998], ["contribution_limit", 12], ["completed", "f"], ["created_at", "2015-05-15 01:09:49.934451"], ["updated_at", "2015-05-15 01:09:49.934451"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 4ms (Views: 0.3ms | ActiveRecord: 0.8ms)
+  [1m[35mStory Load (1.0ms)[0m  SELECT  "stories".* FROM "stories"  ORDER BY "stories"."id" DESC LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+Processing by StoriesController#create as HTML
+  Parameters: {"story"=>{"title"=>"Supernatural Winnipeg", "origin_latitude"=>"-41.2967128", "origin_longitude"=>"174.77388449999998", "contribution_limit"=>"12"}}
+Geokit is using the domain: test.host
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "stories" ("title", "origin_latitude", "origin_longitude", "contribution_limit", "completed", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["title", "Supernatural Winnipeg"], ["origin_latitude", -41.2967128], ["origin_longitude", 174.77388449999998], ["contribution_limit", 12], ["completed", "f"], ["created_at", "2015-05-15 01:09:49.947687"], ["updated_at", "2015-05-15 01:09:49.947687"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 4ms (Views: 0.4ms | ActiveRecord: 0.8ms)
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "locations" ("lat", "lng", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["lat", "1.0"], ["lng", "1.0"], ["created_at", "2015-05-15 01:09:49.962865"], ["updated_at", "2015-05-15 01:09:49.962865"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "locations" ("lat", "lng", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["lat", "0.0"], ["lng", "0.0"], ["created_at", "2015-05-15 01:09:49.966125"], ["updated_at", "2015-05-15 01:09:49.966125"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "locations" ("lat", "lng", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["lat", "-41.270833"], ["lng", "173.283889"], ["created_at", "2015-05-15 01:09:49.969372"], ["updated_at", "2015-05-15 01:09:49.969372"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mLocation Load (2.7ms)[0m  [1mSELECT  "locations".* FROM "locations"  ORDER BY 
+          (ACOS(least(1,COS(0.0)*COS(0.0)*COS(RADIANS(locations.lat))*COS(RADIANS(locations.lng))+
+          COS(0.0)*SIN(0.0)*COS(RADIANS(locations.lat))*SIN(RADIANS(locations.lng))+
+          SIN(0.0)*SIN(RADIANS(locations.lat))))*6376.77271)
+          ASC LIMIT 1[0m
+  [1m[35mSQL (0.5ms)[0m  DELETE FROM "locations"
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mStory Load (1.1ms)[0m  SELECT "stories".* FROM "stories"
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+Processing by StoriesController#create as HTML
+  Parameters: {"story"=>{"title"=>"Supernatural Winnipeg", "origin_latitude"=>"-41.2967128", "origin_longitude"=>"174.77388449999998", "contribution_limit"=>"12"}}
+Geokit is using the domain: test.host
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "stories" ("title", "origin_latitude", "origin_longitude", "contribution_limit", "completed", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "Supernatural Winnipeg"], ["origin_latitude", -41.2967128], ["origin_longitude", 174.77388449999998], ["contribution_limit", 12], ["completed", "f"], ["created_at", "2015-05-15 01:10:53.131461"], ["updated_at", "2015-05-15 01:10:53.131461"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+Completed 200 OK in 18ms (Views: 0.4ms | ActiveRecord: 4.4ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+Processing by StoriesController#create as HTML
+  Parameters: {"story"=>{"title"=>"Supernatural Winnipeg", "origin_latitude"=>"-41.2967128", "origin_longitude"=>"174.77388449999998", "contribution_limit"=>"12"}}
+Geokit is using the domain: test.host
+  [1m[36m (0.4ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "stories" ("title", "origin_latitude", "origin_longitude", "contribution_limit", "completed", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["title", "Supernatural Winnipeg"], ["origin_latitude", -41.2967128], ["origin_longitude", 174.77388449999998], ["contribution_limit", 12], ["completed", "f"], ["created_at", "2015-05-15 01:10:53.147894"], ["updated_at", "2015-05-15 01:10:53.147894"]]
+  [1m[36m (0.3ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 7ms (Views: 0.3ms | ActiveRecord: 1.3ms)
+  [1m[35mStory Load (1.4ms)[0m  SELECT  "stories".* FROM "stories"  ORDER BY "stories"."id" DESC LIMIT 1
+  [1m[36m (0.4ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+Processing by StoriesController#create as HTML
+  Parameters: {"story"=>{"title"=>"Supernatural Winnipeg", "origin_latitude"=>"-41.2967128", "origin_longitude"=>"174.77388449999998", "contribution_limit"=>"12"}}
+Geokit is using the domain: test.host
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "stories" ("title", "origin_latitude", "origin_longitude", "contribution_limit", "completed", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["title", "Supernatural Winnipeg"], ["origin_latitude", -41.2967128], ["origin_longitude", 174.77388449999998], ["contribution_limit", 12], ["completed", "f"], ["created_at", "2015-05-15 01:10:53.160094"], ["updated_at", "2015-05-15 01:10:53.160094"]]
+  [1m[36m (0.3ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 4ms (Views: 0.4ms | ActiveRecord: 1.3ms)
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "locations" ("lat", "lng", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["lat", "-36.840556"], ["lng", "174.74"], ["created_at", "2015-05-15 01:10:53.175528"], ["updated_at", "2015-05-15 01:10:53.175528"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "locations" ("lat", "lng", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["lat", "-41.288889"], ["lng", "174.777222"], ["created_at", "2015-05-15 01:10:53.179464"], ["updated_at", "2015-05-15 01:10:53.179464"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "locations" ("lat", "lng", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["lat", "-41.270833"], ["lng", "173.283889"], ["created_at", "2015-05-15 01:10:53.182325"], ["updated_at", "2015-05-15 01:10:53.182325"]]
+  [1m[35m (0.3ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mLocation Load (2.5ms)[0m  [1mSELECT  "locations".* FROM "locations"  ORDER BY 
+          (ACOS(least(1,COS(-0.720627057540469)*COS(3.0504379813890687)*COS(RADIANS(locations.lat))*COS(RADIANS(locations.lng))+
+          COS(-0.720627057540469)*SIN(3.0504379813890687)*COS(RADIANS(locations.lat))*SIN(RADIANS(locations.lng))+
+          SIN(-0.720627057540469)*SIN(RADIANS(locations.lat))))*6376.77271)
+          ASC LIMIT 1[0m
+  [1m[35mSQL (0.6ms)[0m  DELETE FROM "locations"
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mStory Load (1.1ms)[0m  SELECT "stories".* FROM "stories"
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+Processing by StoriesController#create as HTML
+  Parameters: {"story"=>{"title"=>"Supernatural Winnipeg", "origin_latitude"=>"-41.2967128", "origin_longitude"=>"174.77388449999998", "contribution_limit"=>"12"}}
+Geokit is using the domain: test.host
+  [1m[35m (0.4ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (1.0ms)[0m  [1mINSERT INTO "stories" ("title", "origin_latitude", "origin_longitude", "contribution_limit", "completed", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "Supernatural Winnipeg"], ["origin_latitude", -41.2967128], ["origin_longitude", 174.77388449999998], ["contribution_limit", 12], ["completed", "f"], ["created_at", "2015-05-15 01:11:26.566329"], ["updated_at", "2015-05-15 01:11:26.566329"]]
+  [1m[35m (0.4ms)[0m  RELEASE SAVEPOINT active_record_1
+Completed 200 OK in 23ms (Views: 0.6ms | ActiveRecord: 5.9ms)
+  [1m[36m (0.4ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+Processing by StoriesController#create as HTML
+  Parameters: {"story"=>{"title"=>"Supernatural Winnipeg", "origin_latitude"=>"-41.2967128", "origin_longitude"=>"174.77388449999998", "contribution_limit"=>"12"}}
+Geokit is using the domain: test.host
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "stories" ("title", "origin_latitude", "origin_longitude", "contribution_limit", "completed", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["title", "Supernatural Winnipeg"], ["origin_latitude", -41.2967128], ["origin_longitude", 174.77388449999998], ["contribution_limit", 12], ["completed", "f"], ["created_at", "2015-05-15 01:11:26.583309"], ["updated_at", "2015-05-15 01:11:26.583309"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 5ms (Views: 0.4ms | ActiveRecord: 1.1ms)
+  [1m[35mStory Load (1.3ms)[0m  SELECT  "stories".* FROM "stories"  ORDER BY "stories"."id" DESC LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+Processing by StoriesController#create as HTML
+  Parameters: {"story"=>{"title"=>"Supernatural Winnipeg", "origin_latitude"=>"-41.2967128", "origin_longitude"=>"174.77388449999998", "contribution_limit"=>"12"}}
+Geokit is using the domain: test.host
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "stories" ("title", "origin_latitude", "origin_longitude", "contribution_limit", "completed", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["title", "Supernatural Winnipeg"], ["origin_latitude", -41.2967128], ["origin_longitude", 174.77388449999998], ["contribution_limit", 12], ["completed", "f"], ["created_at", "2015-05-15 01:11:26.596222"], ["updated_at", "2015-05-15 01:11:26.596222"]]
+  [1m[36m (0.3ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 4ms (Views: 0.4ms | ActiveRecord: 1.1ms)
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36m (0.6ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.4ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "locations" ("lat", "lng", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["lat", "-36.840556"], ["lng", "174.74"], ["created_at", "2015-05-15 01:11:26.618430"], ["updated_at", "2015-05-15 01:11:26.618430"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "locations" ("lat", "lng", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["lat", "-41.288889"], ["lng", "174.777222"], ["created_at", "2015-05-15 01:11:26.621046"], ["updated_at", "2015-05-15 01:11:26.621046"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "locations" ("lat", "lng", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["lat", "-41.270833"], ["lng", "173.283889"], ["created_at", "2015-05-15 01:11:26.622791"], ["updated_at", "2015-05-15 01:11:26.622791"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mLocation Load (1.8ms)[0m  [1mSELECT  "locations".* FROM "locations"  ORDER BY 
+          (ACOS(least(1,COS(-0.720627057540469)*COS(3.0504379813890687)*COS(RADIANS(locations.lat))*COS(RADIANS(locations.lng))+
+          COS(-0.720627057540469)*SIN(3.0504379813890687)*COS(RADIANS(locations.lat))*SIN(RADIANS(locations.lng))+
+          SIN(-0.720627057540469)*SIN(RADIANS(locations.lat))))*6376.77271)
+          ASC LIMIT 1[0m
+  [1m[35mSQL (0.6ms)[0m  DELETE FROM "locations"
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mStory Load (0.6ms)[0m  SELECT "stories".* FROM "stories"
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Processing by StoriesController#create as HTML
+  Parameters: {"story"=>{"title"=>"Supernatural Winnipeg", "origin_latitude"=>"-41.2967128", "origin_longitude"=>"174.77388449999998", "contribution_limit"=>"12"}}
+Geokit is using the domain: test.host
+  [1m[35m (0.4ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (1.0ms)[0m  [1mINSERT INTO "stories" ("title", "origin_latitude", "origin_longitude", "contribution_limit", "completed", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "Supernatural Winnipeg"], ["origin_latitude", -41.2967128], ["origin_longitude", 174.77388449999998], ["contribution_limit", 12], ["completed", "f"], ["created_at", "2015-05-15 01:11:56.077160"], ["updated_at", "2015-05-15 01:11:56.077160"]]
+  [1m[35m (0.3ms)[0m  RELEASE SAVEPOINT active_record_1
+Completed 200 OK in 20ms (Views: 0.5ms | ActiveRecord: 4.4ms)
+  [1m[36m (0.4ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  BEGIN
+Processing by StoriesController#create as HTML
+  Parameters: {"story"=>{"title"=>"Supernatural Winnipeg", "origin_latitude"=>"-41.2967128", "origin_longitude"=>"174.77388449999998", "contribution_limit"=>"12"}}
+Geokit is using the domain: test.host
+  [1m[36m (0.4ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "stories" ("title", "origin_latitude", "origin_longitude", "contribution_limit", "completed", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["title", "Supernatural Winnipeg"], ["origin_latitude", -41.2967128], ["origin_longitude", 174.77388449999998], ["contribution_limit", 12], ["completed", "f"], ["created_at", "2015-05-15 01:11:56.097929"], ["updated_at", "2015-05-15 01:11:56.097929"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 8ms (Views: 0.3ms | ActiveRecord: 1.3ms)
+  [1m[35mStory Load (1.4ms)[0m  SELECT  "stories".* FROM "stories"  ORDER BY "stories"."id" DESC LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+Processing by StoriesController#create as HTML
+  Parameters: {"story"=>{"title"=>"Supernatural Winnipeg", "origin_latitude"=>"-41.2967128", "origin_longitude"=>"174.77388449999998", "contribution_limit"=>"12"}}
+Geokit is using the domain: test.host
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "stories" ("title", "origin_latitude", "origin_longitude", "contribution_limit", "completed", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["title", "Supernatural Winnipeg"], ["origin_latitude", -41.2967128], ["origin_longitude", 174.77388449999998], ["contribution_limit", 12], ["completed", "f"], ["created_at", "2015-05-15 01:11:56.111333"], ["updated_at", "2015-05-15 01:11:56.111333"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 4ms (Views: 0.5ms | ActiveRecord: 1.0ms)
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36m (0.4ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.4ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "locations" ("lat", "lng", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["lat", "-36.840556"], ["lng", "174.74"], ["created_at", "2015-05-15 01:11:56.130450"], ["updated_at", "2015-05-15 01:11:56.130450"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "locations" ("lat", "lng", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["lat", "-41.288889"], ["lng", "174.777222"], ["created_at", "2015-05-15 01:11:56.134722"], ["updated_at", "2015-05-15 01:11:56.134722"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "locations" ("lat", "lng", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["lat", "-41.270833"], ["lng", "173.283889"], ["created_at", "2015-05-15 01:11:56.137365"], ["updated_at", "2015-05-15 01:11:56.137365"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mLocation Load (2.8ms)[0m  [1mSELECT  "locations".* FROM "locations"  ORDER BY 
+          (ACOS(least(1,COS(-0.720627057540469)*COS(3.0504379813890687)*COS(RADIANS(locations.lat))*COS(RADIANS(locations.lng))+
+          COS(-0.720627057540469)*SIN(3.0504379813890687)*COS(RADIANS(locations.lat))*SIN(RADIANS(locations.lng))+
+          SIN(-0.720627057540469)*SIN(RADIANS(locations.lat))))*6376.77271)
+          DESC LIMIT 1[0m
+  [1m[35mSQL (1.0ms)[0m  DELETE FROM "locations"
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mStory Load (0.7ms)[0m  SELECT "stories".* FROM "stories"
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+Processing by StoriesController#create as HTML
+  Parameters: {"story"=>{"title"=>"Supernatural Winnipeg", "origin_latitude"=>"-41.2967128", "origin_longitude"=>"174.77388449999998", "contribution_limit"=>"12"}}
+Geokit is using the domain: test.host
+  [1m[35m (0.4ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (1.1ms)[0m  [1mINSERT INTO "stories" ("title", "origin_latitude", "origin_longitude", "contribution_limit", "completed", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "Supernatural Winnipeg"], ["origin_latitude", -41.2967128], ["origin_longitude", 174.77388449999998], ["contribution_limit", 12], ["completed", "f"], ["created_at", "2015-05-15 01:12:25.361158"], ["updated_at", "2015-05-15 01:12:25.361158"]]
+  [1m[35m (0.3ms)[0m  RELEASE SAVEPOINT active_record_1
+Completed 200 OK in 27ms (Views: 0.4ms | ActiveRecord: 4.9ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Processing by StoriesController#create as HTML
+  Parameters: {"story"=>{"title"=>"Supernatural Winnipeg", "origin_latitude"=>"-41.2967128", "origin_longitude"=>"174.77388449999998", "contribution_limit"=>"12"}}
+Geokit is using the domain: test.host
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "stories" ("title", "origin_latitude", "origin_longitude", "contribution_limit", "completed", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["title", "Supernatural Winnipeg"], ["origin_latitude", -41.2967128], ["origin_longitude", 174.77388449999998], ["contribution_limit", 12], ["completed", "f"], ["created_at", "2015-05-15 01:12:25.375439"], ["updated_at", "2015-05-15 01:12:25.375439"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 4ms (Views: 0.4ms | ActiveRecord: 0.6ms)
+  [1m[35mStory Load (0.7ms)[0m  SELECT  "stories".* FROM "stories"  ORDER BY "stories"."id" DESC LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Processing by StoriesController#create as HTML
+  Parameters: {"story"=>{"title"=>"Supernatural Winnipeg", "origin_latitude"=>"-41.2967128", "origin_longitude"=>"174.77388449999998", "contribution_limit"=>"12"}}
+Geokit is using the domain: test.host
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "stories" ("title", "origin_latitude", "origin_longitude", "contribution_limit", "completed", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["title", "Supernatural Winnipeg"], ["origin_latitude", -41.2967128], ["origin_longitude", 174.77388449999998], ["contribution_limit", 12], ["completed", "f"], ["created_at", "2015-05-15 01:12:25.385387"], ["updated_at", "2015-05-15 01:12:25.385387"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 3ms (Views: 0.3ms | ActiveRecord: 0.5ms)
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.4ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "locations" ("lat", "lng", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["lat", "-36.840556"], ["lng", "174.74"], ["created_at", "2015-05-15 01:12:25.402404"], ["updated_at", "2015-05-15 01:12:25.402404"]]
+  [1m[35m (0.3ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "locations" ("lat", "lng", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["lat", "-41.288889"], ["lng", "174.777222"], ["created_at", "2015-05-15 01:12:25.406738"], ["updated_at", "2015-05-15 01:12:25.406738"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "locations" ("lat", "lng", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["lat", "-41.270833"], ["lng", "173.283889"], ["created_at", "2015-05-15 01:12:25.408987"], ["updated_at", "2015-05-15 01:12:25.408987"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mSQL (0.6ms)[0m  [1mDELETE FROM "locations"[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36mLocation Load (2.4ms)[0m  [1mSELECT  "locations".* FROM "locations"  ORDER BY 
+          (ACOS(least(1,COS(-0.720627057540469)*COS(3.0504379813890687)*COS(RADIANS(locations.lat))*COS(RADIANS(locations.lng))+
+          COS(-0.720627057540469)*SIN(3.0504379813890687)*COS(RADIANS(locations.lat))*SIN(RADIANS(locations.lng))+
+          SIN(-0.720627057540469)*SIN(RADIANS(locations.lat))))*6376.77271)
+          DESC LIMIT 1[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mStory Load (0.9ms)[0m  SELECT "stories".* FROM "stories"
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+Processing by StoriesController#create as HTML
+  Parameters: {"story"=>{"title"=>"Supernatural Winnipeg", "origin_latitude"=>"-41.2967128", "origin_longitude"=>"174.77388449999998", "contribution_limit"=>"12"}}
+Geokit is using the domain: test.host
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.9ms)[0m  [1mINSERT INTO "stories" ("title", "origin_latitude", "origin_longitude", "contribution_limit", "completed", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "Supernatural Winnipeg"], ["origin_latitude", -41.2967128], ["origin_longitude", 174.77388449999998], ["contribution_limit", 12], ["completed", "f"], ["created_at", "2015-05-15 01:13:35.415714"], ["updated_at", "2015-05-15 01:13:35.415714"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+Completed 200 OK in 27ms (Views: 0.4ms | ActiveRecord: 4.3ms)
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+Processing by StoriesController#create as HTML
+  Parameters: {"story"=>{"title"=>"Supernatural Winnipeg", "origin_latitude"=>"-41.2967128", "origin_longitude"=>"174.77388449999998", "contribution_limit"=>"12"}}
+Geokit is using the domain: test.host
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "stories" ("title", "origin_latitude", "origin_longitude", "contribution_limit", "completed", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["title", "Supernatural Winnipeg"], ["origin_latitude", -41.2967128], ["origin_longitude", 174.77388449999998], ["contribution_limit", 12], ["completed", "f"], ["created_at", "2015-05-15 01:13:35.429001"], ["updated_at", "2015-05-15 01:13:35.429001"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 5ms (Views: 0.3ms | ActiveRecord: 1.1ms)
+  [1m[35mStory Load (1.3ms)[0m  SELECT  "stories".* FROM "stories"  ORDER BY "stories"."id" DESC LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+Processing by StoriesController#create as HTML
+  Parameters: {"story"=>{"title"=>"Supernatural Winnipeg", "origin_latitude"=>"-41.2967128", "origin_longitude"=>"174.77388449999998", "contribution_limit"=>"12"}}
+Geokit is using the domain: test.host
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "stories" ("title", "origin_latitude", "origin_longitude", "contribution_limit", "completed", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["title", "Supernatural Winnipeg"], ["origin_latitude", -41.2967128], ["origin_longitude", 174.77388449999998], ["contribution_limit", 12], ["completed", "f"], ["created_at", "2015-05-15 01:13:35.441009"], ["updated_at", "2015-05-15 01:13:35.441009"]]
+  [1m[36m (0.4ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 5ms (Views: 0.7ms | ActiveRecord: 1.1ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "locations" ("lat", "lng", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["lat", "-36.840556"], ["lng", "174.74"], ["created_at", "2015-05-15 01:13:35.456944"], ["updated_at", "2015-05-15 01:13:35.456944"]]
+  [1m[35m (0.3ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "locations" ("lat", "lng", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["lat", "-41.288889"], ["lng", "174.777222"], ["created_at", "2015-05-15 01:13:35.460908"], ["updated_at", "2015-05-15 01:13:35.460908"]]
+  [1m[36m (0.3ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "locations" ("lat", "lng", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["lat", "-41.270833"], ["lng", "173.283889"], ["created_at", "2015-05-15 01:13:35.463957"], ["updated_at", "2015-05-15 01:13:35.463957"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mLocation Load (2.7ms)[0m  [1mSELECT  "locations".* FROM "locations"  ORDER BY 
+          (ACOS(least(1,COS(-0.720627057540469)*COS(3.0504379813890687)*COS(RADIANS(locations.lat))*COS(RADIANS(locations.lng))+
+          COS(-0.720627057540469)*SIN(3.0504379813890687)*COS(RADIANS(locations.lat))*SIN(RADIANS(locations.lng))+
+          SIN(-0.720627057540469)*SIN(RADIANS(locations.lat))))*6376.77271)
+          DESC LIMIT 1[0m
+  [1m[35mSQL (0.6ms)[0m  DELETE FROM "locations"
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35mLocation Load (1.5ms)[0m  SELECT  "locations".* FROM "locations"  ORDER BY 
+          (ACOS(least(1,COS(-0.720627057540469)*COS(3.0504379813890687)*COS(RADIANS(locations.lat))*COS(RADIANS(locations.lng))+
+          COS(-0.720627057540469)*SIN(3.0504379813890687)*COS(RADIANS(locations.lat))*SIN(RADIANS(locations.lng))+
+          SIN(-0.720627057540469)*SIN(RADIANS(locations.lat))))*6376.77271)
+          DESC LIMIT 1
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mStory Load (0.9ms)[0m  SELECT "stories".* FROM "stories"
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+Processing by StoriesController#create as HTML
+  Parameters: {"story"=>{"title"=>"Supernatural Winnipeg", "origin_latitude"=>"-41.2967128", "origin_longitude"=>"174.77388449999998", "contribution_limit"=>"12"}}
+Geokit is using the domain: test.host
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (1.0ms)[0m  [1mINSERT INTO "stories" ("title", "origin_latitude", "origin_longitude", "contribution_limit", "completed", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "Supernatural Winnipeg"], ["origin_latitude", -41.2967128], ["origin_longitude", 174.77388449999998], ["contribution_limit", 12], ["completed", "f"], ["created_at", "2015-05-15 01:13:48.052363"], ["updated_at", "2015-05-15 01:13:48.052363"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+Completed 200 OK in 23ms (Views: 0.6ms | ActiveRecord: 6.5ms)
+  [1m[36m (0.4ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+Processing by StoriesController#create as HTML
+  Parameters: {"story"=>{"title"=>"Supernatural Winnipeg", "origin_latitude"=>"-41.2967128", "origin_longitude"=>"174.77388449999998", "contribution_limit"=>"12"}}
+Geokit is using the domain: test.host
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "stories" ("title", "origin_latitude", "origin_longitude", "contribution_limit", "completed", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["title", "Supernatural Winnipeg"], ["origin_latitude", -41.2967128], ["origin_longitude", 174.77388449999998], ["contribution_limit", 12], ["completed", "f"], ["created_at", "2015-05-15 01:13:48.074047"], ["updated_at", "2015-05-15 01:13:48.074047"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 5ms (Views: 0.4ms | ActiveRecord: 1.1ms)
+  [1m[35mStory Load (1.3ms)[0m  SELECT  "stories".* FROM "stories"  ORDER BY "stories"."id" DESC LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Processing by StoriesController#create as HTML
+  Parameters: {"story"=>{"title"=>"Supernatural Winnipeg", "origin_latitude"=>"-41.2967128", "origin_longitude"=>"174.77388449999998", "contribution_limit"=>"12"}}
+Geokit is using the domain: test.host
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "stories" ("title", "origin_latitude", "origin_longitude", "contribution_limit", "completed", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["title", "Supernatural Winnipeg"], ["origin_latitude", -41.2967128], ["origin_longitude", 174.77388449999998], ["contribution_limit", 12], ["completed", "f"], ["created_at", "2015-05-15 01:13:48.084934"], ["updated_at", "2015-05-15 01:13:48.084934"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 4ms (Views: 0.5ms | ActiveRecord: 1.2ms)
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.4ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.9ms)[0m  [1mINSERT INTO "locations" ("lat", "lng", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["lat", "-36.840556"], ["lng", "174.74"], ["created_at", "2015-05-15 01:13:48.105237"], ["updated_at", "2015-05-15 01:13:48.105237"]]
+  [1m[35m (0.3ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "locations" ("lat", "lng", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["lat", "-41.288889"], ["lng", "174.777222"], ["created_at", "2015-05-15 01:13:48.110767"], ["updated_at", "2015-05-15 01:13:48.110767"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "locations" ("lat", "lng", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["lat", "-41.270833"], ["lng", "173.283889"], ["created_at", "2015-05-15 01:13:48.112771"], ["updated_at", "2015-05-15 01:13:48.112771"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mDELETE FROM "locations"[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36mLocation Load (1.8ms)[0m  [1mSELECT  "locations".* FROM "locations"  ORDER BY 
+          (ACOS(least(1,COS(-0.720627057540469)*COS(3.0504379813890687)*COS(RADIANS(locations.lat))*COS(RADIANS(locations.lng))+
+          COS(-0.720627057540469)*SIN(3.0504379813890687)*COS(RADIANS(locations.lat))*SIN(RADIANS(locations.lng))+
+          SIN(-0.720627057540469)*SIN(RADIANS(locations.lat))))*6376.77271)
+          DESC LIMIT 1[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mStory Load (0.6ms)[0m  SELECT "stories".* FROM "stories"
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+Processing by StoriesController#create as HTML
+  Parameters: {"story"=>{"title"=>"Supernatural Winnipeg", "origin_latitude"=>"-41.2967128", "origin_longitude"=>"174.77388449999998", "contribution_limit"=>"12"}}
+Geokit is using the domain: test.host
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "stories" ("title", "origin_latitude", "origin_longitude", "contribution_limit", "completed", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "Supernatural Winnipeg"], ["origin_latitude", -41.2967128], ["origin_longitude", 174.77388449999998], ["contribution_limit", 12], ["completed", "f"], ["created_at", "2015-05-15 01:14:12.472418"], ["updated_at", "2015-05-15 01:14:12.472418"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Completed 200 OK in 23ms (Views: 0.4ms | ActiveRecord: 5.2ms)
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  BEGIN
+Processing by StoriesController#create as HTML
+  Parameters: {"story"=>{"title"=>"Supernatural Winnipeg", "origin_latitude"=>"-41.2967128", "origin_longitude"=>"174.77388449999998", "contribution_limit"=>"12"}}
+Geokit is using the domain: test.host
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "stories" ("title", "origin_latitude", "origin_longitude", "contribution_limit", "completed", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["title", "Supernatural Winnipeg"], ["origin_latitude", -41.2967128], ["origin_longitude", 174.77388449999998], ["contribution_limit", 12], ["completed", "f"], ["created_at", "2015-05-15 01:14:12.490273"], ["updated_at", "2015-05-15 01:14:12.490273"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 8ms (Views: 0.3ms | ActiveRecord: 1.1ms)
+  [1m[35mStory Load (0.7ms)[0m  SELECT  "stories".* FROM "stories"  ORDER BY "stories"."id" DESC LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Processing by StoriesController#create as HTML
+  Parameters: {"story"=>{"title"=>"Supernatural Winnipeg", "origin_latitude"=>"-41.2967128", "origin_longitude"=>"174.77388449999998", "contribution_limit"=>"12"}}
+Geokit is using the domain: test.host
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "stories" ("title", "origin_latitude", "origin_longitude", "contribution_limit", "completed", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["title", "Supernatural Winnipeg"], ["origin_latitude", -41.2967128], ["origin_longitude", 174.77388449999998], ["contribution_limit", 12], ["completed", "f"], ["created_at", "2015-05-15 01:14:12.502258"], ["updated_at", "2015-05-15 01:14:12.502258"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 3ms (Views: 0.4ms | ActiveRecord: 0.6ms)
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.6ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "locations" ("lat", "lng", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["lat", "-36.840556"], ["lng", "174.74"], ["created_at", "2015-05-15 01:14:12.516487"], ["updated_at", "2015-05-15 01:14:12.516487"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "locations" ("lat", "lng", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["lat", "-41.288889"], ["lng", "174.777222"], ["created_at", "2015-05-15 01:14:12.519768"], ["updated_at", "2015-05-15 01:14:12.519768"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "locations" ("lat", "lng", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["lat", "-41.270833"], ["lng", "173.283889"], ["created_at", "2015-05-15 01:14:12.522243"], ["updated_at", "2015-05-15 01:14:12.522243"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mLocation Load (1.9ms)[0m  [1mSELECT  "locations".* FROM "locations"  ORDER BY 
+          (ACOS(least(1,COS(-0.720627057540469)*COS(3.0504379813890687)*COS(RADIANS(locations.lat))*COS(RADIANS(locations.lng))+
+          COS(-0.720627057540469)*SIN(3.0504379813890687)*COS(RADIANS(locations.lat))*SIN(RADIANS(locations.lng))+
+          SIN(-0.720627057540469)*SIN(RADIANS(locations.lat))))*6376.77271)
+          DESC LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  DELETE FROM "locations"
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35mLocation Load (1.1ms)[0m  SELECT  "locations".* FROM "locations"  ORDER BY 
+          (ACOS(least(1,COS(-0.720627057540469)*COS(3.0504379813890687)*COS(RADIANS(locations.lat))*COS(RADIANS(locations.lng))+
+          COS(-0.720627057540469)*SIN(3.0504379813890687)*COS(RADIANS(locations.lat))*SIN(RADIANS(locations.lng))+
+          SIN(-0.720627057540469)*SIN(RADIANS(locations.lat))))*6376.77271)
+          DESC LIMIT 1
+  [1m[36mActiveRecord::SchemaMigration Load (1.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mStory Load (1.1ms)[0m  SELECT "stories".* FROM "stories"
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+Processing by StoriesController#create as HTML
+  Parameters: {"story"=>{"title"=>"Supernatural Winnipeg", "origin_latitude"=>"-41.2967128", "origin_longitude"=>"174.77388449999998", "contribution_limit"=>"12"}}
+Geokit is using the domain: test.host
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "stories" ("title", "origin_latitude", "origin_longitude", "contribution_limit", "completed", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "Supernatural Winnipeg"], ["origin_latitude", -41.2967128], ["origin_longitude", 174.77388449999998], ["contribution_limit", 12], ["completed", "f"], ["created_at", "2015-05-15 01:14:53.249248"], ["updated_at", "2015-05-15 01:14:53.249248"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+Completed 200 OK in 27ms (Views: 0.4ms | ActiveRecord: 6.1ms)
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Processing by StoriesController#create as HTML
+  Parameters: {"story"=>{"title"=>"Supernatural Winnipeg", "origin_latitude"=>"-41.2967128", "origin_longitude"=>"174.77388449999998", "contribution_limit"=>"12"}}
+Geokit is using the domain: test.host
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "stories" ("title", "origin_latitude", "origin_longitude", "contribution_limit", "completed", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["title", "Supernatural Winnipeg"], ["origin_latitude", -41.2967128], ["origin_longitude", 174.77388449999998], ["contribution_limit", 12], ["completed", "f"], ["created_at", "2015-05-15 01:14:53.261513"], ["updated_at", "2015-05-15 01:14:53.261513"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 4ms (Views: 0.3ms | ActiveRecord: 0.9ms)
+  [1m[35mStory Load (1.3ms)[0m  SELECT  "stories".* FROM "stories"  ORDER BY "stories"."id" DESC LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Processing by StoriesController#create as HTML
+  Parameters: {"story"=>{"title"=>"Supernatural Winnipeg", "origin_latitude"=>"-41.2967128", "origin_longitude"=>"174.77388449999998", "contribution_limit"=>"12"}}
+Geokit is using the domain: test.host
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "stories" ("title", "origin_latitude", "origin_longitude", "contribution_limit", "completed", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["title", "Supernatural Winnipeg"], ["origin_latitude", -41.2967128], ["origin_longitude", 174.77388449999998], ["contribution_limit", 12], ["completed", "f"], ["created_at", "2015-05-15 01:14:53.272728"], ["updated_at", "2015-05-15 01:14:53.272728"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 4ms (Views: 0.4ms | ActiveRecord: 0.9ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.9ms)[0m  [1mINSERT INTO "locations" ("lat", "lng", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["lat", "-36.840556"], ["lng", "174.74"], ["created_at", "2015-05-15 01:14:53.287362"], ["updated_at", "2015-05-15 01:14:53.287362"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "locations" ("lat", "lng", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["lat", "-41.288889"], ["lng", "174.777222"], ["created_at", "2015-05-15 01:14:53.291172"], ["updated_at", "2015-05-15 01:14:53.291172"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "locations" ("lat", "lng", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["lat", "-41.270833"], ["lng", "173.283889"], ["created_at", "2015-05-15 01:14:53.293797"], ["updated_at", "2015-05-15 01:14:53.293797"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mLocation Load (2.8ms)[0m  [1mSELECT  "locations".* FROM "locations"  ORDER BY 
+          (ACOS(least(1,COS(-0.720627057540469)*COS(3.0504379813890687)*COS(RADIANS(locations.lat))*COS(RADIANS(locations.lng))+
+          COS(-0.720627057540469)*SIN(3.0504379813890687)*COS(RADIANS(locations.lat))*SIN(RADIANS(locations.lng))+
+          SIN(-0.720627057540469)*SIN(RADIANS(locations.lat))))*6376.77271)
+          DESC LIMIT 1[0m
+  [1m[35mSQL (0.5ms)[0m  DELETE FROM "locations"
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mStory Load (1.1ms)[0m  SELECT "stories".* FROM "stories"
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+Processing by StoriesController#create as HTML
+  Parameters: {"story"=>{"title"=>"Supernatural Winnipeg", "origin_latitude"=>"-41.2967128", "origin_longitude"=>"174.77388449999998", "contribution_limit"=>"12"}}
+Geokit is using the domain: test.host
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "stories" ("title", "origin_latitude", "origin_longitude", "contribution_limit", "completed", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "Supernatural Winnipeg"], ["origin_latitude", -41.2967128], ["origin_longitude", 174.77388449999998], ["contribution_limit", 12], ["completed", "f"], ["created_at", "2015-05-15 01:16:00.389694"], ["updated_at", "2015-05-15 01:16:00.389694"]]
+  [1m[35m (0.3ms)[0m  RELEASE SAVEPOINT active_record_1
+Completed 200 OK in 26ms (Views: 0.4ms | ActiveRecord: 5.5ms)
+  [1m[36m (0.4ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Processing by StoriesController#create as HTML
+  Parameters: {"story"=>{"title"=>"Supernatural Winnipeg", "origin_latitude"=>"-41.2967128", "origin_longitude"=>"174.77388449999998", "contribution_limit"=>"12"}}
+Geokit is using the domain: test.host
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "stories" ("title", "origin_latitude", "origin_longitude", "contribution_limit", "completed", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["title", "Supernatural Winnipeg"], ["origin_latitude", -41.2967128], ["origin_longitude", 174.77388449999998], ["contribution_limit", 12], ["completed", "f"], ["created_at", "2015-05-15 01:16:00.403046"], ["updated_at", "2015-05-15 01:16:00.403046"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 4ms (Views: 0.4ms | ActiveRecord: 0.9ms)
+  [1m[35mStory Load (1.2ms)[0m  SELECT  "stories".* FROM "stories"  ORDER BY "stories"."id" DESC LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Processing by StoriesController#create as HTML
+  Parameters: {"story"=>{"title"=>"Supernatural Winnipeg", "origin_latitude"=>"-41.2967128", "origin_longitude"=>"174.77388449999998", "contribution_limit"=>"12"}}
+Geokit is using the domain: test.host
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "stories" ("title", "origin_latitude", "origin_longitude", "contribution_limit", "completed", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["title", "Supernatural Winnipeg"], ["origin_latitude", -41.2967128], ["origin_longitude", 174.77388449999998], ["contribution_limit", 12], ["completed", "f"], ["created_at", "2015-05-15 01:16:00.414369"], ["updated_at", "2015-05-15 01:16:00.414369"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 4ms (Views: 0.4ms | ActiveRecord: 0.9ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "locations" ("lat", "lng", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["lat", "-36.840556"], ["lng", "174.74"], ["created_at", "2015-05-15 01:16:00.429264"], ["updated_at", "2015-05-15 01:16:00.429264"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "locations" ("lat", "lng", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["lat", "-41.288889"], ["lng", "174.777222"], ["created_at", "2015-05-15 01:16:00.432896"], ["updated_at", "2015-05-15 01:16:00.432896"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "locations" ("lat", "lng", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["lat", "-41.270833"], ["lng", "173.283889"], ["created_at", "2015-05-15 01:16:00.435617"], ["updated_at", "2015-05-15 01:16:00.435617"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mLocation Load (2.7ms)[0m  [1mSELECT  "locations".* FROM "locations"  ORDER BY 
+          (ACOS(least(1,COS(-0.720627057540469)*COS(3.0504379813890687)*COS(RADIANS(locations.lat))*COS(RADIANS(locations.lng))+
+          COS(-0.720627057540469)*SIN(3.0504379813890687)*COS(RADIANS(locations.lat))*SIN(RADIANS(locations.lng))+
+          SIN(-0.720627057540469)*SIN(RADIANS(locations.lat))))*6376.77271)
+          DESC LIMIT 1[0m
+  [1m[35mSQL (0.5ms)[0m  DELETE FROM "locations"
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m

@@ -698,3 +698,70 @@ WHERE c.contype = 'f'
   AND t3.nspname = ANY (current_schemas(false))
 ORDER BY c.conname
 
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (1.0ms)[0m  INSERT INTO "locations" ("lat", "lng", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["lat", "1.1"], ["lng", "2.2"], ["created_at", "2015-05-15 00:41:13.773390"], ["updated_at", "2015-05-15 00:41:13.773390"]]
+  [1m[36m (1.4ms)[0m  [1mCOMMIT[0m
+  [1m[35mLocation Load (0.9ms)[0m  SELECT "locations".* FROM "locations"
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "locations" ("lat", "lng", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["lat", "0.0"], ["lng", "0.0"], ["created_at", "2015-05-15 00:41:38.973008"], ["updated_at", "2015-05-15 00:41:38.973008"]]
+  [1m[36m (3.4ms)[0m  [1mCOMMIT[0m
+  [1m[35mLocation Load (1.4ms)[0m  SELECT  "locations".* FROM "locations"  ORDER BY "locations"."id" DESC LIMIT 1
+  [1m[36mLocation Load (3.1ms)[0m  [1mSELECT  "locations".* FROM "locations"  ORDER BY 
+          (ACOS(least(1,COS(0.0)*COS(0.0)*COS(RADIANS(locations.lat))*COS(RADIANS(locations.lng))+
+          COS(0.0)*SIN(0.0)*COS(RADIANS(locations.lat))*SIN(RADIANS(locations.lng))+
+          SIN(0.0)*SIN(RADIANS(locations.lat))))*6376.77271)
+          DESC LIMIT 1[0m
+  [1m[36mLocation Load (0.8ms)[0m  [1mSELECT  "locations".* FROM "locations"  ORDER BY "locations"."id" ASC LIMIT 1[0m
+  [1m[35mLocation Load (1.5ms)[0m  SELECT  "locations".* FROM "locations"  ORDER BY 
+          (ACOS(least(1,COS(0.019198621771937624)*COS(0.03839724354387525)*COS(RADIANS(locations.lat))*COS(RADIANS(locations.lng))+
+          COS(0.019198621771937624)*SIN(0.03839724354387525)*COS(RADIANS(locations.lat))*SIN(RADIANS(locations.lng))+
+          SIN(0.019198621771937624)*SIN(RADIANS(locations.lat))))*6376.77271)
+          DESC LIMIT 1
+  [1m[36m (113.6ms)[0m  [1mDROP DATABASE IF EXISTS "corpsebook_development"[0m
+  [1m[35m (109.1ms)[0m  DROP DATABASE IF EXISTS "corpsebook_test"
+  [1m[36m (255.6ms)[0m  [1mCREATE DATABASE "corpsebook_development" ENCODING = 'unicode'[0m
+  [1m[35m (258.2ms)[0m  CREATE DATABASE "corpsebook_test" ENCODING = 'unicode'
+  [1m[36mSQL (0.8ms)[0m  [1mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (13.7ms)[0m  CREATE TABLE "locations" ("id" serial primary key, "lat" decimal, "lng" decimal, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) 
+  [1m[36m (9.7ms)[0m  [1mCREATE TABLE "stories" ("id" serial primary key, "title" character varying, "origin_latitude" float, "origin_longitude" float, "contribution_limit" integer, "completed" boolean, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (7.7ms)[0m  CREATE TABLE "schema_migrations" ("version" character varying NOT NULL) 
+  [1m[36m (3.5ms)[0m  [1mCREATE UNIQUE INDEX  "unique_schema_migrations" ON "schema_migrations"  ("version")[0m
+  [1m[35m (0.6ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (1.4ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150514230218')[0m
+  [1m[35m (1.2ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150514053116')
+  [1m[36mSQL (0.6ms)[0m  [1mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (16.2ms)[0m  CREATE TABLE "locations" ("id" serial primary key, "lat" decimal, "lng" decimal, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) 
+  [1m[36m (6.9ms)[0m  [1mCREATE TABLE "stories" ("id" serial primary key, "title" character varying, "origin_latitude" float, "origin_longitude" float, "contribution_limit" integer, "completed" boolean, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (4.6ms)[0m  CREATE TABLE "schema_migrations" ("version" character varying NOT NULL) 
+  [1m[36m (3.6ms)[0m  [1mCREATE UNIQUE INDEX  "unique_schema_migrations" ON "schema_migrations"  ("version")[0m
+  [1m[35m (0.7ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (1.2ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150514230218')[0m
+  [1m[35m (0.9ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150514053116')
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (1.2ms)[0m  [1mINSERT INTO "stories" ("title", "origin_latitude", "origin_longitude", "contribution_limit", "completed", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "Supernatural Winnipeg"], ["origin_latitude", -41.2967128], ["origin_longitude", 174.77388449999998], ["contribution_limit", 12], ["completed", "f"], ["created_at", "2015-05-15 00:56:28.012558"], ["updated_at", "2015-05-15 00:56:28.012558"]]
+  [1m[35m (0.9ms)[0m  COMMIT
+  [1m[36m (115.8ms)[0m  [1mDROP DATABASE IF EXISTS "corpsebook_development"[0m
+  [1m[35m (116.0ms)[0m  DROP DATABASE IF EXISTS "corpsebook_test"
+  [1m[36m (254.7ms)[0m  [1mCREATE DATABASE "corpsebook_development" ENCODING = 'unicode'[0m
+  [1m[35m (249.2ms)[0m  CREATE DATABASE "corpsebook_test" ENCODING = 'unicode'
+  [1m[36mSQL (0.6ms)[0m  [1mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (22.8ms)[0m  CREATE TABLE "locations" ("id" serial primary key, "lat" decimal, "lng" decimal, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) 
+  [1m[36m (10.2ms)[0m  [1mCREATE TABLE "stories" ("id" serial primary key, "title" character varying, "origin_latitude" float, "origin_longitude" float, "contribution_limit" integer, "completed" boolean, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (3.9ms)[0m  CREATE TABLE "schema_migrations" ("version" character varying NOT NULL) 
+  [1m[36m (3.7ms)[0m  [1mCREATE UNIQUE INDEX  "unique_schema_migrations" ON "schema_migrations"  ("version")[0m
+  [1m[35m (0.8ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (1.2ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150514230218')[0m
+  [1m[35m (0.9ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150514053116')
+  [1m[36mSQL (0.3ms)[0m  [1mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (15.4ms)[0m  CREATE TABLE "locations" ("id" serial primary key, "lat" decimal, "lng" decimal, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) 
+  [1m[36m (8.8ms)[0m  [1mCREATE TABLE "stories" ("id" serial primary key, "title" character varying, "origin_latitude" float, "origin_longitude" float, "contribution_limit" integer, "completed" boolean, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (5.5ms)[0m  CREATE TABLE "schema_migrations" ("version" character varying NOT NULL) 
+  [1m[36m (3.3ms)[0m  [1mCREATE UNIQUE INDEX  "unique_schema_migrations" ON "schema_migrations"  ("version")[0m
+  [1m[35m (0.5ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (2.5ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150514230218')[0m
+  [1m[35m (1.0ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150514053116')
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (1.1ms)[0m  [1mINSERT INTO "stories" ("title", "origin_latitude", "origin_longitude", "contribution_limit", "completed", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "Supernatural Winnipeg"], ["origin_latitude", -41.2967128], ["origin_longitude", 174.77388449999998], ["contribution_limit", 12], ["completed", "f"], ["created_at", "2015-05-15 01:14:43.568509"], ["updated_at", "2015-05-15 01:14:43.568509"]]
+  [1m[35m (1.1ms)[0m  COMMIT
