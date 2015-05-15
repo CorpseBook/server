@@ -16,7 +16,10 @@ RSpec.describe Story, type: :model do
   	end
 
 	it "Stories can searched by nearby" do
-		expect(Location.within(10, origin: @welly_story.location).first).to eq(@nelly_story.location)
+
+		expect(Location.within(10, origin: @welly_story.location)).to include(@welly_story.location)
+		expect(Location.within(200, origin: @welly_story.location)).to include(@nelly_story.location)
+		expect(Location.within(10, origin: @welly_story.location)).not_to include(@akl_story.location)
   	end  	
 
   	after(:each) do
