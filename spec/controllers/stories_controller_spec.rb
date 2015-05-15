@@ -16,7 +16,7 @@ RSpec.describe StoriesController, type: :controller do
     end
 
     before do
-      post :create, {story: {title: "Supernatural Winnipeg", contribution_limit: 12}}
+      post :create, {story: {title: "Supernatural Winnipeg", contribution_limit: 12, origin_latitude:-41.270833, origin_longitude: 173.283889}}
     end
 
     it "should create new story" do
@@ -49,6 +49,20 @@ RSpec.describe StoriesController, type: :controller do
       expect(response.body).to include(@contribution.to_json)
     end
   end
+
+  # describe "#nearby" do
+  #   before(:each) do
+  #     akl = FactoryGirl.create(:auckland)
+  #     @welly = FactoryGirl.create(:wellington)
+  #     nelly = FactoryGirl.create(:nelson)
+  #     @akl_story = Story.create(location: akl)
+  #     @welly_story = Story.create(location: @welly)
+  #     @nelly_story = Story.create(location: nelly)
+  #     # get :"stories/nearby", range: 10, coordinates:
+  #   end
+
+
+  # end
 
   after(:all) do
     Story.destroy_all
