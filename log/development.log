@@ -1568,3 +1568,14 @@ Started GET "/stories" for ::1 at 2015-05-15 14:23:16 +1200
 Processing by StoriesController#index as HTML
   [1m[36mStory Load (0.4ms)[0m  [1mSELECT "stories".* FROM "stories"[0m
 Completed 200 OK in 3ms (Views: 2.2ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/stories" for ::1 at 2015-05-15 14:29:10 +1200
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by StoriesController#create as */*
+  Parameters: {"story"=>{"title"=>"that", "origin_latitude"=>"54", "origin_longitude"=>"45", "contribution_limit"=>"30"}}
+Can't verify CSRF token authenticity
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "stories" ("title", "origin_latitude", "origin_longitude", "contribution_limit", "completed", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "that"], ["origin_latitude", 54.0], ["origin_longitude", 45.0], ["contribution_limit", 30], ["completed", "f"], ["created_at", "2015-05-15 02:29:10.711909"], ["updated_at", "2015-05-15 02:29:10.711909"]]
+  [1m[35m (6.1ms)[0m  COMMIT
+Completed 200 OK in 40ms (Views: 1.0ms | ActiveRecord: 13.3ms)
