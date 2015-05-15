@@ -5,6 +5,8 @@ Rails.application.routes.draw do
     resources :contributions, only: [:create]
   end
 
+  get '/stories/nearby' => "stories#nearby"
+
   controller :stories, path: '/' do
     match 'stories', to: "stories#create", via: [ :post, :options]
   end
