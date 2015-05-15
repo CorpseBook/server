@@ -2,9 +2,7 @@ require 'rails_helper'
 
 RSpec.describe Location, type: :model do
 
-
 	before(:each) do
-
 		@akl = FactoryGirl.create(:auckland)
 		@welly = FactoryGirl.create(:wellington)
 		@nelly = FactoryGirl.create(:nelson)
