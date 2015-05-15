@@ -17,6 +17,10 @@ class StoriesController < ApplicationController
     end
   end
 
+  def show
+    render json: Story.find(params[:id])
+  end
+
   private
 
   def story_params
