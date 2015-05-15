@@ -11,19 +11,38 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150514053116) do
+ActiveRecord::Schema.define(version: 20150515014233) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "contributions", force: :cascade do |t|
+    t.integer  "story_id"
+    t.text     "content"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "contributions", ["story_id"], name: "index_contributions_on_story_id", using: :btree
+
+  create_table "locations", force: :cascade do |t|
+    t.integer  "lat"
+    t.integer  "lng"
+    t.integer  "locatable_id"
+    t.string   "locatable_type"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+  end
+
+  add_index "locations", ["locatable_type", "locatable_id"], name: "index_locations_on_locatable_type_and_locatable_id", using: :btree
+
   create_table "stories", force: :cascade do |t|
     t.string   "title"
-    t.float    "origin_latitude"
-    t.float    "origin_longitude"
     t.integer  "contribution_limit"
     t.boolean  "completed"
     t.datetime "created_at",         null: false
     t.datetime "updated_at",         null: false
   end
 
+  add_foreign_key "contributions", "stories"
 end
