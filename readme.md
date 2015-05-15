@@ -13,6 +13,12 @@ Hello World Branch = The Hello World server
     -GET return all stories
     -POST create a story
 
+  /stories/:id
+    -GET returns the title and contributions (last only if story is not completed, all if story is completed) for a     story
+  
+  /stories/:story_id/contributions
+    -POST create a contribution for a specific story
+
 **HEROKU INSTRUCTIONS**
 
 As several branches within this repo have heroku servers when you initially pull the repo you need to set up heroku remotes and learn to specify which app you're running heroku commands on.
