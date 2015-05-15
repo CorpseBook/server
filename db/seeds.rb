@@ -8,4 +8,4 @@
 
 # Story.create(title: "Supernatural Winnipeg", origin_latitude: -41.2967128, origin_longitude: 174.77388449999998, contribution_limit: 12, completed: false)
 
-Contribution.create(content: "This is content.", story_id: 1)
+# Contribution.create(content: "This is content.", story_id: 1)
