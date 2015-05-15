@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
   root to: 'home#index'
 
-  resources :stories
+  resources :stories do
+    resources :constributions, only: [:create]
+  end
 
 
 
