@@ -26,9 +26,15 @@ ActiveRecord::Schema.define(version: 20150515014233) do
   add_index "contributions", ["story_id"], name: "index_contributions_on_story_id", using: :btree
 
   create_table "locations", force: :cascade do |t|
-    t.decimal "lat"
-    t.decimal "lng"
+    t.integer  "lat"
+    t.integer  "lng"
+    t.integer  "locatable_id"
+    t.string   "locatable_type"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
   end
+
+  add_index "locations", ["locatable_type", "locatable_id"], name: "index_locations_on_locatable_type_and_locatable_id", using: :btree
 
   create_table "stories", force: :cascade do |t|
     t.string   "title"
@@ -36,11 +42,7 @@ ActiveRecord::Schema.define(version: 20150515014233) do
     t.boolean  "completed"
     t.datetime "created_at",         null: false
     t.datetime "updated_at",         null: false
-    t.integer  "locatable_id"
-    t.string   "locatable_type"
   end
-
-  add_index "stories", ["locatable_type", "locatable_id"], name: "index_stories_on_locatable_type_and_locatable_id", using: :btree
 
   add_foreign_key "contributions", "stories"
 end
