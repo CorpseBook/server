@@ -4,6 +4,12 @@ class StoriesController < ApplicationController
     render json: Story.all
   end
 
+  def nearby
+    coordinates = params[:coordinates]
+    range = params[:range]
+    nearby = Location.within(range, :origin => coordinates)
+  end
+
   def create
     new_story = Story.new(story_params)
     if new_story.save
