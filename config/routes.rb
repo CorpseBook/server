@@ -6,7 +6,11 @@ Rails.application.routes.draw do
   end
 
   controller :stories, path: '/' do
-          match 'stories', to: "stories#create", via: [ :post, :options]
+    match 'stories', to: "stories#create", via: [ :post, :options]
+  end
+
+  controller :contributions, path: "/stories/:story_id/" do
+    match 'contributions', to: "contributions#create", via: [ :post, :options]
   end
 
   # The priority is based upon order of creation: first created -> highest priority.

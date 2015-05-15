@@ -2102,3 +2102,4 @@ Can't verify CSRF token authenticity
   [1m[35m (6.1ms)[0m  COMMIT
 Completed 200 OK in 40ms (Views: 1.0ms | ActiveRecord: 13.3ms)
 >>>>>>> 7588f905407088f86137ec6c42f7cdcd18ff8774
+DEPRECATION WARNING: Defining a route where `to` is a controller without an action is deprecated. Please change `to: :` to `controller: :`. (called from block (2 levels) in <top (required)> at /Users/caradev/Desktop/phase_three/server/config/routes.rb:13)
