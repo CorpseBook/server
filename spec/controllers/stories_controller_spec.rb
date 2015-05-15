@@ -16,7 +16,7 @@ RSpec.describe StoriesController, type: :controller do
     end
 
     before do
-      post :create, {story: {title: "Supernatural Winnipeg", origin_latitude: -41.2967128, origin_longitude: 174.77388449999998, contribution_limit: 12}}
+      post :create, {story: {title: "Supernatural Winnipeg", contribution_limit: 12}}
     end
 
     it "should create new story" do
@@ -31,8 +31,9 @@ RSpec.describe StoriesController, type: :controller do
 
   describe "#show" do
     before do
-      @story = Story.create(title: "Joe's Adventure", origin_latitude: -42.29, origin_longitude: 175.77, contribution_limit: 100)
-      @contribution = Contribution.create(story_id: @story.id, content: "Blah blah blah.")
+      @story = FactoryGirl.create(:story)
+      @contribution = FactoryGirl.create(:contribution)
+      @story.contributions << @contribution
       get :show, id: @story.id
     end
 
