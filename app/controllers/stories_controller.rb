@@ -48,7 +48,7 @@ class StoriesController < ApplicationController
   private
 
   def story_params
-    params.require(:story).permit(:title, :contribution_limit).merge(completed: false)
+    params.require(:story).permit(:title, :contribution_limit)
   end
 
   def location_params
