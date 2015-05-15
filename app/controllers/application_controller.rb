@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
 
   skip_before_filter :verify_authenticity_token
 
-  protect_from_forgery with: :null_session, if: Proc.new { |c| c.request.format == 'application/json' }
+  protect_from_forgery with: :null_session#, if: Proc.new { |c| c.request.format == 'application/json' }
 
   before_filter :cors_preflight_check
   after_filter :cors_set_access_control_headers
@@ -18,6 +18,7 @@ class ApplicationController < ActionController::Base
    end
 
    def cors_preflight_check
+    p request.method
      if request.method == 'OPTIONS'
        # headers['Access-Control-Allow-Origin'] = '*'
        # headers['Access-Control-Allow-Methods'] = 'POST, GET, PUT, DELETE, OPTIONS'
@@ -28,9 +29,16 @@ class ApplicationController < ActionController::Base
        headers['Access-Control-Allow-Methods'] = 'POST, PUT, DELETE, GET, OPTIONS'
        headers['Access-Control-Request-Method'] = '*'
        headers['Access-Control-Allow-Headers'] = 'Origin, X-Requested-With, Content-Type, Accept, Authorization'
+       headers['Access-Control-Allow-Credentials'] = 'true'
+       headers['Access-Control-Max-Age'] = '1728000'
 
        render :text => '', :content_type => 'text/plain'
      end
+
+     # def set_csrf_cookie_for_ng
+     #    cookies['XSRF-TOKEN'] = form_authenticity_token if protect_against_forgery?
+     #  end
+
    end
 
 
