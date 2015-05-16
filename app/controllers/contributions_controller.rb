@@ -4,10 +4,10 @@ class ContributionsController < ApplicationController
 
     story = Story.find(params[:story_id])
     contribution = Contribution.new(contribution_params)
-
     if contribution.save
-
       story.add_contribution(contribution)
+      story.complete! if story.completed?
+
 
       render status: 200, json: {
         contribution: contribution
