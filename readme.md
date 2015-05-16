@@ -1,7 +1,7 @@
 **Development Branch** = current 100% working app, pull from here before you push your own branch.
 
 https://corpsebook-server.herokuapp.com/
-https://git.heroku.com/corpsebook-server.git
+https://git.heroku.com/corpsebook-server.gitgit a
 
 **HEROKU INSTRUCTIONS**
 
