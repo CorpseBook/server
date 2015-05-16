@@ -4,10 +4,12 @@ class ContributionsController < ApplicationController
 
     story = Story.find(params[:story_id])
     contribution = Contribution.new(contribution_params)
-
     if contribution.save
-      story.contributions << contribution
-      render status: 200, json: {        
+      story.add_contribution(contribution)
+      story.complete! if story.completed?
+
+
+      render status: 200, json: {
         contribution: contribution
       }
     else
@@ -20,7 +22,7 @@ class ContributionsController < ApplicationController
   private
 
   def contribution_params
-    params.require(:contribution).permit(:content)
+    params.require(:contribution).permit(:content, :username)
   end
 
 end

@@ -7,7 +7,11 @@ Rails.application.routes.draw do
     resources :contributions, only: [:create]
   end
 
-  get '/stories/nearby' => "stories#nearby"
+  # The following 2 routes aren't restful but stories/completed is perceived as stories/:id
+  get '/nearby', to: "stories#nearby", as: :nearby
+  get '/completed', to: "stories#completed", as: :completed
+
+  get '/stories/:story_id/in_range', to: "stories#in_range", as: 'in_range'
 
   controller :stories, path: '/' do
     match 'stories', to: "stories#create", via: [ :post, :options]
@@ -16,6 +20,10 @@ Rails.application.routes.draw do
   controller :contributions, path: "/stories/:story_id/" do
     match 'contributions', to: "contributions#create", via: [ :post, :options]
   end
+
+  # controller :stories, path: "/stories/:id/" do
+  #   match 'in_range', to: "stories#in_range", via: [ :get], as: 'in_range'
+  # end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
