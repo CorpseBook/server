@@ -18,7 +18,8 @@ class StoriesController < ApplicationController
     # nearby = Location.within(range, :origin => coordinates)
     # nearby = Location.find(:origin => coordinates, :within => 10)
     nearby_stories = Story.joins(:location).within(range, :origin => coordinates)
-    render status: 200, json: { nearby_stories: nearby_stories }
+    # render status: 200, json: { nearby_stories: nearby_stories }
+    render status: 200, json: nearby_stories.map { |story| {id: story.id, contribution_limit: story.contribution_limit, contributions: story.contributions.length, title: story.title.to_json, lat: story.location.lat.to_json, lng: story.location.lng.to_json} }
   end
 
   def in_range
