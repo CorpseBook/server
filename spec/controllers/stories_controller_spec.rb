@@ -4,9 +4,10 @@ RSpec.describe StoriesController, type: :controller do
 
 
   describe "#index" do
-    it "should return all the stories as json" do
+    it "should return the last 10 updated incomplete stories as json" do
       get :index, :format => :json
-      expect(response.body).to eq(Story.all.to_json)
+      # This test needs a rewrite as uses code from the method itself
+      expect(response.body).to eq(Story.where(completed: false).order(updated_at: :desc).limit(10).to_json)
     end
   end
 
@@ -75,6 +76,16 @@ RSpec.describe StoriesController, type: :controller do
       expect(response.body).to include(@akl_story.to_json)
     end
 
+  end
+
+  describe "#completed" do
+    before(:each) do
+      Story.create(title: "something", contribution_limit: 10)
+      get :completed
+    end
+    it "should return complete stories as json" do
+      expect(response.body).to eq(Story.where(completed: true).to_json)
+    end
   end
 
   after(:all) do
