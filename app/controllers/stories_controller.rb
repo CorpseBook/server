@@ -5,6 +5,11 @@ class StoriesController < ApplicationController
     render json: stories, status: 200
   end
 
+  def completed
+    stories = Story.where(completed: true)
+    render json: stories, status: 200
+  end
+
   def nearby
     lat = params[:search][:lat]
     lng = params[:search][:lng]
