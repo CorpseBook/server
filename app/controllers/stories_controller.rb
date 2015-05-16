@@ -1,7 +1,8 @@
 class StoriesController < ApplicationController
 
   def index
-    render json: Story.all
+    stories = Story.where(completed: false).order(updated_at: :desc).limit(10)
+    render json: stories, status: 200
   end
 
   def nearby
