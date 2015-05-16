@@ -5,11 +5,17 @@ Rails.application.routes.draw do
     resources :contributions, only: [:create]
   end
 
-  get '/stories/nearby' => "stories#nearby"
+  get '/stories/nearby', to: "stories#nearby", as: 'nearby'
 
   controller :stories, path: '/' do
     match 'stories', to: "stories#create", via: [ :post, :options]
   end
+
+  # controller :stories, path: '/stories/' do
+  #   match 'nearby', to: "stories#nearby", via: [ :get], as: 'nearby'
+  # end
+
+  # match '/nearby', controller: :stories, action: :nearby, via: [:get]
 
   controller :contributions, path: "/stories/:story_id/" do
     match 'contributions', to: "contributions#create", via: [ :post, :options]
