@@ -6,7 +6,7 @@ class ContributionsController < ApplicationController
     contribution = Contribution.new(contribution_params)
 
     if contribution.save
-      story.add_contributions(contribution)
+      story.add_contribution(contribution)
       render status: 200, json: {
         contribution: contribution
       }
