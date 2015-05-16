@@ -82,6 +82,7 @@ RSpec.describe Story, type: :model do
         Contribution.destroy_all
         Story.destroy_all
       end
+
     end
 
 end
