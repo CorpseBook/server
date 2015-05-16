@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   root to: 'home#index'
 
-  get :token, controller: 'application'
+  post :token, controller: 'application'
 
   resources :stories do
     resources :contributions, only: [:create]

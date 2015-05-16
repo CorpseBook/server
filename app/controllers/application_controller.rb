@@ -1,4 +1,4 @@
-class ApplicationController < ActionController::Base
+class ApplicationController < ActionController::API
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
   include ActionController::HttpAuthentication::Basic::ControllerMethods
@@ -8,7 +8,7 @@ class ApplicationController < ActionController::Base
 
   skip_before_filter :verify_authenticity_token
 
-  protect_from_forgery with: :null_session, if: Proc.new { |c| c.request.format == 'application/json' }
+  # protect_from_forgery with: :null_session, if: Proc.new { |c| c.request.format == 'application/json' }
 
    before_filter :cors_preflight_check
    after_filter :cors_set_access_control_headers
@@ -45,10 +45,10 @@ class ApplicationController < ActionController::Base
    end
 
    def token
-
-    authenticate_with_http_basic do |email, password|
-      user = User.find_by(email: email)
-        if user && user.password == password
+    authenticate_with_http_basic do
+      user = User.find_by(email: params[:email])
+        if user && user.password == params[:password]
+          puts user.auth_token
           render json: { token: user.auth_token }
         else
           render json: { error: 'Incorrect credentials' }, status: 401
