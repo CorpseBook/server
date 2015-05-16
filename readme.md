@@ -1,39 +1,7 @@
-**Development Branch** = current 100% working app, pull from here before you push your own brach.
+**Development Branch** = current 100% working app, pull from here before you push your own branch.
 
-Hello World Branch = The Hello World server
-  - https://corpsebook.herokuapp.com/
-  - https://git.heroku.com/corpsebook.git
-
-**Draft One** = Original server creation brach. Currently in use for production of story and contribution routes
  - https://corpsebook-server.herokuapp.com/
  - https://git.heroku.com/corpsebook-server.git
-
-**Search Nearby** = Most up to date server branch, with below routes and nearby (search radius) route in development (as of Friday evening). Heroku link as above.
- 
-**ROUTES:**
-
-  /stories 
-    -GET 
-      - returns all stories 
-      - will return each as: {story: {id: 1, title: "title", contribution_limit: 45, completed: false}}
-
-  -POST
-    - create a new story
-    - needs to take input as: {story: { title: "title", contribution_limit: 45}}
-    - failure status 400
-    
-  /stories/:id 
-    -GET 
-      - returns the title and contributions or last contribution of story :
-      * IF INCOMPLETE
-      - will return as: { title: "story title", last_contribution: { story_id: story_id, content: "content" } }
-      * IF COMPLETED
-      -  will return as: { title: "story title", all_contributions: { [story_id: story_id, content: "content"], [story_id: story_id, content: "content"]... } }
-
-  /stories/:story_id/contributions 
-    -POST 
-      - create a contribution for a specific story 
-      - needs to take input as: {contribution: {content: "content"}}
 
 **HEROKU INSTRUCTIONS**
 
