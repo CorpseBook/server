@@ -12,15 +12,25 @@ Hello World Branch = The Hello World server
  
 **ROUTES:**
 
-  /stories
-    -GET return all stories
-    -POST create a story
+  /stories 
+    -GET 
+      - returns all stories 
+      - will return each as: {story: {id: 1, title: "title", contribution_limit: 45, completed: false}}
 
-  /stories/:id
-    -GET returns the title and contributions (last only if story is not completed, all if story is completed) for a     story
-  
-  /stories/:story_id/contributions
-    -POST create a contribution for a specific story
+  -POST
+    - create a new story
+    - needs to take input as: {story: { title: "title", contribution_limit: 45}}
+    - failure status 400
+    
+  /stories/:id 
+    -GET 
+      - returns the title and contributions (last only if story is not completed, all if story is completed) for a story 
+      - will return as: { title: "story title", all_contributions/last_contribution: { story_id: story_id, content: "content" } }
+
+  /stories/:story_id/contributions 
+    -POST 
+      - create a contribution for a specific story 
+      - needs to take input as: {contribution: {content: "content"}}
 
 **HEROKU INSTRUCTIONS**
 
