@@ -42,6 +42,8 @@ class ApplicationController < ActionController::API
 
    end
 
+   # A user can sign up with email + password and is assigned a auth_token
+
    def sign_up
     user = User.new(user_params)
     if user.save
@@ -51,10 +53,16 @@ class ApplicationController < ActionController::API
     end
    end
 
+   # A user can login with email + password. Their auth_token is rendered. The client must save the token as an Authorization header. This will then be sent with every request made to the API for authentication.
+   # For Ajax:
+   # $.ajaxSetup({
+   #     headers: { 'Authorization': "Token token="+token }
+   # });
+
    def token
-    user = User.find_by(email: params[:user][:email])
-    if user && user.password == params[:user][:password]
-        render json: { token: user.auth_token }
+    user = User.find_by(email: user_params[:email])
+    if user && user.password == user_params[:password]
+        render json: { token: user.auth_token, user: user }
       else
         render json: { error: 'Incorrect credentials' }, status: 401
     end
@@ -69,14 +77,21 @@ class ApplicationController < ActionController::API
     # end
   end
 
-  def sign_off
+  # A user can sign out by having their auth_token reset. Their Authorization header will no longer match and fail to pass authentication
 
+  def sign_out
+    authenticate_with_http_token do |token, options|
+       user = User.find_by(auth_token: token)
+       user.auth_token = SecureRandom.hex
+      render json: {message: "You have signed out."}
+    end
   end
 
   private
 
   def authenticate_user_from_token
-    unless authenticate_with_http_token { |token, options| User.find_by(auth_token: token) }
+    unless authenticate_with_http_token { |token, options|
+      User.find_by(auth_token: token) }
        render json: { error: 'Bad Token'}, status: 401
      end
   end

@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
   root to: 'home#index'
 
-  post :token, controller: 'application'
-  post :sign_up, controller: 'application'
-  post :sign_out, controller: 'application'
+  # post :token, controller: 'application'
+  # post :sign_up, controller: 'application'
+  # get '/sign_out', to:"application#destroy", as: :sign_out
 
   resources :stories do
     resources :contributions, only: [:create]
@@ -19,8 +19,12 @@ Rails.application.routes.draw do
     match 'stories', to: "stories#create", via: [ :post, :options]
   end
 
+  controller :contributions, path: "/stories/:story_id/" do
+    match 'contributions', to: "contributions#create", via: [ :post, :options]
+  end
+
   controller :application, path: '/' do
-    match 'token', to: "application#rails token", via: [ :post, :options]
+    match 'token', to: "application#token", via: [ :post, :options]
   end
 
   controller :application, path: '/' do
@@ -31,9 +35,6 @@ Rails.application.routes.draw do
     match 'sign_out', to: "application#sign_out", via: [ :post, :options]
   end
 
-  controller :contributions, path: "/stories/:story_id/" do
-    match 'contributions', to: "contributions#create", via: [ :post, :options]
-  end
 
   # controller :stories, path: "/stories/:id/" do
   #   match 'in_range', to: "stories#in_range", via: [ :get], as: 'in_range'

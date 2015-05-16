@@ -17,7 +17,7 @@ When running heroku commands make sure they work by saying
  ```your-command corpse-book-server```
 
 
-Harriet's secret testing ajax
+Harriet's token testing ajax
 
  $(document).ready(function(){
    $.ajax({
