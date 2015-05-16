@@ -5,14 +5,21 @@ class StoriesController < ApplicationController
   end
 
   def nearby
-    coordinates = params[:coordinates]
-    range = params[:range]
-    nearby = Location.within(range, :origin => coordinates)
+    lat = params[:search][:lat]
+    lng = params[:search][:lng]
+    coordinates = [lat, lng]
+    range = params[:search].fetch(:range, 1000)
+    # nearby = Location.within(range, :origin => coordinates)
+    # nearby = Location.find(:origin => coordinates, :within => 10)
+    nearby_stories = Story.joins(:location).within(range, :origin => coordinates)
+    render status: 200, json: { nearby_stories: nearby_stories }
   end
 
   def create
-    new_story = Story.new(story_params)
+    new_story = Story.new(title: story_params[:title], contribution_limit: story_params[:contribution_limit])
+    new_location = Location.new(lat: story_params[:lat], lng: story_params[:lng])
     if new_story.save
+      new_story.location = new_location
       render status: 200, json: {
         story: new_story,
       }
@@ -43,6 +50,6 @@ class StoriesController < ApplicationController
   private
 
   def story_params
-    params.require(:story).permit(:title, :contribution_limit)
+    params.require(:story).permit(:title, :contribution_limit, :lat, :lng)
   end
 end
