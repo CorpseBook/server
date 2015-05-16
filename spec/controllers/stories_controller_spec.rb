@@ -71,9 +71,8 @@ RSpec.describe StoriesController, type: :controller do
       expect(response.status).to eq(200)
     end
 
-    it "should return a collection of locations" do
-      p response.body
-      # expect(response.body).to include(@akl.to_json)
+    it "should return the akl story which is within range" do
+      expect(response.body).to include(@akl_story.to_json)
     end
 
   end
