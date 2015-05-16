@@ -4,14 +4,13 @@ class ApplicationController < ActionController::API
   include ActionController::HttpAuthentication::Basic::ControllerMethods
   include ActionController::HttpAuthentication::Token::ControllerMethods
 
-  before_filter :authenticate_user_from_token, except: [:token]
+  before_filter :cors_preflight_check, :authenticate_user_from_token, except: [:token]
 
   skip_before_filter :verify_authenticity_token
 
   # protect_from_forgery with: :null_session, if: Proc.new { |c| c.request.format == 'application/json' }
 
-   before_filter :cors_preflight_check
-   after_filter :cors_set_access_control_headers
+  after_filter :cors_set_access_control_headers
 
   def cors_set_access_control_headers
      headers['Access-Control-Allow-Origin'] = '*'
@@ -21,7 +20,6 @@ class ApplicationController < ActionController::API
    end
 
    def cors_preflight_check
-    p request.method
      if request.method == 'OPTIONS'
        # headers['Access-Control-Allow-Origin'] = '*'
        # headers['Access-Control-Allow-Methods'] = 'POST, GET, PUT, DELETE, OPTIONS'
@@ -45,15 +43,21 @@ class ApplicationController < ActionController::API
    end
 
    def token
-    authenticate_with_http_basic do
-      user = User.find_by(email: params[:email])
-        if user && user.password == params[:password]
-          puts user.auth_token
-          render json: { token: user.auth_token }
-        else
-          render json: { error: 'Incorrect credentials' }, status: 401
-        end
+    user = User.find_by(email: params[:email])
+    if user && user.password == params[:password]
+        render json: { token: user.auth_token }
+      else
+        render json: { error: 'Incorrect credentials' }, status: 401
     end
+    # authenticate_with_http_basic do |email, password|
+    #   puts "inside the do"
+    #   user = User.find_by(email: params[:email])
+    #   if user && user.password == params[:password]
+      #   render json: { token: user.auth_token }
+      # else
+      #   render json: { error: 'Incorrect credentials' }, status: 401
+    #   end
+    # end
   end
 
   private

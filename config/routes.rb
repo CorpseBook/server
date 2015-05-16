@@ -17,6 +17,10 @@ Rails.application.routes.draw do
     match 'stories', to: "stories#create", via: [ :post, :options]
   end
 
+  controller :application, path: '/' do
+    match 'token', to: "application#rails token", via: [ :post, :options]
+  end
+
   controller :contributions, path: "/stories/:story_id/" do
     match 'contributions', to: "contributions#create", via: [ :post, :options]
   end
