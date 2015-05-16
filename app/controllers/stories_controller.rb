@@ -21,6 +21,16 @@ class StoriesController < ApplicationController
     render status: 200, json: { nearby_stories: nearby_stories }
   end
 
+  def in_range
+    story = Story.find(params[:story_id])
+    lat = params[:search][:lat]
+    lng = params[:search][:lng]
+    coordinates = [lat, lng]
+    range = params[:search].fetch(:range, 1000)
+    nearby_stories = Story.joins(:location).within(range, :origin => coordinates)
+    render status: 200, json: { in_range: nearby_stories.include?(story) }
+  end
+
   def create
     new_story = Story.new(title: story_params[:title], contribution_limit: story_params[:contribution_limit])
     new_location = Location.new(lat: story_params[:lat], lng: story_params[:lng])
