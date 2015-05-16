@@ -7,7 +7,7 @@ class ContributionsController < ApplicationController
 
     if contribution.save
       story.contributions << contribution
-      render status: 200, json: {        
+      render status: 200, json: {
         contribution: contribution
       }
     else
@@ -20,7 +20,7 @@ class ContributionsController < ApplicationController
   private
 
   def contribution_params
-    params.require(:contribution).permit(:content)
+    params.require(:contribution).permit(:content, :username)
   end
 
 end

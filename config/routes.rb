@@ -5,7 +5,9 @@ Rails.application.routes.draw do
     resources :contributions, only: [:create]
   end
 
-  get '/stories/nearby', to: "stories#nearby", as: 'nearby'
+  # The following 2 routes aren't restful but stories/completed is perceived as stories/:id
+  get '/nearby', to: "stories#nearby", as: :nearby
+  get '/completed', to: "stories#completed", as: :completed
 
   get '/stories/:story_id/in_range', to: "stories#in_range", as: 'in_range'
 
