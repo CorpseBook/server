@@ -15,3 +15,39 @@ NB:
 
 When running heroku commands make sure they work by saying
  ```your-command corpse-book-server```
+
+
+Harriet's secret testing ajax
+
+ $(document).ready(function(){
+   $.ajax({
+     url: "http://localhost:3000/token",
+     type: "POST",
+     data: {email: "user@example.com",
+             password: "password"
+           },
+     success: function(data, status){
+       console.log(data)
+       var token = data.token
+       $.ajaxSetup({
+           headers: { 'Authorization': "Token token="+token }
+       });
+       $.ajax({
+         url: "http://localhost:3000/stories",
+         type: "GET",
+         // data: {story:
+         //         {title: "soemthing"}
+         //       },
+         success: function(data, status){
+           console.log(data, status)
+         },
+         failure: function(data, status){
+           console.log(data, status)
+         }
+       })
+     },
+     failure: function(data,status){
+       console.log(data, status)
+     }
+   })
+ });

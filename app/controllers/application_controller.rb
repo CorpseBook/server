@@ -4,7 +4,7 @@ class ApplicationController < ActionController::API
   include ActionController::HttpAuthentication::Basic::ControllerMethods
   include ActionController::HttpAuthentication::Token::ControllerMethods
 
-  before_filter :cors_preflight_check, :authenticate_user_from_token, except: [:token]
+  before_filter :cors_preflight_check, :authenticate_user_from_token, except: [:token, :sign_up]
 
   skip_before_filter :verify_authenticity_token
 
@@ -42,9 +42,18 @@ class ApplicationController < ActionController::API
 
    end
 
+   def sign_up
+    user = User.new(user_params)
+    if user.save
+      render status: 200, json: { token: user.auth_token }
+    else
+      render json: { error: 'Incorrect user information' }, status: 401
+    end
+   end
+
    def token
-    user = User.find_by(email: params[:email])
-    if user && user.password == params[:password]
+    user = User.find_by(email: params[:user][:email])
+    if user && user.password == params[:user][:password]
         render json: { token: user.auth_token }
       else
         render json: { error: 'Incorrect credentials' }, status: 401
@@ -53,11 +62,15 @@ class ApplicationController < ActionController::API
     #   puts "inside the do"
     #   user = User.find_by(email: params[:email])
     #   if user && user.password == params[:password]
-      #   render json: { token: user.auth_token }
-      # else
-      #   render json: { error: 'Incorrect credentials' }, status: 401
+    #     render json: { token: user.auth_token }
+    #   else
+    #     render json: { error: 'Incorrect credentials' }, status: 401
     #   end
     # end
+  end
+
+  def sign_off
+
   end
 
   private
@@ -66,6 +79,10 @@ class ApplicationController < ActionController::API
     unless authenticate_with_http_token { |token, options| User.find_by(auth_token: token) }
        render json: { error: 'Bad Token'}, status: 401
      end
+  end
+
+  def user_params
+    params.require(:user).permit(:email, :password)
   end
 
 

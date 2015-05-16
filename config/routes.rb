@@ -2,6 +2,8 @@ Rails.application.routes.draw do
   root to: 'home#index'
 
   post :token, controller: 'application'
+  post :sign_up, controller: 'application'
+  post :sign_out, controller: 'application'
 
   resources :stories do
     resources :contributions, only: [:create]
@@ -19,6 +21,14 @@ Rails.application.routes.draw do
 
   controller :application, path: '/' do
     match 'token', to: "application#rails token", via: [ :post, :options]
+  end
+
+  controller :application, path: '/' do
+    match 'sign_up', to: "application#sign_up", via: [ :post, :options]
+  end
+
+  controller :application, path: '/' do
+    match 'sign_out', to: "application#sign_out", via: [ :post, :options]
   end
 
   controller :contributions, path: "/stories/:story_id/" do
