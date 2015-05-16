@@ -62,8 +62,6 @@ RSpec.describe StoriesController, type: :controller do
       @akl_story = Story.create(location: @akl)
       @welly_story = Story.create(location: @welly)
       @nelly_story = Story.create(location: @nelly)
-      # get :"stories/nearby", range: 10, coordinates:
-
       get :nearby, search: {lat:-36.840556, lng: 174.74}
     end
 
@@ -74,7 +72,26 @@ RSpec.describe StoriesController, type: :controller do
     it "should return the akl story which is within range" do
       expect(response.body).to include(@akl_story.to_json)
     end
+  end
 
+  describe "#in_range" do
+    before(:each) do
+      @akl = FactoryGirl.create(:auckland)
+      @welly = FactoryGirl.create(:wellington)
+      @nelly = FactoryGirl.create(:nelson)
+      @akl_story = Story.create(location: @akl)
+      @welly_story = Story.create(location: @welly)
+      @nelly_story = Story.create(location: @nelly)
+      get :in_range, :story_id => @welly_story.id, search: {lat:-36.840556, lng: 174.74}
+    end
+
+    it "should return status 200" do
+      expect(response.status).to eq(200)
+    end
+
+    it "should return true if the story is in range" do
+      expect(response.body).to include("true")
+    end
   end
 
   after(:all) do

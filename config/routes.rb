@@ -7,19 +7,19 @@ Rails.application.routes.draw do
 
   get '/stories/nearby', to: "stories#nearby", as: 'nearby'
 
+  get '/stories/:story_id/in_range', to: "stories#in_range", as: 'in_range'
+
   controller :stories, path: '/' do
     match 'stories', to: "stories#create", via: [ :post, :options]
   end
 
-  # controller :stories, path: '/stories/' do
-  #   match 'nearby', to: "stories#nearby", via: [ :get], as: 'nearby'
-  # end
-
-  # match '/nearby', controller: :stories, action: :nearby, via: [:get]
-
   controller :contributions, path: "/stories/:story_id/" do
     match 'contributions', to: "contributions#create", via: [ :post, :options]
   end
+
+  # controller :stories, path: "/stories/:id/" do
+  #   match 'in_range', to: "stories#in_range", via: [ :get], as: 'in_range'
+  # end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
