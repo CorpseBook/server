@@ -24,8 +24,11 @@ Hello World Branch = The Hello World server
     
   /stories/:id 
     -GET 
-      - returns the title and contributions (last only if story is not completed, all if story is completed) for a story 
-      - will return as: { title: "story title", all_contributions/last_contribution: { story_id: story_id, content: "content" } }
+      - returns the title and contributions or last contribution of story :
+      * IF INCOMPLETE
+      - will return as: { title: "story title", last_contribution: { story_id: story_id, content: "content" } }
+      * IF COMPLETED
+      -  will return as: { title: "story title", all_contributions: { [story_id: story_id, content: "content"], [story_id: story_id, content: "content"]... } }
 
   /stories/:story_id/contributions 
     -POST 
