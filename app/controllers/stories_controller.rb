@@ -5,12 +5,14 @@ class StoriesController < ApplicationController
   end
 
   def nearby
-    coordinates = params[:coordinates]
-    range = params[:range]
-    nearby = Location.within(range, :origin => coordinates)
-    # should return a collection of stories, currently returns a collection of locations
-    # each location has lat and lng properties
-    stories = Story.locations.within(range, :origin => coordinates)
+    lat = params[:search][:lat]
+    lng = params[:search][:lng]
+    coordinates = [lat, lng]
+    range = 1000
+    # nearby = Location.within(range, :origin => coordinates)
+    # nearby = Location.find(:origin => coordinates, :within => 10)
+    nearby_stories = Story.joins(:location).within(range, :origin => coordinates)
+    render status: 200, json: { nearby_stories: nearby_stories }
   end
 
   def create

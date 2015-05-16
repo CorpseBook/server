@@ -26,6 +26,10 @@ RSpec.describe StoriesController, type: :controller do
     it "should return an HTTP response of 200 if successful" do
       expect(response.status).to eq(200)
     end
+
+    it "should contains location object" do
+      expect(Story.last.location.lat).to eq(-41.270833)
+    end
   end
 
 
@@ -50,19 +54,29 @@ RSpec.describe StoriesController, type: :controller do
     end
   end
 
-  # describe "#nearby" do
-  #   before(:each) do
-  #     akl = FactoryGirl.create(:auckland)
-  #     @welly = FactoryGirl.create(:wellington)
-  #     nelly = FactoryGirl.create(:nelson)
-  #     @akl_story = Story.create(location: akl)
-  #     @welly_story = Story.create(location: @welly)
-  #     @nelly_story = Story.create(location: nelly)
-  #     # get :"stories/nearby", range: 10, coordinates:
-  #   end
+  describe "#nearby" do
+    before(:each) do
+      @akl = FactoryGirl.create(:auckland)
+      @welly = FactoryGirl.create(:wellington)
+      @nelly = FactoryGirl.create(:nelson)
+      @akl_story = Story.create(location: @akl)
+      @welly_story = Story.create(location: @welly)
+      @nelly_story = Story.create(location: @nelly)
+      # get :"stories/nearby", range: 10, coordinates:
 
+      get :nearby, search: {lat:-36.840556, lng: 174.74}
+    end
 
-  # end
+    it "should return status 200" do
+      expect(response.status).to eq(200)
+    end
+
+    it "should return a collection of locations" do
+      p response.body
+      # expect(response.body).to include(@akl.to_json)
+    end
+
+  end
 
   after(:all) do
     Story.destroy_all
