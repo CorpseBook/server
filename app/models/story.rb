@@ -5,8 +5,14 @@ class Story < ActiveRecord::Base
 
   def add_contribution(contribution)
     self.contributions << contribution
-    if self.contributions.length >= self.contribution_limit
-      self.completed = true
-    end
   end
+
+  def completed?
+    self.contributions.length >= self.contribution_limit
+  end
+
+  def complete!
+      self.completed = true
+  end
+
 end

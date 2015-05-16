@@ -37,12 +37,50 @@ RSpec.describe Story, type: :model do
         expect(@story.contributions.length).to eq(1)
       end
 
-      # it "returns true for completion property if contributions limit has been met" do
-      #   expect(@story)
-      # end
+      after(:each) do
+        Contribution.destroy_all
+        Story.destroy_all
+      end
+
+    end
+
+    describe "#completed?" do
+      before do
+        @story = FactoryGirl.create(:story)
+        @story.add_contribution(FactoryGirl.create(:contribution))
+      end
+
+      it "returns false if contributions limit has not been met" do
+        expect(@story.completed?).to eq(false)
+      end
+
+      it "returns true if contributions limit has been met" do
+        9.times {@story.add_contribution(FactoryGirl.create(:contribution))}
+        expect(@story.completed?).to eq(true)
+      end
 
       after(:each) do
         Contribution.destroy_all
+        Story.destroy_all
+      end
+
+    end
+
+    describe "#complete!" do
+
+      before do
+        @story = FactoryGirl.create(:story)
+        10.times { @story.add_contribution(FactoryGirl.create(:contribution)) }
+        @story.complete!
+      end
+
+      it "makes story completed state return true" do
+        expect(@story.completed).to eq(true)
+      end
+
+      after do
+        Contribution.destroy_all
+        Story.destroy_all
       end
     end
 
