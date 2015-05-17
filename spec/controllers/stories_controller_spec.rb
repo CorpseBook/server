@@ -2,9 +2,9 @@ require 'rails_helper'
 
 RSpec.describe StoriesController, type: :controller do
 
-
   describe "#index" do
     it "should return the last 10 updated incomplete stories as json" do
+      ApplicationController.stub(:authenticate_user_from_token).and_return(true)
       get :index, :format => :json
       # This test needs a rewrite as uses code from the method itself
       expect(response.body).to eq(Story.where(completed: false).order(updated_at: :desc).limit(10).to_json)
