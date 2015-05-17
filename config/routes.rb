@@ -38,8 +38,6 @@ Rails.application.routes.draw do
   controller :application, path: '/' do
     match 'sign_out', to: "application#sign_out", via: [ :post, :options]
   end
-
-
   # controller :stories, path: "/stories/:id/" do
   #   match 'in_range', to: "stories#in_range", via: [ :get], as: 'in_range'
   # end
