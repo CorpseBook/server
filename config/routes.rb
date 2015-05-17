@@ -19,6 +19,10 @@ Rails.application.routes.draw do
     match 'contributions', to: "contributions#create", via: [ :post, :options]
   end
 
+  controller :stories, path: '/' do
+    match '/stories/:story_id/in_range', to: "stories#in_range", via: [ :post, :options]
+  end
+
   # controller :stories, path: "/stories/:id/" do
   #   match 'in_range', to: "stories#in_range", via: [ :get], as: 'in_range'
   # end
