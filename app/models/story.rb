@@ -12,7 +12,8 @@ class Story < ActiveRecord::Base
   end
 
   def complete!
-      self.completed = true
+    self.completed = true
+    self.save
   end
 
 end
