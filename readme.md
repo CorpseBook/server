@@ -51,3 +51,48 @@ Harriet's token testing ajax
      }
    })
  });
+
+
+ To hit /token with ajax:
+
+ $(document).ready(function(){
+   $.ajax({
+     url: "http://localhost:3000/token",
+     type: "POST",
+     data: {user:
+               {email: "user3@example.com",
+                   password: "password"
+                 }
+           },
+     success: function(data, status){
+       console.log(data)
+     }
+     failure: function(data,status){
+       console.log(data, status)
+     }
+   })
+ });
+
+ To hit /token with angular:
+
+ $scope.testPost = function ()
+ {
+   var config = {
+     method: 'POST',
+     url: 'http://localhost:3000/token',
+     headers: {
+       'Content-Type': 'application/json',
+       'Accept': 'application/json'
+     },
+     data: {user:
+             {email: "user3@example.com",
+               password: "password"
+             }
+           }
+   }
+
+   $http(config)
+   .success(function (data){
+     console.log(data);
+   });
+ }
