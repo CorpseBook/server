@@ -14,7 +14,7 @@ class StoriesController < ApplicationController
     lat = params[:search][:lat]
     lng = params[:search][:lng]
     coordinates = [lat, lng]
-    range = params[:search].fetch(:range, 1000)
+    range = params[:search].fetch(:range, 5)
     # nearby = Location.within(range, :origin => coordinates)
     # nearby = Location.find(:origin => coordinates, :within => 10)
     nearby_stories = Story.joins(:location).within(range, :origin => coordinates)
