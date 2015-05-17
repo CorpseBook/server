@@ -23,6 +23,10 @@ Rails.application.routes.draw do
     match 'contributions', to: "contributions#create", via: [ :post, :options]
   end
 
+  controller :stories, path: '/' do
+    match '/stories/:story_id/in_range', to: "stories#in_range", via: [ :post, :options]
+  end
+
   controller :application, path: '/' do
     match 'token', to: "application#token", via: [ :post, :options]
   end
