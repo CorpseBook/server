@@ -2,7 +2,7 @@ class StoriesController < ApplicationController
 
   def index
     stories = Story.where(completed: false).order(updated_at: :desc).limit(20)
-    render json: stories.map { |story| {id: story.id, contribution_limit: story.contribution_limit, contribution_length: story.contributions.length, last_contribution: story.contributions, title: story.title.to_json, lat: story.location.lat.to_json, lng: story.location.lng.to_json} }, status: 200
+    render json: stories.map { |story| {id: story.id, contribution_limit: story.contribution_limit, contribution_length: story.contributions.length, last_contribution: story.contributions.last, title: story.title.to_json, lat: story.location.lat.to_json, lng: story.location.lng.to_json} }, status: 200
   end
 
   def completed
