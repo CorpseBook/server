@@ -60,7 +60,6 @@ class ApplicationController < ActionController::API
    # });
 
    def token
-    puts params
     user = User.find_by(email: user_params[:email])
     if user && user.password == user_params[:password]
         render json: { token: user.auth_token, user: user }
