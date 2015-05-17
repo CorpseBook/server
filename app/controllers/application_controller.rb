@@ -4,7 +4,7 @@ class ApplicationController < ActionController::API
   include ActionController::HttpAuthentication::Basic::ControllerMethods
   include ActionController::HttpAuthentication::Token::ControllerMethods
 
-  before_filter :cors_preflight_check# :authenticate_user_from_token, except: [:token, :sign_up]
+  before_filter :cors_preflight_check, :authenticate_user_from_token, except: [:token, :sign_up]
 
   skip_before_filter :verify_authenticity_token
 
@@ -60,6 +60,7 @@ class ApplicationController < ActionController::API
    # });
 
    def token
+    puts params
     user = User.find_by(email: user_params[:email])
     if user && user.password == user_params[:password]
         render json: { token: user.auth_token, user: user }
