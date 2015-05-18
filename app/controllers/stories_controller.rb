@@ -26,7 +26,7 @@ class StoriesController < ApplicationController
     range = params[:search].fetch(:range, 5)
     @nearby_stories = Story.joins(:location).within(range, :origin => coordinates)
     render json: @nearby_stories.to_json(
-      :methods => [:contribution_length],
+      :methods => [:contribution_length, :first_contribution, :last_contribution],
       :only => [:id, :title, :contribution_limit, :completed],
       :include => [:location => { :only => [:lat, :lng] }]
     ), status: 200
