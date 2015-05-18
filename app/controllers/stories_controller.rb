@@ -4,7 +4,7 @@ class StoriesController < ApplicationController
     stories = Story.where(completed: false).order(updated_at: :desc).limit(10)
     render json: stories.to_json(
       :methods => [:contributions_length, :last_contribution],
-      :only => [:id, :contribution_limit, :title],
+      :only => [:id, :contribution_limit, :title, :completed],
       :include => [:location => { :only => [:lat, :lng] }]
     ), status: 200
   end
@@ -62,8 +62,6 @@ class StoriesController < ApplicationController
 
   def show
     story = Story.find(params[:id])
-    all_contributions = story.contributions
-    last_contribution = story.contributions.last
     if story.completed
       render json: story.to_json(
         :methods => [:all_contributions, :contributions_length],
