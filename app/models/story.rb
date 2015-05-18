@@ -16,4 +16,20 @@ class Story < ActiveRecord::Base
     self.save
   end
 
+  def contribution_length
+    self.contributions.length
+  end
+
+  def last_contribution
+    self.contributions.last
+  end
+
+  def first_contribution
+    self.contributions.first
+  end
+
+  def all_contributions
+    self.contributions
+  end
+
 end

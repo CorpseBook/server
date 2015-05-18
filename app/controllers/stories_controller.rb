@@ -1,13 +1,22 @@
 class StoriesController < ApplicationController
 
   def index
-    stories = Story.where(completed: false).order(updated_at: :desc).limit(20)
-    render json: stories.map { |story| {id: story.id, contribution_limit: story.contribution_limit,  completed: story.completed, contribution_length: story.contributions.length, last_contribution: story.contributions.last, title: story.title.to_json, lat: story.location.lat.to_json, lng: story.location.lng.to_json} }, status: 200
+    stories = Story.where(completed: false).order(updated_at: :desc).limit(10)
+    render json: stories.to_json(
+      :methods => [:contributions_length, :last_contribution],
+      :only => [:id, :contribution_limit, :title],
+      :include => [:location => { :only => [:lat, :lng] }]
+    ), status: 200
   end
 
   def completed
     stories = Story.where(completed: true)
-    render json: stories, status: 200
+    render json: stories.to_json(
+      :methods => [:first_contribution],
+      :only => [:id, :title],
+      :include => [:location => { :only => [:lat, :lng] }]
+    ), status: 200
+
   end
 
   def nearby
@@ -15,11 +24,8 @@ class StoriesController < ApplicationController
     lng = params[:search][:lng]
     coordinates = [lat, lng]
     range = params[:search].fetch(:range, 5)
-    # nearby = Location.within(range, :origin => coordinates)
-    # nearby = Location.find(:origin => coordinates, :within => 10)
     nearby_stories = Story.joins(:location).within(range, :origin => coordinates)
-    # render status: 200, json: { nearby_stories: nearby_stories }
-    render status: 200, json: nearby_stories.map { |story| {id: story.id, contribution_limit: story.contribution_limit, completed: story.completed, contribution_length: story.contributions.length, title: story.title.to_json, lat: story.location.lat.to_json, lng: story.location.lng.to_json} }
+    render status: 200, json: nearby_stories.to_json(:type => 'nearby')
   end
 
   def in_range
@@ -29,7 +35,9 @@ class StoriesController < ApplicationController
     coordinates = [lat, lng]
     range = params[:search].fetch(:range, 0.5)
     nearby_stories = Story.joins(:location).within(range, :origin => coordinates)
-    render status: 200, json: { in_range: nearby_stories.include?(story) }
+    render status: 200, json: {
+      in_range: nearby_stories.include?(story)
+    }
   end
 
   def create
@@ -53,27 +61,17 @@ class StoriesController < ApplicationController
     all_contributions = story.contributions
     last_contribution = story.contributions.last
     if story.completed
-      render json: {
-        id: story.id,
-        title: story.title,
-        lat: story.location.lat,
-        lng: story.location.lng,
-        completed: story.completed,
-        contribution_limit: story.contribution_limit,
-        contributions_length: story.contributions.length,
-        all_contributions: all_contributions
-      }
+      render json: story.to_json(
+        :methods => [:all_contributions, :contributions_length],
+        :only => [:id, :title, :completed, :contribution_limit],
+        :include => [:location => { :only => [:lat, :lng] }]
+      )
     else
-      render json: {
-        id: story.id,
-        title: story.title,
-        lat: story.location.lat,
-        lng: story.location.lng,
-         completed: story.completed,
-        contribution_limit: story.contribution_limit,
-        contributions_length: story.contributions.length,
-        last_contribution: last_contribution
-      }
+      render json: story.to_json(
+        :methods => [:last_contribution, :contributions_length],
+        :only => [:id, :title, :completed, :contribution_limit],
+        :include => [:location => { :only => [:lat, :lng] }]
+      )
     end
   end
 
