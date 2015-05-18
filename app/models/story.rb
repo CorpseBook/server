@@ -16,16 +16,12 @@ class Story < ActiveRecord::Base
     self.save
   end
 
-  def as_json(options={})
-    {
-      id: self.id,
-      contribution_limit: self.contribution_limit,
-      contribution_length: self.contributions.length,
-      last_contribution: self.contributions.last,
-      title: self.title.to_json,
-      lat: self.location.lat.to_json,
-      lng: self.location.lng.to_json
-    }
+  def contribution_length
+    self.contributions.length
+  end
+
+  def last_contribution
+    self.contributions.last
   end
 
 end

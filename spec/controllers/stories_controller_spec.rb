@@ -10,7 +10,7 @@ RSpec.describe StoriesController, type: :controller do
       4.times {create(:completed_story)}
       get :index, :format => :json
       # This test needs a rewrite as uses code from the method itself
-      expect(response.body).to eq(Story.where(completed: false).order(updated_at: :desc).limit(10).to_json)
+      expect(response.body).to eq(Story.where(completed: false).order(updated_at: :desc).limit(10).to_json(:type => 'completed'))
     end
   end
 
@@ -93,6 +93,10 @@ RSpec.describe StoriesController, type: :controller do
 
     it "should return the akl story which is within range" do
       expect(response.body).to include(@akl_story.to_json)
+    end
+
+    it "should reurn all nearby stories as json" do
+      # expect(response.body).to
     end
   end
 
