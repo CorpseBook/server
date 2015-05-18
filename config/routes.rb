@@ -21,4 +21,8 @@ Rails.application.routes.draw do
     match '/stories/:story_id/in_range', to: "stories#in_range", via: [ :post, :options]
   end
 
+  controller :stories, path: '/' do
+    match '/stories/nearby', to: "stories#nearby", via: [ :post, :options]
+  end
+
 end
