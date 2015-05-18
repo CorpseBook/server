@@ -1,15 +1,13 @@
 Rails.application.routes.draw do
   root to: 'home#index'
 
+  get '/stories/nearby', to: "stories#nearby", as: :nearby
+  get '/stories/completed', to: "stories#completed", as: :completed
+  get '/stories/:story_id/in_range', to: "stories#in_range", as: 'in_range'
+
   resources :stories do
     resources :contributions, only: [:create]
   end
-
-  # The following 2 routes aren't restful but stories/completed is perceived as stories/:id
-  get '/nearby', to: "stories#nearby", as: :nearby
-  get '/completed', to: "stories#completed", as: :completed
-
-  get '/stories/:story_id/in_range', to: "stories#in_range", as: 'in_range'
 
   controller :stories, path: '/' do
     match 'stories', to: "stories#create", via: [ :post, :options]

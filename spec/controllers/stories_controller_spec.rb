@@ -4,7 +4,10 @@ RSpec.describe StoriesController, type: :controller do
 
 
   describe "#index" do
+
     it "should return the last 10 updated incomplete stories as json" do
+      12.times {create(:story)}
+      4.times {create(:completed_story)}
       get :index, :format => :json
       # This test needs a rewrite as uses code from the method itself
       expect(response.body).to eq(Story.where(completed: false).order(updated_at: :desc).limit(10).to_json)
@@ -45,13 +48,17 @@ RSpec.describe StoriesController, type: :controller do
       expect(response.status).to eq(200)
     end
 
+    it "should return an HTTP response of 400 if an error occurs" do
+
+    end
+
   end
 
 
   describe "#show" do
     before do
-      @story = FactoryGirl.create(:story)
-      @contribution = FactoryGirl.create(:contribution)
+      @story = create(:story)
+      @contribution = create(:contribution)
       @story.contributions << @contribution
       get :show, id: @story.id
     end
@@ -71,9 +78,9 @@ RSpec.describe StoriesController, type: :controller do
 
   describe "#nearby" do
     before(:each) do
-      @akl = FactoryGirl.create(:auckland)
-      @welly = FactoryGirl.create(:wellington)
-      @nelly = FactoryGirl.create(:nelson)
+      @akl = create(:auckland)
+      @welly = create(:wellington)
+      @nelly = create(:nelson)
       @akl_story = Story.create(location: @akl)
       @welly_story = Story.create(location: @welly)
       @nelly_story = Story.create(location: @nelly)
@@ -91,9 +98,9 @@ RSpec.describe StoriesController, type: :controller do
 
   describe "#in_range" do
     before(:each) do
-      @akl = FactoryGirl.create(:auckland)
-      @welly = FactoryGirl.create(:wellington)
-      @nelly = FactoryGirl.create(:nelson)
+      @akl = create(:auckland)
+      @welly = create(:wellington)
+      @nelly = create(:nelson)
       @akl_story = Story.create(location: @akl)
       @welly_story = Story.create(location: @welly)
       @nelly_story = Story.create(location: @nelly)
