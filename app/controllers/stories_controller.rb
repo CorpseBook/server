@@ -69,7 +69,7 @@ class StoriesController < ApplicationController
         title: story.title,
         lat: story.location.lat,
         lng: story.location.lng,
-        completed: story.completed;
+        completed: story.completed,
         contribution_limit: story.contribution_limit,
         contributions_length: story.contributions.length,
         last_contribution: last_contribution
