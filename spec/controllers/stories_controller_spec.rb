@@ -5,6 +5,10 @@ RSpec.describe StoriesController, type: :controller do
 
   describe "#index" do
 
+    it "should find correct story" do
+
+    end
+
     it "should return the last 10 updated incomplete stories as json" do
       12.times {create(:story)}
       4.times {create(:completed_story)}
@@ -18,6 +22,7 @@ RSpec.describe StoriesController, type: :controller do
   end
 
   describe "#create" do
+
     it "should route to post" do
       should route(:post, '/stories').to(action: :create)
     end
@@ -49,10 +54,6 @@ RSpec.describe StoriesController, type: :controller do
 
     it "should return an HTTP response of 200 if successful" do
       expect(response.status).to eq(200)
-    end
-
-    it "should return an HTTP response of 400 if an error occurs" do
-
     end
 
   end
@@ -118,12 +119,19 @@ RSpec.describe StoriesController, type: :controller do
     end
 
     it "should return the akl story which is within range" do
-      expect(response.body).to include(@akl_story.to_json)
+      expect(response.body).to include(@nearby_stories.to_json(
+        :methods => [:contribution_length],
+        :only => [:id, :title, :contribution_limit, :completed],
+        :include => [:location => { :only => [:lat, :lng] }]
+      ))
     end
+
+
 
   end
 
   describe "#in_range" do
+
     before(:each) do
       @akl = create(:auckland)
       @welly = create(:wellington)
@@ -131,7 +139,6 @@ RSpec.describe StoriesController, type: :controller do
       @akl_story = Story.create(location: @akl)
       @welly_story = Story.create(location: @welly)
       @nelly_story = Story.create(location: @nelly)
-      get :in_range, :story_id => @welly_story.id, search: {lat:-36.840556, lng: 174.74}
     end
 
     it "should return status 200" do
@@ -139,8 +146,22 @@ RSpec.describe StoriesController, type: :controller do
     end
 
     it "should return true if the story is in range" do
+      get :in_range, :story_id => @akl_story.id, search: {lat:-36.840556, lng: 174.74}
       expect(response.body).to include("true")
     end
+
+    it "should return false if the story is not in range" do
+      get :in_range, :story_id => @welly_story.id, search: {lat:-36.840556, lng: 174.74}
+      expect(response.body).to include("false")
+    end
+
+    # it "should return nearby stories as json" do
+    #   expect(response.body).to include(@nearby_stories.to_json(
+    #     :methods => [:contribution_length],
+    #     :only => [:id, :title, :contribution_limit, :completed],
+    #     :include => [:location => { :only => [:lat, :lng] }]
+    #   ))
+    # end
   end
 
   describe "#completed" do
