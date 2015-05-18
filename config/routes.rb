@@ -28,8 +28,11 @@ Rails.application.routes.draw do
   end
 
   controller :application, path: '/' do
-    match 'token', to: "application#token", via: [ :post, :options]
+    match 'token', to: "application#token", via: [ :post ]
+    match 'token', to: "application#options", via: [ :options ]
   end
+
+
 
   controller :application, path: '/' do
     match 'sign_up', to: "application#sign_up", via: [ :post, :options]

@@ -4,13 +4,13 @@ class ApplicationController < ActionController::API
   include ActionController::HttpAuthentication::Basic::ControllerMethods
   include ActionController::HttpAuthentication::Token::ControllerMethods
 
-  before_filter :cors_preflight_check, :authenticate_user_from_token, except: [:token, :sign_up]
+  before_filter :cors_preflight_check, :authenticate_user_from_token, except: [:token, :options, :sign_up]
 
   skip_before_filter :verify_authenticity_token
 
   # protect_from_forgery with: :null_session, if: Proc.new { |c| c.request.format == 'application/json' }
 
-  after_filter :cors_set_access_control_headers
+  before_filter :cors_set_access_control_headers
 
   def cors_set_access_control_headers
      headers['Access-Control-Allow-Origin'] = '*'
@@ -43,6 +43,10 @@ class ApplicationController < ActionController::API
    end
 
    # A user can sign up with email + password and is assigned a auth_token
+
+  def options
+    render text: ""
+  end
 
    def sign_up
     user = User.new(user_params)
