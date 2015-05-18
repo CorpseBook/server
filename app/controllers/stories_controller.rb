@@ -1,8 +1,13 @@
 class StoriesController < ApplicationController
 
   def index
+<<<<<<< HEAD
     stories = Story.where(completed: false).order(updated_at: :desc).limit(10)
     render json: stories, status: 200
+=======
+    stories = Story.where(completed: false).order(updated_at: :desc).limit(20)
+    render json: stories.map { |story| {id: story.id, contribution_limit: story.contribution_limit,  completed: story.completed, contribution_length: story.contributions.length, last_contribution: story.contributions.last, title: story.title.to_json, lat: story.location.lat.to_json, lng: story.location.lng.to_json} }, status: 200
+>>>>>>> 1c0cdf2c77b8f64cb5d5ed1d939e9f98588549e4
   end
 
   def completed
@@ -19,15 +24,7 @@ class StoriesController < ApplicationController
     # nearby = Location.find(:origin => coordinates, :within => 10)
     nearby_stories = Story.joins(:location).within(range, :origin => coordinates)
     # render status: 200, json: { nearby_stories: nearby_stories }
-    render status: 200, json: nearby_stories.map { |story| {
-      id: story.id,
-      contribution_limit: story.contribution_limit,
-      contribution_length: story.contributions.length,
-      title: story.title.to_json,
-      lat: story.location.lat.to_json,
-      lng: story.location.lng.to_json
-      }
-    }
+    render status: 200, json: nearby_stories.map { |story| {id: story.id, contribution_limit: story.contribution_limit, completed: story.completed, contribution_length: story.contributions.length, title: story.title.to_json, lat: story.location.lat.to_json, lng: story.location.lng.to_json} }
   end
 
   def in_range
@@ -68,6 +65,7 @@ class StoriesController < ApplicationController
         title: story.title,
         lat: story.location.lat,
         lng: story.location.lng,
+        completed: story.completed,
         contribution_limit: story.contribution_limit,
         contributions_length: story.contributions.length,
         all_contributions: all_contributions
@@ -78,6 +76,7 @@ class StoriesController < ApplicationController
         title: story.title,
         lat: story.location.lat,
         lng: story.location.lng,
+         completed: story.completed,
         contribution_limit: story.contribution_limit,
         contributions_length: story.contributions.length,
         last_contribution: last_contribution
