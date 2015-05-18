@@ -4,8 +4,8 @@ RSpec.describe ContributionsController, type: :controller do
 
   describe "#create" do
     before(:each) do
-      @story = FactoryGirl.create(:story)
-      @contribution = FactoryGirl.build(:contribution)
+      @story = create(:story)
+      @contribution = build(:contribution)
       post :create, :story_id => @story.id, contribution: {content: @contribution.content}
     end
 
