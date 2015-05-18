@@ -2,7 +2,7 @@ class HomeController < ApplicationController
 
   def index
     render json: {
-      content: "Home Page "
+      content: "Home Page"
     }
   end
 

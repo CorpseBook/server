@@ -2,7 +2,16 @@ class StoriesController < ApplicationController
 
   def index
     stories = Story.where(completed: false).order(updated_at: :desc).limit(20)
-    render json: stories.map { |story| {id: story.id, contribution_limit: story.contribution_limit, contribution_length: story.contributions.length, last_contribution: story.contributions.last, title: story.title.to_json, lat: story.location.lat.to_json, lng: story.location.lng.to_json} }, status: 200
+    render json: stories.map { |story| {
+      id: story.id,
+      contribution_limit: story.contribution_limit,
+      contribution_length: story.contributions.length,
+      last_contribution: story.contributions.last,
+      title: story.title.to_json,
+      lat: story.location.lat.to_json,
+      lng: story.location.lng.to_json
+      }
+    }, status: 200
   end
 
   def completed
@@ -19,7 +28,15 @@ class StoriesController < ApplicationController
     # nearby = Location.find(:origin => coordinates, :within => 10)
     nearby_stories = Story.joins(:location).within(range, :origin => coordinates)
     # render status: 200, json: { nearby_stories: nearby_stories }
-    render status: 200, json: nearby_stories.map { |story| {id: story.id, contribution_limit: story.contribution_limit, contribution_length: story.contributions.length, title: story.title.to_json, lat: story.location.lat.to_json, lng: story.location.lng.to_json} }
+    render status: 200, json: nearby_stories.map { |story| {
+      id: story.id,
+      contribution_limit: story.contribution_limit,
+      contribution_length: story.contributions.length,
+      title: story.title.to_json,
+      lat: story.location.lat.to_json,
+      lng: story.location.lng.to_json
+      }
+    }
   end
 
   def in_range
@@ -29,7 +46,9 @@ class StoriesController < ApplicationController
     coordinates = [lat, lng]
     range = params[:search].fetch(:range, 0.5)
     nearby_stories = Story.joins(:location).within(range, :origin => coordinates)
-    render status: 200, json: { in_range: nearby_stories.include?(story) }
+    render status: 200, json: {
+      in_range: nearby_stories.include?(story)
+    }
   end
 
   def create

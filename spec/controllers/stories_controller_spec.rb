@@ -17,20 +17,34 @@ RSpec.describe StoriesController, type: :controller do
     end
 
     before do
-      post :create, {story: {title: "Supernatural Winnipeg", contribution_limit: 12, lat:-41.270833, lng: 173.283889}}
+      @title = "Supernatural Winnipeg"
+      @lat = -41.270833
+      @lng = 173.283889
+      @contribution_limit = 12
+      post :create, {story: {title: @title, contribution_limit: @contribution_limit, lat:@lat, lng: @lng }}
     end
 
     it "should create new story" do
-      expect(Story.last.title).to eq("Supernatural Winnipeg")
+      expect(Story.all.length).to eq(1)
+    end
+
+    it "should create a new story with a title" do
+      expect(Story.all.last.title).to eq(@title)
+    end
+
+    it "should create a new story with a contribution limit" do
+      expect(Story.all.last.contribution_limit).to eq(@contribution_limit)
+    end
+
+    it "should create a new story with a location" do
+      expect(Story.last.location.lat).to eq(@lat)
+      expect(Story.last.location.lng).to eq(@lng)
     end
 
     it "should return an HTTP response of 200 if successful" do
       expect(response.status).to eq(200)
     end
 
-    it "should contains location object" do
-      expect(Story.last.location.lat).to eq(-41.270833)
-    end
   end
 
 
@@ -105,7 +119,4 @@ RSpec.describe StoriesController, type: :controller do
     end
   end
 
-  after(:all) do
-    Story.destroy_all
-  end
 end
