@@ -12,4 +12,5 @@ FactoryGirl.define do
     completed true
     location
   end
+
 end

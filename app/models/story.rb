@@ -24,4 +24,12 @@ class Story < ActiveRecord::Base
     self.contributions.last
   end
 
+  def first_contribution
+    self.contributions.first
+  end
+
+  def all_contributions
+    self.contributions
+  end
+
 end

@@ -9,8 +9,11 @@ RSpec.describe StoriesController, type: :controller do
       12.times {create(:story)}
       4.times {create(:completed_story)}
       get :index, :format => :json
-      # This test needs a rewrite as uses code from the method itself
-      expect(response.body).to eq(Story.where(completed: false).order(updated_at: :desc).limit(10).to_json(:type => 'completed'))
+      expect(response.body).to eq(Story.where(completed: false).order(updated_at: :desc).limit(10).to_json(
+        :methods => [:contributions_length, :last_contribution],
+        :only => [:id, :contribution_limit, :title],
+        :include => [:location => { :only => [:lat, :lng] }])
+      )
     end
   end
 
@@ -56,11 +59,33 @@ RSpec.describe StoriesController, type: :controller do
 
 
   describe "#show" do
+
     before do
       @story = create(:story)
+      @completed_story = create(:completed_story)
       @contribution = create(:contribution)
       @story.contributions << @contribution
       get :show, id: @story.id
+    end
+
+    it "Should return proper story format as json if the story is complete" do
+      story = create(:completed_story)
+      get :show, id: story.id
+      expect(response.body).to eq(story.to_json(
+        :methods => [:all_contributions, :contributions_length],
+        :only => [:id, :title, :completed, :contribution_limit],
+        :include => [:location => { :only => [:lat, :lng] }]
+      ))
+    end
+
+    it "Should return proper story format as json if the story is not complete" do
+      story = create(:story)
+      get :show, id: story.id
+      expect(response.body).to eq(story.to_json(
+        :methods => [:last_contribution, :contributions_length],
+        :only => [:id, :title, :completed, :contribution_limit],
+        :include => [:location => { :only => [:lat, :lng] }]
+      ))
     end
 
     it "should find a particular story's contributions" do
@@ -74,6 +99,7 @@ RSpec.describe StoriesController, type: :controller do
     it "should return the story's contribution in json" do
       expect(response.body).to include(@contribution.to_json)
     end
+
   end
 
   describe "#nearby" do
@@ -95,9 +121,6 @@ RSpec.describe StoriesController, type: :controller do
       expect(response.body).to include(@akl_story.to_json)
     end
 
-    it "should reurn all nearby stories as json" do
-      # expect(response.body).to
-    end
   end
 
   describe "#in_range" do
@@ -126,7 +149,11 @@ RSpec.describe StoriesController, type: :controller do
       get :completed
     end
     it "should return complete stories as json" do
-      expect(response.body).to eq(Story.where(completed: true).to_json)
+      expect(response.body).to eq(Story.where(completed: true).to_json(
+        :methods => [:first_contribution],
+        :only => [:id, :title],
+        :include => [:location => { :only => [:lat, :lng] }])
+      )
     end
   end
 
