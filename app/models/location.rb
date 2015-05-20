@@ -8,6 +8,8 @@ class Location < ActiveRecord::Base
 
   def reverse_geocode
     response = Geokit::Geocoders::GoogleGeocoder.reverse_geocode([self.lat, self.lng])
+    puts "Google Response"
+    p response
     self.address = response.street_name + ", " + response.city
   end
 

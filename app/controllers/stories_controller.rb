@@ -48,14 +48,9 @@ class StoriesController < ApplicationController
     new_story = Story.new(title: story_params[:title], contribution_limit: story_params[:contribution_limit])
     new_location = Location.new(lat: story_params[:lat], lng: story_params[:lng])
     new_contribution = Contribution.new(content: story_params[:contribution], username: story_params[:username])
-    puts "1: #{new_story.valid?}"
-    puts "2: #{new_location.valid?}"
-    puts "3: #{new_contribution.valid?}"
     if new_story.save
-    puts "4. whatever"
       new_story.location = new_location
       new_story.contributions << new_contribution
-      puts "5. #{new_story.contributions}"
       render status: 200, json: {
         story: new_story
       }
