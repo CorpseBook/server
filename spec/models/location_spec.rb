@@ -2,6 +2,10 @@ require 'rails_helper'
 
 RSpec.describe Location, type: :model do
 
+  # Couple of notes:
+  # If you don't put :each then :each is the default anyway
+  # You can also use `let`s here instead of instance vars.
+  # Neither are required but just some tips
 	before(:each) do
 		@akl = FactoryGirl.create(:auckland)
 		@welly = FactoryGirl.create(:wellington)

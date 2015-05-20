@@ -19,6 +19,8 @@ RSpec.describe ContributionsController, type: :controller do
       expect(response.status).to eq(200)
     end
 
+    # There is a gem called database_cleaner that can do this for you
+    # for all your tests that you may want to look into.
     after(:each) do
       Contribution.delete_all
       Story.delete_all

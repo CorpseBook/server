@@ -2,6 +2,8 @@ require 'rails_helper'
 
 RSpec.describe Story, type: :model do
 
+  # Lots of setup here. Might be a sign of tight coupling somewhere
+  # or that this is not a unit test but an integration test.
 	before(:each) do
 		akl = FactoryGirl.create(:auckland)
 		@welly = FactoryGirl.create(:wellington)
