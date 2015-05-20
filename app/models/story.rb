@@ -1,6 +1,8 @@
 class Story < ActiveRecord::Base
-  has_many :contributions
-  has_one :location, as: :locatable  # also works for belongs_to associations
+  has_many :contributions, dependent: :destroy
+  has_one :location, as: :locatable, dependent: :destroy
+  # add test for dependent destroy
+    # also works for belongs_to associations
   acts_as_mappable through: :location
 
   def add_contribution(contribution)

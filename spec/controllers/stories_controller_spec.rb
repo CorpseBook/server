@@ -9,14 +9,14 @@ RSpec.describe StoriesController, type: :controller do
 
     end
 
-    it "should return the last 10 updated incomplete stories as json" do
+    it "should return the last 20 updated incomplete stories as json" do
       12.times {create(:story)}
       4.times {create(:completed_story)}
       get :index, :format => :json
-      expect(response.body).to eq(Story.where(completed: false).order(updated_at: :desc).limit(10).to_json(
+      expect(response.body).to eq(Story.where(completed: false).order(updated_at: :desc).limit(20).to_json(
         :methods => [:contributions_length, :last_contribution],
         :only => [:id, :contribution_limit, :title, :completed],
-        :include => [:location => { :only => [:lat, :lng] }])
+        :include => [:location => { :only => [:lat, :lng, :address] }])
       )
     end
   end
@@ -75,7 +75,7 @@ RSpec.describe StoriesController, type: :controller do
       expect(response.body).to eq(story.to_json(
         :methods => [:all_contributions, :contributions_length],
         :only => [:id, :title, :completed, :contribution_limit],
-        :include => [:location => { :only => [:lat, :lng] }]
+        :include => [:location => { :only => [:lat, :lng, :address] }]
       ))
     end
 
@@ -85,7 +85,7 @@ RSpec.describe StoriesController, type: :controller do
       expect(response.body).to eq(story.to_json(
         :methods => [:last_contribution, :contributions_length],
         :only => [:id, :title, :completed, :contribution_limit],
-        :include => [:location => { :only => [:lat, :lng] }]
+        :include => [:location => { :only => [:lat, :lng, :address] }]
       ))
     end
 
@@ -105,11 +105,11 @@ RSpec.describe StoriesController, type: :controller do
 
   describe "#nearby" do
     before(:each) do
-      @EDA = create(:EDA)
-      @tepapa = create(:tepapa)
-      @karori_park = create(:karori_park)
-      @ngaio = create(:ngaio)
-      @madagascar = create(:madagascar)
+      @EDA = FactoryGirl.create(:EDA)
+      @tepapa = FactoryGirl.create(:tepapa)
+      @karori_park = FactoryGirl.create(:karori_park)
+      @ngaio = FactoryGirl.create(:ngaio)
+      @madagascar = FactoryGirl.create(:madagascar)
 
       @EDA_story = Story.create(location: @EDA, title: 'EDA')
       @tepapa_story = Story.create(location: @tepapa, title: 'TePapa')
@@ -124,23 +124,30 @@ RSpec.describe StoriesController, type: :controller do
       expect(response.status).to eq(200)
     end
 
-    it "should return the correct stories that are in range" do
-      expect(response.body).to include('EDA', 'TePapa', 'Karori Park')
+    it "should return the akl story which is within range" do
+      expect(response.body).to include(@EDA.to_json(
+        :methods => [:contribution_length],
+        :only => [:id, :title, :contribution_limit, :completed],
+        :include => [:location => { :only => [:lat, :lng, :address] }]
+      ))
     end
+    # it "should return the correct stories that are in range" do
+    #   expect(response.body).to include('EDA', 'TePapa', 'Karori Park')
+    # end
 
-    it "should not return stories out of range" do
-      expect(response.body).to_not include('Ngaio', 'Madagascar')
-    end
+    # it "should not return stories out of range" do
+    #   expect(response.body).to_not include('Ngaio', 'Madagascar')
+    # end
   end
 
   describe "#in_range" do
 
     before(:each) do
-      @EDA = create(:EDA)
-      @tepapa = create(:tepapa)
-      @karori_park = create(:karori_park)
-      @ngaio = create(:ngaio)
-      @madagascar = create(:madagascar)
+      @EDA = FactoryGirl.create(:EDA)
+      @tepapa = FactoryGirl.create(:tepapa)
+      @karori_park = FactoryGirl.create(:karori_park)
+      @ngaio = FactoryGirl.create(:ngaio)
+      @madagascar = FactoryGirl.create(:madagascar)
 
       @EDA_story = Story.create(location: @EDA, title: 'EDA')
       @tepapa_story = Story.create(location: @tepapa, title: 'TePapa')
@@ -153,7 +160,6 @@ RSpec.describe StoriesController, type: :controller do
     it "should return status 200" do
       get :in_range, {story_id: @EDA_story.id, search: {lat:@EDA.lat, lng:@EDA.lng}}
       expect(response.status).to eq(200)
-      p response.body
     end
 
     it "should return true if the story is in range" do
@@ -177,7 +183,7 @@ RSpec.describe StoriesController, type: :controller do
       expect(response.body).to eq(Story.where(completed: true).to_json(
         :methods => [:first_contribution],
         :only => [:id, :title],
-        :include => [:location => { :only => [:lat, :lng] }])
+        :include => [:location => { :only => [:lat, :lng, :address] }])
       )
     end
   end

@@ -98,6 +98,7 @@ GEM
     orm_adapter (0.5.0)
     pg (0.18.2)
     rack (1.6.1)
+    rack-cors (0.4.0)
     rack-test (0.6.3)
       rack (>= 1.0)
     rails (4.2.1)
@@ -202,6 +203,7 @@ DEPENDENCIES
   jquery-rails
   nyan-cat-formatter
   pg
+  rack-cors
   rails (= 4.2.1)
   rspec-rails
   sass-rails (~> 5.0)
