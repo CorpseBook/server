@@ -5,7 +5,7 @@ class StoriesController < ApplicationController
     render json: stories.to_json(
       :methods => [:contributions_length, :last_contribution],
       :only => [:id, :contribution_limit, :title, :completed],
-      :include => [:location => { :only => [:lat, :lng] }]
+      :include => [:location => { :only => [:lat, :lng, :address] }]
     ), status: 200
   end
 
@@ -14,7 +14,7 @@ class StoriesController < ApplicationController
     render json: stories.to_json(
       :methods => [:first_contribution],
       :only => [:id, :title],
-      :include => [:location => { :only => [:lat, :lng] }]
+      :include => [:location => { :only => [:lat, :lng, :address] }]
     ), status: 200
 
   end
@@ -28,7 +28,7 @@ class StoriesController < ApplicationController
     render json: @nearby_stories.to_json(
       :methods => [:contribution_length, :first_contribution, :last_contribution],
       :only => [:id, :title, :contribution_limit, :completed],
-      :include => [:location => { :only => [:lat, :lng] }]
+      :include => [:location => { :only => [:lat, :lng, :address] }]
     ), status: 200
   end
 
@@ -70,13 +70,13 @@ class StoriesController < ApplicationController
       render json: story.to_json(
         :methods => [:all_contributions, :contributions_length],
         :only => [:id, :title, :completed, :contribution_limit],
-        :include => [:location => { :only => [:lat, :lng] }]
+        :include => [:location => { :only => [:lat, :lng, :address] }]
       )
     else
       render json: story.to_json(
         :methods => [:last_contribution, :contributions_length],
         :only => [:id, :title, :completed, :contribution_limit],
-        :include => [:location => { :only => [:lat, :lng] }]
+        :include => [:location => { :only => [:lat, :lng, :address] }]
       )
     end
   end

@@ -16,7 +16,7 @@ RSpec.describe StoriesController, type: :controller do
       expect(response.body).to eq(Story.where(completed: false).order(updated_at: :desc).limit(10).to_json(
         :methods => [:contributions_length, :last_contribution],
         :only => [:id, :contribution_limit, :title, :completed],
-        :include => [:location => { :only => [:lat, :lng] }])
+        :include => [:location => { :only => [:lat, :lng, :address] }])
       )
     end
   end
@@ -75,7 +75,7 @@ RSpec.describe StoriesController, type: :controller do
       expect(response.body).to eq(story.to_json(
         :methods => [:all_contributions, :contributions_length],
         :only => [:id, :title, :completed, :contribution_limit],
-        :include => [:location => { :only => [:lat, :lng] }]
+        :include => [:location => { :only => [:lat, :lng, :address] }]
       ))
     end
 
@@ -85,7 +85,7 @@ RSpec.describe StoriesController, type: :controller do
       expect(response.body).to eq(story.to_json(
         :methods => [:last_contribution, :contributions_length],
         :only => [:id, :title, :completed, :contribution_limit],
-        :include => [:location => { :only => [:lat, :lng] }]
+        :include => [:location => { :only => [:lat, :lng, :address] }]
       ))
     end
 
@@ -122,7 +122,7 @@ RSpec.describe StoriesController, type: :controller do
       expect(response.body).to include(@nearby_stories.to_json(
         :methods => [:contribution_length],
         :only => [:id, :title, :contribution_limit, :completed],
-        :include => [:location => { :only => [:lat, :lng] }]
+        :include => [:location => { :only => [:lat, :lng, :address] }]
       ))
     end
 
@@ -173,7 +173,7 @@ RSpec.describe StoriesController, type: :controller do
       expect(response.body).to eq(Story.where(completed: true).to_json(
         :methods => [:first_contribution],
         :only => [:id, :title],
-        :include => [:location => { :only => [:lat, :lng] }])
+        :include => [:location => { :only => [:lat, :lng, :address] }])
       )
     end
   end
