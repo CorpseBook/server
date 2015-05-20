@@ -1,7 +1,7 @@
 class StoriesController < ApplicationController
 
   def index
-    stories = Story.where(completed: false).order(updated_at: :desc).limit(10)
+    stories = Story.where(completed: false).order(updated_at: :desc).limit(20)
     render json: stories.to_json(
       :methods => [:contributions_length, :last_contribution],
       :only => [:id, :contribution_limit, :title, :completed],

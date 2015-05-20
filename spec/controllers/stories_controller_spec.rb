@@ -9,11 +9,11 @@ RSpec.describe StoriesController, type: :controller do
 
     end
 
-    it "should return the last 10 updated incomplete stories as json" do
+    it "should return the last 20 updated incomplete stories as json" do
       12.times {create(:story)}
       4.times {create(:completed_story)}
       get :index, :format => :json
-      expect(response.body).to eq(Story.where(completed: false).order(updated_at: :desc).limit(10).to_json(
+      expect(response.body).to eq(Story.where(completed: false).order(updated_at: :desc).limit(20).to_json(
         :methods => [:contributions_length, :last_contribution],
         :only => [:id, :contribution_limit, :title, :completed],
         :include => [:location => { :only => [:lat, :lng, :address] }])
