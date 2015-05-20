@@ -2,11 +2,24 @@ Rails.application.routes.draw do
   root to: 'home#index'
 
   resources :stories do
+    # nice work only producing the routes you are going to use
     resources :contributions, only: [:create]
   end
 
+  # You can put this in the nested route so you don't have to manually specify
+  # the story part of this URL. Helps keep common route togther, in this case
+  # all the story routes.
+  #
+  # Also something to keep in mind. If you are not using RESTful routes then
+  # you may be missing a controller. One or two might be ok but they tend to grow
+  # as soon as you have non RESTful routes. Maybe there is a NearbyController
+  # that could do this job?
   get '/stories/nearby' => "stories#nearby"
 
+  # See notes above. Until we ran rake routes we didn't realise there were
+  # more story routes as they are not nested in the first block. Once again
+  # keeping in mind RESTful controllers/routes as well. Likely missing
+  # controller/objects.
   controller :stories, path: '/' do
     match 'stories', to: "stories#create", via: [ :post, :options]
   end
@@ -14,6 +27,9 @@ Rails.application.routes.draw do
   controller :contributions, path: "/stories/:story_id/" do
     match 'contributions', to: "contributions#create", via: [ :post, :options]
   end
+
+  # Good to have these around for reference at first but I like to delete the
+  # examples pretty soon after so you don't have it cluttering your code base.
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
