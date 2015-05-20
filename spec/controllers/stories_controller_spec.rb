@@ -105,13 +105,19 @@ RSpec.describe StoriesController, type: :controller do
 
   describe "#nearby" do
     before(:each) do
-      @akl = create(:auckland)
-      @welly = create(:wellington)
-      @nelly = create(:nelson)
-      @akl_story = Story.create(location: @akl)
-      @welly_story = Story.create(location: @welly)
-      @nelly_story = Story.create(location: @nelly)
-      get :nearby, search: {lat:-36.840556, lng: 174.74}
+      @EDA = FactoryGirl.create(:EDA)
+      @tepapa = FactoryGirl.create(:tepapa)
+      @karori_park = FactoryGirl.create(:karori_park)
+      @ngaio = FactoryGirl.create(:ngaio)
+      @madagascar = FactoryGirl.create(:madagascar)
+
+      @EDA_story = Story.create(location: @EDA, title: 'EDA')
+      @tepapa_story = Story.create(location: @tepapa, title: 'TePapa')
+      @karori_park_story = Story.create(location: @karori_park, title: 'Karori Park')
+      @ngaio_story = Story.create(location: @ngaio, title: 'Ngaio')
+      @madagascar_story = Story.create(location: @madagascar, title: 'Madagascar')
+
+      get :nearby, search: {lat:@EDA.lat, lng:@EDA.lng}
     end
 
     it "should return status 200" do
@@ -119,49 +125,53 @@ RSpec.describe StoriesController, type: :controller do
     end
 
     it "should return the akl story which is within range" do
-      expect(response.body).to include(@nearby_stories.to_json(
+      expect(response.body).to include(@EDA.to_json(
         :methods => [:contribution_length],
         :only => [:id, :title, :contribution_limit, :completed],
         :include => [:location => { :only => [:lat, :lng, :address] }]
       ))
     end
+    # it "should return the correct stories that are in range" do
+    #   expect(response.body).to include('EDA', 'TePapa', 'Karori Park')
+    # end
 
-
-
+    # it "should not return stories out of range" do
+    #   expect(response.body).to_not include('Ngaio', 'Madagascar')
+    # end
   end
 
   describe "#in_range" do
 
     before(:each) do
-      @akl = create(:auckland)
-      @welly = create(:wellington)
-      @nelly = create(:nelson)
-      @akl_story = Story.create(location: @akl)
-      @welly_story = Story.create(location: @welly)
-      @nelly_story = Story.create(location: @nelly)
+      @EDA = FactoryGirl.create(:EDA)
+      @tepapa = FactoryGirl.create(:tepapa)
+      @karori_park = FactoryGirl.create(:karori_park)
+      @ngaio = FactoryGirl.create(:ngaio)
+      @madagascar = FactoryGirl.create(:madagascar)
+
+      @EDA_story = Story.create(location: @EDA, title: 'EDA')
+      @tepapa_story = Story.create(location: @tepapa, title: 'TePapa')
+      @karori_park_story = Story.create(location: @karori_park, title: 'Karori Park')
+      @ngaio_story = Story.create(location: @ngaio, title: 'Ngaio')
+      @madagascar_story = Story.create(location: @madagascar, title: 'Madagascar')
+
     end
 
     it "should return status 200" do
+      get :in_range, {story_id: @EDA_story.id, search: {lat:@EDA.lat, lng:@EDA.lng}}
       expect(response.status).to eq(200)
     end
 
     it "should return true if the story is in range" do
-      get :in_range, :story_id => @akl_story.id, search: {lat:-36.840556, lng: 174.74}
+      get :in_range, {story_id: @EDA_story.id, search: {lat:@EDA.lat, lng:@EDA.lng}}
       expect(response.body).to include("true")
     end
 
     it "should return false if the story is not in range" do
-      get :in_range, :story_id => @welly_story.id, search: {lat:-36.840556, lng: 174.74}
+      get :in_range, {story_id: @madagascar_story.id, search: {lat:@EDA.lat, lng:@EDA.lng}}
       expect(response.body).to include("false")
     end
 
-    # it "should return nearby stories as json" do
-    #   expect(response.body).to include(@nearby_stories.to_json(
-    #     :methods => [:contribution_length],
-    #     :only => [:id, :title, :contribution_limit, :completed],
-    #     :include => [:location => { :only => [:lat, :lng] }]
-    #   ))
-    # end
   end
 
   describe "#completed" do
